@@ -25,10 +25,18 @@
         <input type="text" name="zip" ng-model="view.zip" required>
         <input type="submit" ng-click="view.getMarkets(view.zip)">
       </form>
-      <p>{{ view.zip }}</p>
     </div>
     <div class="results">
-      Results
+      <div class="market" ng-repeat="market in view.markets">
+        <h4 class="pointer" ng-click="view.moreInfo(market.id)">{{ market.marketname }}</h4>
+        <div class="details" ng-show="view.activeMarketId === market.id">
+          <p>{{ view.marketDetails.address }}</p>
+          <a href="{{ view.marketDetails.GoogleLink }}">
+            <p>Website</p>
+          </a>
+          <p>Products: {{ view.marketDetails.Products }}</p>
+        </div>
+      </div>
     </div>
   </main>
 

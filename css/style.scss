@@ -3,6 +3,13 @@ body {
   padding: 0;
   border: 1px solid black;
 }
+.pointer {
+  cursor: pointer;
+}
+a, a * {
+  text-decoration: none;
+  color:  inherit;
+}
 header {
   background: rgba(0,0,0,0.2);
 }
@@ -16,7 +23,7 @@ header {
   background: yellow;
 }
 .search {
-  background: green;
+  // background: green;
   width: 45%;
   height: 95%;
 }
@@ -25,7 +32,8 @@ header {
   height: 30%;
 }
 .results {
-  background: blue;
+  // background: blue;
   width: 45%;
   height: 95%;
+  overflow-x: scroll;
 }
