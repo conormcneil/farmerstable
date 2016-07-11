@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+}
+header {
+  background: rgba(0,0,0,0.2);
+}
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 90vw;
+  height: 90vh;
+  background: yellow;
+}
+.search {
+  background: green;
+  width: 45%;
+  height: 95%;
+}
+.googleMap {
+  background: orange;
+  height: 30%;
+}
+.results {
+  background: blue;
+  width: 45%;
+  height: 95%;
+}
