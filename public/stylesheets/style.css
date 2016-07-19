@@ -26,9 +26,8 @@ header {
   width: 45%;
   height: 95%; }
 
-.googleMap {
-  background: orange;
-  height: 30%; }
+#map {
+  height: 40%; }
 
 .results {
   width: 45%;
