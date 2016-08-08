@@ -1,25 +1,23 @@
-body {
-  margin: 0;
-  padding: 0;
-  border: 1px solid black; }
-
 .pointer {
   cursor: pointer; }
+
+body {
+  margin: 0;
+  padding: 0; }
 
 a, a * {
   text-decoration: none;
   color: inherit; }
 
 header {
-  background: rgba(0, 0, 0, 0.2); }
+  background: rgba(0, 0, 0, 0.2);
+  height: 50px; }
 
 .content {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 auto;
-  width: 90vw;
-  height: 90vh;
+  flex-flow: column nowrap;
+  width: 100vw;
+  height: 100vh;
   background: yellow; }
 
 .search {
@@ -27,7 +25,8 @@ header {
   height: 95%; }
 
 #map {
-  height: 40%; }
+  height: 40%;
+  width: 100%; }
 
 .results {
   width: 45%;

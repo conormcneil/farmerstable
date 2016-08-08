@@ -18,33 +18,29 @@
   </header>
 
   <main class="content">
-    <div class="search">
-      <div id="map">
-        Google Map
-      </div>
+    <div id="map">
+      Google Map
+    </div>
+    <!-- <div class="search">
       <form name="searchForm" ng-model="$searchForm">
         <label for="zip">Zip Code</label>
         <input type="text" name="zip" ng-model="view.zip" required>
         <input type="submit" ng-click="view.getMarkets(view.zip)">
       </form>
-    </div>
-    <div class="results">
+    </div> -->
+    <!-- <div class="results">
       <div class="market" ng-repeat="market in view.markets">
         <h4 class="pointer" ng-click="view.moreInfo(market.id)">{{ market.marketname }}</h4>
         <div class="details" ng-show="view.activeMarketId === market.id">
-          <p ng-click="view.getLatLong(view.marketDetails.Address)">{{ view.marketDetails.Address }}</p>
-          <a href="{{ view.marketDetails.GoogleLink }}">
-            <p>Website</p>
+          <a href="{{ view.marketDetails.GoogleLink }}" target="_blank">
+            <p>{{ view.marketDetails.Address }}</p>
           </a>
-          <p>Products: {{ view.marketDetails.Products }}</p>
+          <p ng-show="view.marketDetails.Products">Products: {{ view.marketDetails.Products }}</p>
         </div>
       </div>
-    </div>
+    </div> -->
   </main>
 
-
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc&callback=initMap" async defer></script> -->
-  <!-- <script src="./js/googlemaps.js" charset="utf-8"></script> -->
 
 </body>
 </html>

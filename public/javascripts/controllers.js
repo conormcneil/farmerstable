@@ -1,6 +1,5 @@
 app.controller('farmersTableController',['$scope','$http',function($scope,$http){
   $scope.view = {};
-
   $scope.view.getMarkets = function(zip) {
     var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip;
     $http.get(url).then(function(data) {
@@ -25,7 +24,6 @@ app.controller('farmersTableController',['$scope','$http',function($scope,$http)
     var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBIY03seu1Mt8H5G-Tleh8_rII0t97gBGg';
     $http.get(url).then(function(data) {
       console.log(data.data.results);
-    })
-  }
-
+    });
+  };
 }]);
