@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./stylesheets/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
   <script src="./javascripts/app.js" charset="utf-8"></script>
   <script src="./javascripts/controllers.js" charset="utf-8"></script>
   <script src="./javascripts/services.js" charset="utf-8"></script>
@@ -11,11 +12,12 @@
   <script src="./javascripts/filters.js" charset="utf-8"></script>
   <script src="./javascripts/googlemaps.js" charset="utf-8" async defer></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc&callback=initMap" async defer></script>
+  <base href="/">
   <title>Angular Farmer's Table</title>
 </head>
 <body ng-controller='farmersTableController'>
 
-  <ft-header></ft-header>
+  <ft-header class="header"></ft-header>
 
   <main class="content">
     <div id="map">
@@ -26,6 +28,7 @@
     <ft-market-list ng-show="view.markets" class="market-list"></ft-market-list>
   </main>
 
+  <div ng-view></div>
 
 </body>
 </html>
