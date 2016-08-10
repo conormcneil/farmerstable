@@ -11,7 +11,8 @@ a, a * {
 
 header {
   background: rgba(0, 0, 0, 0.2);
-  height: 50px; }
+  height: 50px;
+  z-index: 1; }
 
 .content {
   display: flex;
@@ -20,17 +21,21 @@ header {
   height: 100vh;
   background: yellow; }
 
-.search {
-  width: 45%;
-  height: 95%; }
-
 #map {
   height: 40%;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 25px;
+  box-shadow: 0px 0px 5px 0px black;
+  z-index: 0; }
 
-.results {
-  width: 45%;
-  height: 95%;
+.market-list {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
   overflow-x: scroll; }
+  .market-list .market {
+    width: 32%; }
+    .market-list .market h5 {
+      margin: 5px; }
 
 /*# sourceMappingURL=style.css.map */

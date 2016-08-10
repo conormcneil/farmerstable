@@ -6,6 +6,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" charset="utf-8"></script>
   <script src="./javascripts/app.js" charset="utf-8"></script>
   <script src="./javascripts/controllers.js" charset="utf-8"></script>
+  <script src="./javascripts/services.js" charset="utf-8"></script>
+  <script src="./javascripts/directives.js" charset="utf-8"></script>
   <script src="./javascripts/filters.js" charset="utf-8"></script>
   <script src="./javascripts/googlemaps.js" charset="utf-8" async defer></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc&callback=initMap" async defer></script>
@@ -13,32 +15,15 @@
 </head>
 <body ng-controller='farmersTableController'>
 
-  <header>
-    Farmer's Table
-  </header>
+  <ft-header></ft-header>
 
   <main class="content">
     <div id="map">
       Google Map
     </div>
-    <!-- <div class="search">
-      <form name="searchForm" ng-model="$searchForm">
-        <label for="zip">Zip Code</label>
-        <input type="text" name="zip" ng-model="view.zip" required>
-        <input type="submit" ng-click="view.getMarkets(view.zip)">
-      </form>
-    </div> -->
-    <!-- <div class="results">
-      <div class="market" ng-repeat="market in view.markets">
-        <h4 class="pointer" ng-click="view.moreInfo(market.id)">{{ market.marketname }}</h4>
-        <div class="details" ng-show="view.activeMarketId === market.id">
-          <a href="{{ view.marketDetails.GoogleLink }}" target="_blank">
-            <p>{{ view.marketDetails.Address }}</p>
-          </a>
-          <p ng-show="view.marketDetails.Products">Products: {{ view.marketDetails.Products }}</p>
-        </div>
-      </div>
-    </div> -->
+    <input type="text" ng-model="view.zip">
+    <button ng-click="view.getMarkets(view.zip)">Get Nearby Markets</button>
+    <ft-market-list ng-show="view.markets" class="market-list"></ft-market-list>
   </main>
 
 

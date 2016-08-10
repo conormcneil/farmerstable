@@ -1,19 +1,14 @@
-app.controller('farmersTableController',['$scope','$http',function($scope,$http){
+app.controller('farmersTableController',['$scope','$http','MarketService',function($scope,$http,MarketService){
   $scope.view = {};
   $scope.view.getMarkets = function(zip) {
-    var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip;
-    $http.get(url).then(function(data) {
+    MarketService.getMarketsByZip(zip).then(function(data) {
       $scope.view.markets = data.data.results;
     });
   };
+  // $scope.view.market = MarketService.getMarketById(id);
   $scope.view.moreInfo = function(id) {
     $scope.view.marketDetails = null;
     $scope.view.activeMarketId === id ? $scope.view.activeMarketId = null : $scope.view.activeMarketId = id;
-    var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + id;
-    $http.get(url).then(function(data) {
-      $scope.view.marketDetails = data.data.marketdetails;
-      console.log(data.data.marketdetails);
-    });
   };
   $scope.view.getLatLong = function(address) {
     var addressString = '';
