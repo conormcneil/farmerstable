@@ -85,10 +85,16 @@ a, a * {
   width: 100%;
   overflow-x: scroll;
   .market {
+    background: green;
     display: flex;
+    flex-flow: column;
     align-items: center;
     width: 30%;
     box-shadow: 0px 0px 1px 0px black;
     margin: 3px;
+    overflow-x: scroll;
+    .market-details {
+      background: white;
+    }
   }
 }

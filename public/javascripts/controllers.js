@@ -5,14 +5,14 @@ function makeFarmersTableController($scope,$http,MarketService){
   $scope.view.getMarkets = function(zip) {
     MarketService.getMarketsByZip(zip).then(function(data) {
       $scope.view.markets = data.data.results;
-      console.log($scope.view.markets);
+      $scope.view.moreMarkets = $scope.view.markets.splice(12,$scope.view.markets.length-1);
     });
   };
   $scope.view.marketInfo = function(id) {
+    console.log(id);
     MarketService.getMarketById(id).then(function(data) {
       $scope.view.market = data.data.marketdetails;
       $scope.view.market.id = id;
-      console.log($scope.view.market);
     });
   };
 };
