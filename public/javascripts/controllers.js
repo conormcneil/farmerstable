@@ -4,15 +4,23 @@ function makeFarmersTableController($scope,$http,MarketService){
   $scope.view = {};
   $scope.view.getMarkets = function(zip) {
     MarketService.getMarketsByZip(zip).then(function(data) {
-      $scope.view.markets = data.data.results;
-      $scope.view.moreMarkets = $scope.view.markets.splice(12,$scope.view.markets.length-1);
+      var results = data.data.results;
+      $scope.view.moreMarkets = results.splice(12,results.length-1);
+      $scope.view.markets = results.map(function(e) {
+        e.marketname = e.marketname.split('');
+        e.distanceFromZip = e.marketname.splice(0,4);
+        e.distanceFromZip.splice(3,1);
+        e.distanceFromZip = e.distanceFromZip.join('');
+        e.marketname = e.marketname.join('');
+        return e;
+      });
     });
   };
   $scope.view.marketInfo = function(id) {
-    console.log(id);
     MarketService.getMarketById(id).then(function(data) {
       $scope.view.market = data.data.marketdetails;
       $scope.view.market.id = id;
+      console.log($scope.view.market);
     });
   };
 };
@@ -23,9 +31,7 @@ app.controller('HeaderController',makeHeaderController);
 function makeHeaderController($scope,MarketService,FormService) {
   $scope.view = {};
   $scope.forms = {};
-
   $scope.forms = FormService.forms;
-
   $scope.view.toggle = function(form) {
     FormService.toggle(form);
     $scope.forms = FormService.forms;
