@@ -5,10 +5,14 @@ app.controller('farmersTableController',['$scope','$http','MarketService',functi
       $scope.view.markets = data.data.results;
     });
   };
-  // $scope.view.market = MarketService.getMarketById(id);
-  $scope.view.moreInfo = function(id) {
-    $scope.view.marketDetails = null;
-    $scope.view.activeMarketId === id ? $scope.view.activeMarketId = null : $scope.view.activeMarketId = id;
+  $scope.view.marketInfo = function(id) {
+    MarketService.getMarketById(id).then(function(data) {
+      $scope.view.market = data.data.marketdetails;
+      $scope.view.market.id = id;
+      console.log($scope.view.market);
+    });
+    // $scope.view.marketDetails = null;
+    // $scope.view.activeMarketId === id ? $scope.view.activeMarketId = null : $scope.view.activeMarketId = id;
   };
   $scope.view.getLatLong = function(address) {
     var addressString = '';

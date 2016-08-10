@@ -6,10 +6,7 @@ app.factory("MarketService",function($http) {
     },
     getMarketById: function(id) {
       var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + id;
-      $http.get(url).then(function(data) {
-        console.log(data.data.marketdetails);
-        return data.data.marketdetails;
-      });
+      return $http.get(url);
     }
   }
 })

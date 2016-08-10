@@ -1,9 +1,14 @@
+::-webkit-scrollbar {
+    display: none;
+}
 .pointer {
   cursor: pointer;
 }
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
   // border: 1px solid black;
 }
 a, a * {
@@ -12,35 +17,35 @@ a, a * {
 }
 header {
   background: rgba(0,0,0,0.2);
-  height: 50px;
-  z-index: 1;
+  height: 5%;
 }
 .content {
   display: flex;
   flex-flow: column nowrap;
   width: 100vw;
-  height: 100vh;
+  height: 90%;
   background: yellow;
 }
 #map {
   // background: orange;
+  opacity: 0.87;
   height: 40%;
   width: 100%;
   margin-bottom: 25px;
   box-shadow: 0px 0px 5px 0px black;
-  z-index: 0;
 }
 .market-list {
   // background: blue;
   display: flex;
   flex-flow: row wrap;
-  // justify-content: space-between;
+  justify-content: space-between;
   width: 100%;
   overflow-x: scroll;
   .market {
-    width: 32%;
-    h5 {
-      margin: 5px;
-    }
+    display: flex;
+    align-items: center;
+    width: 30%;
+    box-shadow: 0px 0px 1px 0px black;
+    margin: 3px;
   }
 }
