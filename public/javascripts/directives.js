@@ -1,7 +1,8 @@
 app
   .directive("ftHeader",function() {
     return {
-      templateUrl: "partials/header.html"
+      templateUrl: "partials/header.html",
+      controller: 'HeaderController'
     }
   })
   .directive("ftMarketList",function() {

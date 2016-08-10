@@ -20,10 +20,27 @@ a, a * {
   width: 100%;
   background: rgba(0,0,0,0.2);
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  a {
+  a, p {
     padding: 10px;
+  }
+  .signin {
+    background: orange;
+    display: flex;
+    flex-direction: column;
+    // width: 175px;
+    // height: 100px;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    input, button {
+      margin: 0;
+      padding: 0;
+      height: 40px;
+      width: 175px;
+    }
   }
 }
 .content {

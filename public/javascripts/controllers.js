@@ -1,4 +1,6 @@
-app.controller('farmersTableController',['$scope','$http','MarketService',function($scope,$http,MarketService){
+// FarmersTableController
+app.controller('FarmersTableController',makeFarmersTableController);
+function makeFarmersTableController($scope,$http,MarketService){
   $scope.view = {};
   $scope.view.getMarkets = function(zip) {
     MarketService.getMarketsByZip(zip).then(function(data) {
@@ -11,8 +13,6 @@ app.controller('farmersTableController',['$scope','$http','MarketService',functi
       $scope.view.market.id = id;
       console.log($scope.view.market);
     });
-    // $scope.view.marketDetails = null;
-    // $scope.view.activeMarketId === id ? $scope.view.activeMarketId = null : $scope.view.activeMarketId = id;
   };
   $scope.view.getLatLong = function(address) {
     var addressString = '';
@@ -25,4 +25,23 @@ app.controller('farmersTableController',['$scope','$http','MarketService',functi
       console.log(data.data.results);
     });
   };
-}]);
+};
+makeFarmersTableController.$inject = ['$scope','$http','MarketService'];
+
+// HeaderController
+app.controller('HeaderController',makeHeaderController);
+function makeHeaderController($scope,MarketService,FormService) {
+  $scope.view = {};
+  $scope.forms = {};
+
+  $scope.forms = FormService.forms;
+
+  $scope.view.toggle = function(form) {
+    FormService.toggle(form);
+    $scope.forms = FormService.forms;
+  };
+  $scope.view.signin = function(username,password) {
+    console.log(username,password);
+  };
+};
+makeHeaderController.$inject = ['$scope','MarketService','FormService'];

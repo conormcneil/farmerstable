@@ -19,10 +19,23 @@ a, a * {
   width: 100%;
   background: rgba(0, 0, 0, 0.2);
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center; }
-  .header a {
+  .header a, .header p {
     padding: 10px; }
+  .header .signin {
+    background: orange;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 5px;
+    top: 50px; }
+    .header .signin input, .header .signin button {
+      margin: 0;
+      padding: 0;
+      height: 40px;
+      width: 175px; }
 
 .content {
   display: flex;

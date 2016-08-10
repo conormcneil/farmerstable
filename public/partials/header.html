@@ -1,3 +1,13 @@
-<a href="/">Farmer's Table</a>
-<a href="/#/farmers">Farmers</a>
-<a href="/#/users">Users</a>
+<div>
+  <a href="/">Farmer's Table</a>
+  <a href="/#/farmers">Farmers</a>
+  <a href="/#/users">Users</a>
+</div>
+<div>
+  <p ng-click="view.toggle('signin')" class="pointer">Sign In</p>
+</div>
+<div class="signin" ng-show="forms.signin">
+  <input type="text" ng-model="view.username" placeholder="username/email">
+  <input type="text" ng-model="view.password" placeholder="password">
+  <button ng-click="view.signin(view.username,view.password)">Submit</button>
+</div>
