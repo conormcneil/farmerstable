@@ -34,13 +34,23 @@ a, a * {
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: 5px;
-    top: 50px; }
+    right: 0;
+    top: 45px;
+    z-index: 1;
+    border: none; }
     .header .signin input, .header .signin button {
       margin: 0;
       padding: 0;
       height: 40px;
-      width: 175px; }
+      width: 175px;
+      border: none;
+      border-bottom: 1px solid grey; }
+    .header .signin input {
+      padding: 5px; }
+    .header .signin button {
+      width: 190px;
+      margin-right: -5px;
+      border: none; }
 
 .content {
   display: flex;
@@ -51,7 +61,7 @@ a, a * {
 
 #map {
   opacity: 0.87;
-  height: 40%;
+  height: 25%;
   width: 100vw;
   margin-left: -5px;
   margin-bottom: 25px;

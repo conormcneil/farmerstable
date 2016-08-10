@@ -38,13 +38,25 @@ a, a * {
     // width: 175px;
     // height: 100px;
     position: absolute;
-    right: 5px;
-    top: 50px;
+    right: 0;
+    top: 45px;
+    z-index: 1;
+    border: none;
     input, button {
       margin: 0;
       padding: 0;
       height: 40px;
       width: 175px;
+      border: none;
+      border-bottom: 1px solid grey;
+    }
+    input {
+      padding: 5px;
+    }
+    button {
+      width: 190px;
+      margin-right: -5px;
+      border: none;
     }
   }
 }
@@ -59,7 +71,7 @@ a, a * {
 #map {
   // background: orange;
   opacity: 0.87;
-  height: 40%;
+  height: 25%;
   width: 100vw;
   margin-left: -5px;
   margin-bottom: 25px;
