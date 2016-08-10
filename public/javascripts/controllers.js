@@ -20,7 +20,6 @@ function makeFarmersTableController($scope,$http,MarketService){
     MarketService.getMarketById(id).then(function(data) {
       $scope.view.market = data.data.marketdetails;
       $scope.view.market.id = id;
-      console.log($scope.view.market);
     });
   };
 };

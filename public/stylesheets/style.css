@@ -72,17 +72,18 @@ a, a * {
   flex-flow: row wrap;
   justify-content: space-between;
   width: 100%;
+  max-height: 60%;
   overflow-x: scroll; }
   .market-list .market {
-    background: green;
     display: flex;
     flex-flow: column;
     align-items: center;
     width: 30%;
-    box-shadow: 0px 0px 1px 0px black;
+    box-shadow: 0px 0px 1px 0px grey;
     margin: 3px;
     overflow-x: scroll; }
     .market-list .market .market-details {
-      background: white; }
+      padding: 5px;
+      font-size: 0.8em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,6 @@
 <div ng-repeat="market in view.markets track by $index" class="market">
-  <h5 class="pointer" ng-click="view.marketInfo(market.id)">{{ market.marketname }}</h5>
-  <ft-market-details ng-show="view.market.id === market.id" class="market-details"></ft-market-details>
+    <h5 class="pointer" ng-click="view.marketInfo(market.id)">{{ market.marketname }}</h5>
+  <div class="market-details">
+    <ft-market-details ng-show="view.market.id === market.id"></ft-market-details>
+  </div>
 </div>
