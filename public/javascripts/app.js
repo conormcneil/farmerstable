@@ -5,10 +5,10 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     .when('/', {
       templateUrl: 'partials/market-search.html'
     })
-    // .when('/markets', {
-    //   templateUrl: 'partials/market-map.html'
-    // })
-    .when('/farmers', {
+    .when('/markets', {
+      templateUrl: "partials/market-list.html"
+    })
+    .when('/farms', {
       templateUrl: 'partials/farms.html',
       controllers: 'FarmsController'
     })
