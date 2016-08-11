@@ -24,6 +24,7 @@ function makeFarmersTableController($scope,$http,MarketService){
     MarketService.getMarketById(id).then(function(data) {
       $scope.view.market = data.data.marketdetails;
       $scope.view.market.id = id;
+      console.log($scope.view.market);
     });
   };
 };
@@ -44,3 +45,15 @@ function makeHeaderController($scope,MarketService,FormService) {
   };
 };
 makeHeaderController.$inject = ['$scope','MarketService','FormService'];
+
+// FarmsController
+app.controller("FarmsController",makeFarmsController);
+function makeFarmsController($scope,$http,FarmService) {
+  $scope.view = {};
+  $scope.farms = {};
+  $scope.farms = FarmService.farms;
+  $scope.view.log = function(item) {
+    console.log(item);
+  }
+};
+makeFarmsController.$inject = ['$scope','$http','FarmService'];

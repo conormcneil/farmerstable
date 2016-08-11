@@ -1,0 +1,11 @@
+<div ng-controller="FarmsController">
+  <div ng-repeat="farm in farms" class="farm" ng-show="farm.id === 1">
+    <h1>{{ farm.name }}</h1>
+    <img ng-src="{{ farm.image_url }}" style="height: 200px;">
+    <h2>{{ farm.address }}</h2>
+    <h3>Markets: </h3>
+    <li ng-repeat="market in farm.markets track by $index" ng-click="view.log(market.id)" class="pointer">{{ market.name }}</li>
+    <h3>Products: </h3>
+    <li ng-repeat="product in farm.products">{{ product }}</li>
+  </div>
+</div>
