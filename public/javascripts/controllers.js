@@ -57,3 +57,11 @@ function makeFarmsController($scope,$http,FarmService) {
   }
 };
 makeFarmsController.$inject = ['$scope','$http','FarmService'];
+
+app.controller("UsersController",makeUsersController);
+function makeUsersController($scope,$http,$routeParams,UserService) {
+  $scope.view = {};
+  $scope.view.greeting = 'hello users';
+  $scope.view.user = UserService.users[0];
+}
+makeUsersController.$inject = ['$scope','$http','$routeParams','UserService']

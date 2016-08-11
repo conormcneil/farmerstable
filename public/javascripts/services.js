@@ -95,4 +95,23 @@ app
         }
       ]
     }
+  })
+  .factory("UserService",function() {
+    return {
+      users: [
+        {
+          id: 1,
+          name: 'Conor Kingston',
+          location: 'Tucson, AZ 85712',
+          farms: [{
+            id: 1,
+            name: 'Shady Springs Farms, LLC'
+          },
+          {
+            id: 2,
+            name: 'Northbreeze Meadows'
+          }]
+        }
+      ]
+    }
   });

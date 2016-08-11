@@ -12,7 +12,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
       templateUrl: 'partials/farms.html',
       controllers: 'FarmsController'
     })
-    .when('/users', {
+    .when('/users/:id', {
       templateUrl: 'partials/users.html'
     })
     .otherwise({

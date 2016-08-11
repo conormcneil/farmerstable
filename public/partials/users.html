@@ -1,1 +1,6 @@
-<h1>Users!</h1>
+<div ng-controller="UsersController">
+  <h1>{{ view.user.name }}</h1>
+  <h3>{{ view.user.location }}</h3>
+  <h2>Farms {{ view.user.name }} is following:</h2>
+  <li ng-repeat="farm in view.user.farms track by $index">{{ farm.name }}</li>
+</div>
