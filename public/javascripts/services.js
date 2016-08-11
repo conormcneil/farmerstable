@@ -66,6 +66,7 @@ app
       farms: [
         {
           id: 1,
+          csa_id: 1,
           name: 'Shady Springs Farms, LLC',
           image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
           address: '590 N Tanque Verde Loop Rd, Tucson, AZ  85748',
@@ -83,6 +84,7 @@ app
         },
         {
           id: 2,
+          csa_id: 2,
           name: 'Northbreeze Meadows',
           image_url: "http://www.myashevillerealestate.com/images/cms/4/photo-1.jpg",
           address: '1234 E 5th St, Tucson, AZ 85712',
