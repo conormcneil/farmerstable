@@ -84,6 +84,7 @@ app
         {
           id: 2,
           name: 'Northbreeze Meadows',
+          image_url: "http://www.myashevillerealestate.com/images/cms/4/photo-1.jpg",
           address: '1234 E 5th St, Tucson, AZ 85712',
           markets: [
             {
@@ -93,7 +94,12 @@ app
           ],
           products: ['pork','beef','chicken','eggs']
         }
-      ]
+      ],
+      getFarm: function(id) {
+        return this.farms.filter(function(e) {
+          return e.id === parseInt(id);
+        })
+      }
     }
   })
   .factory("UserService",function() {

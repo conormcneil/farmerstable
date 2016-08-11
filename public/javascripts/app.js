@@ -8,7 +8,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     .when('/markets', {
       templateUrl: "partials/market-list.html"
     })
-    .when('/farms', {
+    .when('/farms/:id', {
       templateUrl: 'partials/farms.html',
       controllers: 'FarmsController'
     })

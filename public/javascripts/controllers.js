@@ -48,15 +48,19 @@ makeHeaderController.$inject = ['$scope','MarketService','FormService'];
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
-function makeFarmsController($scope,$http,FarmService) {
+function makeFarmsController($scope,$http,$routeParams,FarmService) {
   $scope.view = {};
   $scope.farms = {};
   $scope.farms = FarmService.farms;
+  $scope.getFarm = function(id) {
+    $scope.farm = FarmService.getFarm(id);
+  };
+  $scope.getFarm($routeParams.id);
   $scope.view.log = function(item) {
     console.log(item);
-  }
+  };
 };
-makeFarmsController.$inject = ['$scope','$http','FarmService'];
+makeFarmsController.$inject = ['$scope','$http','$routeParams','FarmService'];
 
 app.controller("UsersController",makeUsersController);
 function makeUsersController($scope,$http,$routeParams,UserService) {

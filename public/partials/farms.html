@@ -1,5 +1,5 @@
 <div ng-controller="FarmsController">
-  <div ng-repeat="farm in farms" class="farm" ng-show="farm.id === 1">
+  <div class="farm" ng-repeat="farm in farm track by $index">
     <h1>{{ farm.name }}</h1>
     <img ng-src="{{ farm.image_url }}" style="height: 200px;">
     <h2>{{ farm.address }}</h2>
