@@ -8,6 +8,10 @@ function makeFarmersTableController($scope,$http,MarketService){
       $scope.view.moreMarkets = results.splice(12,results.length-1);
       $scope.view.markets = results.map(function(e) {
         e.marketname = e.marketname.split('');
+        if (e.marketname[0] === 'D') {
+          e.marketname = e.marketname.join('');
+          return e;
+        }
         e.distanceFromZip = e.marketname.splice(0,4);
         e.distanceFromZip.splice(3,1);
         e.distanceFromZip = e.distanceFromZip.join('');
