@@ -27,7 +27,8 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
 .service('jwtInterceptor',function jwtInterceptor() {
   return {
     request: function(config) {
-      if (localStorage.jwt) {
+      var addJWT = (config.url.indexOf('http://localhost:3000') > -1)
+      if (addJWT && localStorage.jwt) {
         config.headers.Authorization = 'Bearer ' + localStorage.jwt;
       }
       return config;
