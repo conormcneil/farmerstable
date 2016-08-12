@@ -35,7 +35,7 @@ makeFarmersTableController.$inject = ['$scope','$http','MarketService','GoogleMa
 
 // HeaderController
 app.controller('HeaderController',makeHeaderController);
-function makeHeaderController($scope,$http,MarketService,FormService,jwtInterceptor) {
+function makeHeaderController($scope,$http,MarketService,FormService) {
   $scope.view = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;
@@ -51,7 +51,7 @@ function makeHeaderController($scope,$http,MarketService,FormService,jwtIntercep
     });
   };
 };
-makeHeaderController.$inject = ['$scope','$http','MarketService','FormService','jwtInterceptor'];
+makeHeaderController.$inject = ['$scope','$http','MarketService','FormService'];
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
