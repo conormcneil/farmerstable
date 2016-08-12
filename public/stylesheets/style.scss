@@ -100,3 +100,20 @@ a, a * {
     }
   }
 }
+.csa {
+  // background: blue;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  .csa-title {
+    width: 100%;
+  }
+}
+.csa-form {
+  // background: red;
+  width: 40%;
+}
+.csa-description {
+  // background: red;
+  width: 40%;
+}

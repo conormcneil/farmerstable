@@ -15,6 +15,9 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     .when('/users/:id', {
       templateUrl: 'partials/users.html'
     })
+    .when('/csa/:id/:csa_id', {
+      templateUrl: 'partials/csa.html'
+    })
     .otherwise({
       redirectTo: '/'
     });

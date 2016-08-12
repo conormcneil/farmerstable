@@ -1,0 +1,12 @@
+<div ng-controller="CSAController" class="csa">
+  <h2 class="csa-title">Welocme to {{ farm.name }} CSA!</h2>
+  <div class="csa-form">
+    <h3>Current open CSA registrations for {{ farm.name }}:</h3>
+    <li ng-repeat="csa in farm.csa">{{ csa.name }}</li>
+  </div>-
+  <div class="csa-description">
+    <h3>Community Supported Agriculture (CSA) is a great way to support your local economy and ensure that you have access to fresh, delicious food from your nearby farmers.</h3>
+    <h3>Members can sign up for CSA prior to an item's growing season. When the item is ready for harvest, the member picks up weekly "shares" for the length of the season.</h3>
+    <p>In this way, the farm knows beforehand how much to grow and does not have to worry about finding a buyer for however much of an item it has produced, and consumers get to support their local farms while also getting weekly pickups of delicious foods grown in their own communities.</p>
+  </div>
+</div>

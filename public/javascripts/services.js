@@ -80,6 +80,13 @@ app
               name: 'Rincon Valley Farmers Market'
             }
           ],
+          csa: [
+            {
+              name: "Fall Vegetables",
+              produce: ['cucumbers','cilantro','heirloom pumpkins','green onions','butternut squash','shishito peppers'],
+              details: 'Our Fall Vegetables CSA is 6-weeks long and can be picked up Mondays OR Wednesdays from 4:00PM-7:00PM at the McNulty Recreation Center.'
+            }
+          ],
           products: ['eggs','dried herbs','heirloom tomatoes','cucumbers','asparagus','green beans','bell peppers','sunflowers']
         },
         {
@@ -94,6 +101,7 @@ app
               name: 'Heirloom Rillito Park Farmers Market'
             }
           ],
+          csa: ['Summer Vegetables'],
           products: ['pork','beef','chicken','eggs']
         }
       ],

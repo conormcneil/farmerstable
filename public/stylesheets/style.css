@@ -86,4 +86,17 @@ a, a * {
       padding: 5px;
       font-size: 0.8em; }
 
+.csa {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around; }
+  .csa .csa-title {
+    width: 100%; }
+
+.csa-form {
+  width: 40%; }
+
+.csa-description {
+  width: 40%; }
+
 /*# sourceMappingURL=style.css.map */

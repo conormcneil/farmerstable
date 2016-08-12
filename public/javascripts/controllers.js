@@ -68,4 +68,16 @@ function makeUsersController($scope,$http,$routeParams,UserService) {
   $scope.view.greeting = 'hello users';
   $scope.view.user = UserService.users[0];
 }
-makeUsersController.$inject = ['$scope','$http','$routeParams','UserService']
+makeUsersController.$inject = ['$scope','$http','$routeParams','UserService'];
+
+app.controller("CSAController",makeCSAController);
+function makeCSAController($scope,$http,$routeParams,FarmService) {
+  $scope.view = {};
+  $scope.view.greeting = 'hello CSA!';
+  $scope.farm = {};
+  $scope.getFarm = function(id) {
+    $scope.farm = FarmService.getFarm(id)[0];
+  };
+  $scope.getFarm($routeParams.id);
+}
+makeCSAController.$inject = ['$scope','$http','$routeParams','FarmService'];
