@@ -6,10 +6,11 @@
   <a href="/users/1">Users(id: 1)</a>
 </div>
 <div>
-  <p ng-click="view.toggle('signin')" class="pointer">Sign In</p>
+  <p ng-click="view.toggle('signin')" ng-show="!view.user" class="pointer">Sign In</p>
+  <p ng-click="" ng-show="view.user" class="pointer">{{ view.user.name }}</p>
 </div>
 <div class="signin" ng-show="forms.signin">
   <input type="text" ng-model="view.username" placeholder="username/email">
   <input type="text" ng-model="view.password" placeholder="password">
-  <button ng-click="view.signin(view.username,view.password)">Submit</button>
+  <button ng-click="view.toggle('signin');view.signin(view.username,view.password)">Submit</button>
 </div>

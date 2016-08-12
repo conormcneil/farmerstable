@@ -67,7 +67,7 @@ app
         {
           id: 1,
           csa_id: 1,
-          name: 'Shady Springs Farms, LLC',
+          name: 'Shady Spring Farms, LLC',
           image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
           address: '590 N Tanque Verde Loop Rd, Tucson, AZ  85748',
           markets: [

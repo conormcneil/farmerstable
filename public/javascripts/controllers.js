@@ -44,6 +44,7 @@ function makeHeaderController($scope,$http,MarketService,FormService,jwtIntercep
     $http.get('/signin').then(function(data) {
       console.log("DATA: ",data);
       localStorage.jwt = data.data.token;
+      $scope.view.user = data.data.user;
     });
   };
 };

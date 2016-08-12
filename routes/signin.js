@@ -8,9 +8,7 @@ router.get('/', function(req, res, next) {
     name: "Conor",
     isDope: true
   }
-  console.log(user);
-  console.log(jwt.sign(user,process.env.SECRET));
-  res.json({token:jwt.sign(user,process.env.SECRET)});
+  res.json({token:jwt.sign(user,process.env.SECRET),user:user});
 });
 // router.get('/signin', function(req, res, next) {
 //   console.log('signin2');
