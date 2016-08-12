@@ -2,7 +2,11 @@
   <h2 class="csa-title">Welocme to {{ farm.name }} CSA!</h2>
   <div class="csa-form">
     <h3>Current open CSA registrations for {{ farm.name }}:</h3>
-    <li ng-repeat="csa in farm.csa">{{ csa.name }}</li>
+    <ul ng-repeat="csa in farm.csa">
+      <h4>{{ csa.name | uppercase}}</h4>
+      <li ng-repeat="item in csa.produce">{{ item }}</li>
+    </ul>
+  <button>Sign Up here!</button>
   </div>
   <div class="csa-description">
     <h3>Community Supported Agriculture (CSA) is a great way to support your local economy and ensure that you have access to fresh, delicious food from your nearby farmers.</h3>
