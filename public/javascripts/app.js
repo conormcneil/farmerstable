@@ -34,6 +34,6 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     //     config.headers.Authorization = 'Bearer ' + localStorage.jwt;
     //   }
     //   return config;
-    }
+    // }
   }
 })
