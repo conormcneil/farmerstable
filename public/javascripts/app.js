@@ -1,6 +1,7 @@
 var app = angular.module('farmersTableApp',['ngRoute']);
 
-app.config(["$routeProvider","$locationProvider",function($routeProvider,$locationProvider) {
+app.config(["$routeProvider","$locationProvider","$httpProvider",function($routeProvider,$locationProvider,$httpProvider) {
+  $httpProvider.interceptors.push('jwtInterceptor');
   $routeProvider
     .when('/', {
       templateUrl: 'partials/market-search.html'

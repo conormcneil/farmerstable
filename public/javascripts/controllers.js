@@ -32,7 +32,7 @@ makeFarmersTableController.$inject = ['$scope','$http','MarketService'];
 
 // HeaderController
 app.controller('HeaderController',makeHeaderController);
-function makeHeaderController($scope,MarketService,FormService) {
+function makeHeaderController($scope,$http,MarketService,FormService,jwtInterceptor) {
   $scope.view = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;
@@ -41,10 +41,13 @@ function makeHeaderController($scope,MarketService,FormService) {
     $scope.forms = FormService.forms;
   };
   $scope.view.signin = function(username,password) {
-    console.log(username,password);
+    $http.get('/signin').then(function(data) {
+      console.log("DATA: ",data);
+      localStorage.jwt = data.data.token;
+    });
   };
 };
-makeHeaderController.$inject = ['$scope','MarketService','FormService'];
+makeHeaderController.$inject = ['$scope','$http','MarketService','FormService','jwtInterceptor'];
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
