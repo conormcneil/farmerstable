@@ -3,7 +3,8 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'postgresql',
     connection: 'http://localhost:5432/ftdb'
+  }
 
 };

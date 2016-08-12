@@ -4,10 +4,10 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
   $httpProvider.interceptors.push('jwtInterceptor');
   $routeProvider
     .when('/', {
-      templateUrl: 'partials/market-search.html'
+      templateUrl: 'partials/home.html'
     })
     .when('/markets', {
-      templateUrl: "partials/market-list.html"
+      templateUrl: "partials/market-search.html"
     })
     .when('/farms/:id', {
       templateUrl: 'partials/farm.html',
@@ -26,14 +26,14 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
 }])
 .service('jwtInterceptor',function jwtInterceptor() {
   return {
-    // request: function(config) {
-    //   var addJWT = (config.url.indexOf('http://localhost:3000') > -1);
-    //   var addHerokuJWT = (config.url.indexOf('https://farmerstable.herokuapp.com') > -1);
-    //   if (addHerokuJWT && localStorage.jwt || addJWT && localStorage.jwt) {
-    //     console.log('Adding Header', config.url);
-    //     config.headers.Authorization = 'Bearer ' + localStorage.jwt;
-    //   }
-    //   return config;
-    // }
+    request: function(config) {
+      var addJWT = (config.url.indexOf('http://localhost:3000') > -1);
+      var addHerokuJWT = (config.url.indexOf('https://farmerstable.herokuapp.com') > -1);
+      if (addHerokuJWT && localStorage.jwt || addJWT && localStorage.jwt) {
+        console.log('Adding Header', config.url);
+        config.headers.Authorization = 'Bearer ' + localStorage.jwt;
+      }
+      return config;
+    }
   }
 })
