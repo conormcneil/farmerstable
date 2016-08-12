@@ -27,7 +27,7 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
 .service('jwtInterceptor',function jwtInterceptor() {
   return {
     request: function(config) {
-      var addJWT = (config.url.indexOf('http://localhost:3000') > -1)
+      var addJWT = (config.url.indexOf('http://localhost:3000') > -1 || config.url.indexOf('https://farmerstable.herokuapp.com') > -1);
       if (addJWT && localStorage.jwt) {
         config.headers.Authorization = 'Bearer ' + localStorage.jwt;
       }
