@@ -1,6 +1,6 @@
 // FarmersTableController
 app.controller('FarmersTableController',makeFarmersTableController);
-function makeFarmersTableController($scope,$http,MarketService){
+function makeFarmersTableController($scope,$http,MarketService,GoogleMapsService){
   $scope.view = {};
   $scope.view.getMarkets = function(zip) {
     MarketService.getMarketsByZip(zip).then(function(data) {
@@ -27,8 +27,11 @@ function makeFarmersTableController($scope,$http,MarketService){
       console.log($scope.view.market);
     });
   };
+  $scope.view.getLatLong = function(address) {
+    console.log(address);
+  }
 };
-makeFarmersTableController.$inject = ['$scope','$http','MarketService'];
+makeFarmersTableController.$inject = ['$scope','$http','MarketService','GoogleMapsService'];
 
 // HeaderController
 app.controller('HeaderController',makeHeaderController);
@@ -52,7 +55,7 @@ makeHeaderController.$inject = ['$scope','$http','MarketService','FormService','
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
-function makeFarmsController($scope,$http,$routeParams,FarmService) {
+function makeFarmsController($scope,$http,$routeParams,FarmService,GoogleMapsService) {
   $scope.view = {};
   $scope.farms = {};
   $scope.farms = FarmService.farms;
@@ -60,11 +63,18 @@ function makeFarmsController($scope,$http,$routeParams,FarmService) {
     $scope.farm = FarmService.getFarm(id);
   };
   $scope.getFarm($routeParams.id);
+  $scope.view.getLatLong = function(address) {
+    address = address.split(' ').join('+');
+    console.log(address);
+    GoogleMapsService.getLatLong(address).then(function(data) {
+      console.log(data);
+    });
+  };
   $scope.view.log = function(item) {
     console.log(item);
   };
 };
-makeFarmsController.$inject = ['$scope','$http','$routeParams','FarmService'];
+makeFarmsController.$inject = ['$scope','$http','$routeParams','FarmService','GoogleMapsService'];
 
 app.controller("UsersController",makeUsersController);
 function makeUsersController($scope,$http,$routeParams,UserService) {

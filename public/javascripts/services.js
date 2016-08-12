@@ -69,7 +69,7 @@ app
           csa_id: 1,
           name: 'Shady Spring Farms, LLC',
           image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
-          address: '590 N Tanque Verde Loop Rd, Tucson, AZ  85748',
+          address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
           markets: [
             {
               id: 1010544,
@@ -129,5 +129,14 @@ app
           }]
         }
       ]
+    }
+  })
+  .factory("GoogleMapsService",function($http) {
+    return {
+      getLatLong: function(address) {
+        console.log(address);
+        var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address;
+        return $http.get(googleUrl);
+      }
     }
   });

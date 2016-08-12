@@ -10,7 +10,7 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
       templateUrl: "partials/market-list.html"
     })
     .when('/farms/:id', {
-      templateUrl: 'partials/farms.html',
+      templateUrl: 'partials/farm.html',
       controllers: 'FarmsController'
     })
     .when('/users/:id', {
