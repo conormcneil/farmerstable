@@ -94,7 +94,7 @@ app
           csa_id: 2,
           name: 'Northbreeze Meadows',
           image_url: "http://www.myashevillerealestate.com/images/cms/4/photo-1.jpg",
-          address: '1234 E 5th St, Tucson, AZ 85712',
+          address: '2420 N Palo Santo Dr, Tucson, AZ 85745',
           markets: [
             {
               id: 1010543,
