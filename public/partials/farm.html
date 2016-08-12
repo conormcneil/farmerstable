@@ -1,6 +1,6 @@
 <div ng-controller="FarmsController">
   <div class="farm" ng-repeat="farm in farm track by $index">
-    <h1 ng-click="view.getLatLong(farm.address)" class="pointer">{{ farm.name }}</h1>
+    <h1 ng-click="view.getLatLng(farm.address)" class="pointer">{{ farm.name }}</h1>
     <a href="/#/csa/{{ farm.id }}/{{ farm.csa_id }}"><button>Join the {{ farm.name }} CSA!</button></a>
     <h6>CSA ID: {{ farm.csa_id }}</h6>
     <img ng-src="{{ farm.image_url }}" style="height: 200px;">

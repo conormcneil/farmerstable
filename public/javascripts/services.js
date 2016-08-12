@@ -133,8 +133,7 @@ app
   })
   .factory("GoogleMapsService",function($http) {
     return {
-      getLatLong: function(address) {
-        console.log(address);
+      getLatLng: function(address) {
         var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address;
         return $http.get(googleUrl);
       }

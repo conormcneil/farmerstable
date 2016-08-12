@@ -27,7 +27,7 @@ function makeFarmersTableController($scope,$http,MarketService,GoogleMapsService
       console.log($scope.view.market);
     });
   };
-  $scope.view.getLatLong = function(address) {
+  $scope.view.getLatLng = function(address) {
     console.log(address);
   }
 };
@@ -63,11 +63,17 @@ function makeFarmsController($scope,$http,$routeParams,FarmService,GoogleMapsSer
     $scope.farm = FarmService.getFarm(id);
   };
   $scope.getFarm($routeParams.id);
-  $scope.view.getLatLong = function(address) {
+  $scope.view.getLatLng = function(address) {
     address = address.split(' ').join('+');
-    console.log(address);
-    GoogleMapsService.getLatLong(address).then(function(data) {
-      console.log(data);
+    GoogleMapsService.getLatLng(address).then(function(data) {
+      $scope.view.latLng = data.data.results[0].geometry.location;
+      console.log($scope.view.latLng);
+      var marker = new google.maps.Marker({
+          position: $scope.view.latLng,
+          map: map,
+          title: 'I did it!'
+        });
+      map.setCenter(marker.position);
     });
   };
   $scope.view.log = function(item) {
