@@ -87,6 +87,19 @@ function makeUsersController($scope,$http,$routeParams,UserService) {
   $scope.view = {};
   $scope.view.greeting = 'hello users';
   $scope.view.user = UserService.users[0];
+  $scope.view.getLatLng = function(address) {
+    address = address.split(' ').join('+');
+    GoogleMapsService.getLatLng(address).then(function(data) {
+      $scope.view.latLng = data.data.results[0].geometry.location;
+      console.log($scope.view.latLng);
+      var marker = new google.maps.Marker({
+          position: $scope.view.latLng,
+          map: map,
+          title: 'I did it!'
+        });
+      map.setCenter(marker.position);
+    });
+  };
 }
 makeUsersController.$inject = ['$scope','$http','$routeParams','UserService'];
 

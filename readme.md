@@ -2,6 +2,9 @@
 
 Farmer's Table is an application designed to reconnect communities to their local farmers.
 
+## DB
+Postgres DB name: 'ftdb'
+
 ## API:
 The Farmer's Table API makes available data on US farms and registered Farmer's Markets.
 
