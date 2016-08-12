@@ -29,7 +29,7 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     request: function(config) {
       var addJWT = (config.url.indexOf('http://localhost:3000') > -1);
       var addHerokuJWT = (config.url.indexOf('https://farmerstable.herokuapp.com') > -1);
-      if (addJWT && addHerokuJWT && localStorage.jwt) {
+      if (addHerokuJWT && localStorage.jwt || addJWT && localStorage.jwt) {
         config.headers.Authorization = 'Bearer ' + localStorage.jwt;
       }
       return config;
