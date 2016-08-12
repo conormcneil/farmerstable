@@ -6,8 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-// var farmers = require('./routes/farmers');
-// var users = require('./routes/users');
+
+app.use(bearerToken());
+app.use(express.static('public'));
 
 var app = express();
 
