@@ -13,7 +13,7 @@ exports.seed = function(knex, Promise) {
           address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
           markets: '',
           csa: '',
-          products: 'eggs,dried herbs,heirloom tomatoes,cucumbers,asparagus,green beans,bell peppers,sunflowers'
+          products: 'eggs, dried herbs, heirloom tomatoes, cucumbers, asparagus, green beans, bell peppers, sunflowers'
         }),
         knex('farms').insert({
           id: 2,
@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
           address: '2420 N Palo Santo Dr, Tucson, AZ 85745',
           markets: '',
           csa: '',
-          products: 'pork,beef,chicken,eggs'
+          products: 'pork, beef, chicken, eggs'
         })
       ]);
     });

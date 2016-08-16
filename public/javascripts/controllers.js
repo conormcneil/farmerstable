@@ -44,12 +44,21 @@ function makeHeaderController($scope,$http,MarketService,FormService) {
     $scope.forms = FormService.forms;
   };
   $scope.view.signin = function(username,password) {
-    $http.get('/signin').then(function(data) {
-      console.log("DATA: ",data);
+    // TODO: bcrypt here
+    var user = {
+      username: username,
+      password: password
+    };
+    $http.post('/signin',user).then(function(data) {
       localStorage.jwt = data.data.token;
       $scope.view.user = data.data.user;
     });
+    $scope.view.username = '';
+    $scope.view.password = '';
   };
+  $scope.view.signout = function() {
+    $scope.view.user = null;
+  }
 };
 makeHeaderController.$inject = ['$scope','$http','MarketService','FormService'];
 
