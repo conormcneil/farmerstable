@@ -1,17 +1,15 @@
 <div ng-controller="FarmsController" class="farm">
+
   <div class="farm-description">
     <h2 class="farm-title">{{ farm.name }}</h2>
-    <p class="farm-phone"><img src="./images/phone_icon.svg" alt="">{{ farm.phone }}</p>
+    <p class="farm-phone"><img src="./images/phone_icon.svg" alt="">{{ farm.contact_phone }}</p>
+    <p class="farm-email"><img src="./images/mail_icon_black.svg" alt="">{{ farm.contact_email }}</p>
     <p class="farm-address"><img src="./images/map_icon.svg" alt="">{{ farm.address }}</p>
-
   </div>
+
   <div class="farm-details">
     <img ng-src="{{ farm.image_url }}" style="width: 100%;">
     <a href="csa/{{ farm.id }}/{{ farm.csa_id }}"><button>Join the {{ farm.name }} CSA!</button></a>
-
   </div>
-    <!-- <h3>Markets: </h3>
-    <h3>Products: </h3>
-    <li ng-repeat="product in farm.products">{{ product }}</li>
-    <ft-schedule></ft-schedule> -->
+
 </div>

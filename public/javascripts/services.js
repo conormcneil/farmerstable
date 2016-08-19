@@ -70,7 +70,8 @@ app
           name: 'Shady Spring Farms, LLC',
           image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
           address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
-          phone: '520-555-6789',
+          contact_phone: '520-555-6789',
+          contact_email: 'john@shadyspringfarms.com',
           markets: [
             {
               id: 1010544,
@@ -95,7 +96,8 @@ app
           csa_id: 2,
           name: 'Northbreeze Meadows',
           image_url: "http://www.myashevillerealestate.com/images/cms/4/photo-1.jpg",
-          phone: '520-555-9876',
+          contact_phone: '520-555-9876',
+          contact_email: 'linda@nbmfarm.com',
           address: '2420 N Palo Santo Dr, Tucson, AZ 85745',
           markets: [
             {
