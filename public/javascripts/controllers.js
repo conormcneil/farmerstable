@@ -70,19 +70,20 @@ function makeFarmsController($scope,$http,$routeParams,FarmService,GoogleMapsSer
   $scope.farms = FarmService.farms;
   $scope.getFarm = function(id) {
     $scope.farm = FarmService.getFarm(id)[0];
+    $scope.view.getLatLng($scope.farm.address);
   };
-  $scope.getFarm($routeParams.id);
   $scope.view.getLatLng = function(address) {
     address = address.split(' ').join('+');
     GoogleMapsService.getLatLng(address).then(function(data) {
       $scope.view.latLng = data.data.results[0].geometry.location;
       var marker = new google.maps.Marker({
-          position: $scope.view.latLng,
-          map: map
-        });
+        position: $scope.view.latLng,
+        map: map
+      });
       map.setCenter(marker.position);
     });
   };
+  $scope.getFarm($routeParams.id);
 };
 makeFarmsController.$inject = ['$scope','$http','$routeParams','FarmService','GoogleMapsService'];
 
