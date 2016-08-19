@@ -11,7 +11,9 @@ body {
   margin: 5px;
   padding: 0;
   height: 100vh;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-variant: small-caps;
+  font-family: Tahoma; }
 
 a, a * {
   text-decoration: none;
@@ -22,7 +24,8 @@ a, a * {
   width: 100vw;
   margin-top: -5px;
   margin-left: -5px;
-  background: rgba(0, 0, 0, 0.2);
+  background: #29b90b;
+  color: white;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -30,7 +33,6 @@ a, a * {
   .header a, .header p {
     padding: 10px; }
   .header .signin {
-    background: orange;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -51,13 +53,6 @@ a, a * {
       width: 190px;
       margin-right: -5px;
       border: none; }
-
-.content {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-  height: 90%;
-  border: 1px solid black; }
 
 #map {
   opacity: 0.87;
@@ -98,5 +93,25 @@ a, a * {
 
 .csa-description {
   width: 40%; }
+
+.content {
+  display: flex;
+  justify-content: center; }
+
+.farm {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap; }
+  .farm .farm-title {
+    width: 100%;
+    text-align: center; }
+  .farm .farm-description, .farm .farm-details {
+    width: 45%; }
+    .farm .farm-description .farm-phone, .farm .farm-description .farm-address, .farm .farm-details .farm-phone, .farm .farm-details .farm-address {
+      display: flex;
+      align-items: center; }
+      .farm .farm-description .farm-phone img, .farm .farm-description .farm-address img, .farm .farm-details .farm-phone img, .farm .farm-details .farm-address img {
+        padding-right: 5px; }
 
 /*# sourceMappingURL=style.css.map */

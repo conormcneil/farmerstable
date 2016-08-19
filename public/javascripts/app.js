@@ -10,8 +10,8 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
       templateUrl: "partials/market-search.html"
     })
     .when('/farms/:id', {
-      templateUrl: 'partials/farm.html',
-      controllers: 'FarmsController'
+      templateUrl: 'partials/farm.html'
+      // controllers: 'FarmsController'
     })
     .when('/users/:id', {
       templateUrl: 'partials/users.html'
