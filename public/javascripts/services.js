@@ -54,9 +54,17 @@ app
     return {
       forms: {
         signin: false,
-        user_nav: false
+        user_nav: false,
+        account_home: true,
+        account_csa: false,
+        account_settings: false
       },
       toggle: function(form) {
+        if (form === 'account_home' || form === 'account_csa' || form === 'account_settings') {
+          this.forms['account_home'] = false;
+          this.forms['account_csa'] = false;
+          this.forms['account_settings'] = false;
+        }
         this.forms[form] = !this.forms[form];
         return this.forms[form];
       }
@@ -69,6 +77,7 @@ app
           id: 1,
           csa_id: 1,
           name: 'Shady Spring Farms, LLC',
+          owner_id: 1,
           image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
           address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
           contact_phone: '520-555-6789',
@@ -96,6 +105,7 @@ app
           id: 2,
           csa_id: 2,
           name: 'Northbreeze Meadows',
+          owner_id: 2,
           image_url: "http://www.myashevillerealestate.com/images/cms/4/photo-1.jpg",
           contact_phone: '520-555-9876',
           contact_email: 'linda@nbmfarm.com',

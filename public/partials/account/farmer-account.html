@@ -1,8 +1,8 @@
-<div class="account">
+<div class="account" ng-controller="AccountController">
   <ft-account-nav></ft-account-nav>
-  <ft-account-home ng-show="false"></ft-account-home>
-  <ft-account-settings ng-show="false"></ft-account-settings>
   <div class="account-body">
-    <ft-account-csa></ft-account-csa>
+    <ft-account-home ng-show="forms.account_home"></ft-account-home>
+    <ft-account-csa ng-show="forms.account_csa"></ft-account-csa>
+    <ft-account-settings ng-show="forms.account_settings"></ft-account-settings>
   </div>
 </div>

@@ -125,6 +125,9 @@ a, a * {
   display: flex;
   justify-content: center; }
 
+.row {
+  border-bottom: 1px solid grey; }
+
 ft-account-nav {
   width: 100%;
   display: flex;
@@ -140,6 +143,21 @@ ft-account-nav {
       padding-right: 15px;
       font-size: 1.3em;
       color: grey; }
+
+ft-account-csa {
+  margin-top: 25px;
+  width: 90%;
+  display: flex;
+  flex-flow: column; }
+  ft-account-csa .row1 {
+    display: flex;
+    flex-flow: row nowrap; }
+    ft-account-csa .row1 .csa-metrics {
+      width: 30%; }
+      ft-account-csa .row1 .csa-metrics img {
+        width: 100%; }
+    ft-account-csa .row1 .csa-details {
+      margin: 0 auto; }
 
 .user-nav {
   z-index: 1;

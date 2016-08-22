@@ -120,3 +120,21 @@ function makeCSAController($scope,$http,$routeParams,FarmService) {
   $scope.getFarm($routeParams.id);
 }
 makeCSAController.$inject = ['$scope','$http','$routeParams','FarmService'];
+
+app.controller("AccountController",makeAccountController);
+function makeAccountController($scope,$http,$routeParams,FormService,FarmService) {
+  $scope.view = {};
+  $scope.view.greeting = "accounts";
+  $scope.forms = {};
+  $scope.forms = FormService.forms;
+  console.log($scope.forms);
+  $scope.toggle = function(form) {
+    if ($scope.forms[form] === true) {
+      return;
+    } else {
+      FormService.toggle(form);
+      $scope.forms = FormService.forms;
+    }
+  };
+};
+makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","FarmService"];
