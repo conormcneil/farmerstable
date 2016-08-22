@@ -117,4 +117,11 @@ a, a * {
       .farm .farm-description .farm-phone img, .farm .farm-description .farm-email img, .farm .farm-description .farm-address img, .farm .farm-details .farm-phone img, .farm .farm-details .farm-email img, .farm .farm-details .farm-address img {
         padding-right: 5px; }
 
+.user-nav {
+  z-index: 1;
+  background: #29b90b;
+  padding: 10px;
+  padding-top: 2px;
+  padding-bottom: 3px; }
+
 /*# sourceMappingURL=style.css.map */

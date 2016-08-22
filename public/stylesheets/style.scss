@@ -77,7 +77,6 @@ a, a * {
   z-index: 0;
 }
 .market-list {
-  // background: blue;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -85,7 +84,6 @@ a, a * {
   max-height: 60%;
   overflow-x: scroll;
   .market {
-    // background: green;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -121,7 +119,6 @@ a, a * {
 // partials/farm/:id
 .farm {
   width: 100%;
-  // background: red;
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
@@ -139,4 +136,13 @@ a, a * {
       }
     }
   }
+}
+
+// user-nav
+.user-nav {
+  z-index: 1;
+  background: $primary;
+  padding: 10px;
+  padding-top: 2px;
+  padding-bottom: 3px;
 }
