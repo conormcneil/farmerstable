@@ -35,7 +35,7 @@ makeFarmersTableController.$inject = ['$scope','$http','MarketService','GoogleMa
 
 // HeaderController
 app.controller('HeaderController',makeHeaderController);
-function makeHeaderController($scope,$http,MarketService,FormService) {
+function makeHeaderController($scope,$http,MarketService,FormService,UserService) {
   $scope.view = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;
@@ -52,6 +52,7 @@ function makeHeaderController($scope,$http,MarketService,FormService) {
     $http.post('/signin',user).then(function(data) {
       localStorage.jwt = data.data.token;
       $scope.view.user = data.data.user;
+      UserService.activeUser = $scope.view.user;
     });
     $scope.view.username = '';
     $scope.view.password = '';
@@ -61,7 +62,7 @@ function makeHeaderController($scope,$http,MarketService,FormService) {
     $scope.forms['user_nav'] = false;
   }
 };
-makeHeaderController.$inject = ['$scope','$http','MarketService','FormService'];
+makeHeaderController.$inject = ['$scope','$http','MarketService','FormService','UserService'];
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
@@ -122,12 +123,11 @@ function makeCSAController($scope,$http,$routeParams,FarmService) {
 makeCSAController.$inject = ['$scope','$http','$routeParams','FarmService'];
 
 app.controller("AccountController",makeAccountController);
-function makeAccountController($scope,$http,$routeParams,FormService,FarmService) {
+function makeAccountController($scope,$http,$routeParams,FormService,FarmService,UserService) {
   $scope.view = {};
   $scope.view.greeting = "accounts";
   $scope.forms = {};
   $scope.forms = FormService.forms;
-  console.log($scope.forms);
   $scope.toggle = function(form) {
     if ($scope.forms[form] === true) {
       return;
@@ -136,5 +136,8 @@ function makeAccountController($scope,$http,$routeParams,FormService,FarmService
       $scope.forms = FormService.forms;
     }
   };
+  $scope.user = UserService.activeUser;
+  $scope.user.farm = {};
+  // get farm associated with current user
 };
-makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","FarmService"];
+makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","FarmService","UserService"];
