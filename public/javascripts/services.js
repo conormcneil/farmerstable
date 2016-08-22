@@ -53,7 +53,8 @@ app
   .factory("FormService",function($http) {
     return {
       forms: {
-        signin: false
+        signin: false,
+        user_nav: false
       },
       toggle: function(form) {
         this.forms[form] = !this.forms[form];

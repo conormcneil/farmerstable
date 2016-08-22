@@ -58,6 +58,7 @@ function makeHeaderController($scope,$http,MarketService,FormService) {
   };
   $scope.view.signout = function() {
     $scope.view.user = null;
+    $scope.forms['user_nav'] = false;
   }
 };
 makeHeaderController.$inject = ['$scope','$http','MarketService','FormService'];

@@ -7,10 +7,13 @@
 </div>
 <div class="signin-button">
   <p ng-click="view.toggle('signin')" ng-show="!view.user" class="pointer">Sign In</p>
-  <p ng-click="view.signout()" ng-show="view.user" class="pointer">{{ view.user.username }}</p>
+  <p ng-click="view.toggle('user_nav')" ng-show="view.user" class="pointer">{{ view.user.username }}</p>
 </div>
 <div class="signin" ng-show="forms.signin">
   <input type="text" ng-model="view.username" placeholder="username/email">
   <input type="text" ng-model="view.password" placeholder="password">
   <button ng-click="view.toggle('signin');view.signin(view.username,view.password)">Submit</button>
+</div>
+<div class="signin user-nav" ng-show="forms.user_nav">
+  <ft-user-nav></ft-user-nav>
 </div>
