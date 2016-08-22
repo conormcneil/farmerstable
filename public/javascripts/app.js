@@ -11,13 +11,15 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     })
     .when('/farms/:id', {
       templateUrl: 'partials/farm.html'
-      // controllers: 'FarmsController'
     })
     .when('/users/:id', {
       templateUrl: 'partials/users.html'
     })
     .when('/csa/:id/:csa_id', {
       templateUrl: 'partials/csa.html'
+    })
+    .when('/account/farmer', {
+      templateUrl: 'partials/account/farmer-account.html'
     })
     .otherwise({
       redirectTo: '/'

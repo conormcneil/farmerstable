@@ -117,6 +117,30 @@ a, a * {
       .farm .farm-description .farm-phone img, .farm .farm-description .farm-email img, .farm .farm-description .farm-address img, .farm .farm-details .farm-phone img, .farm .farm-details .farm-email img, .farm .farm-details .farm-address img {
         padding-right: 5px; }
 
+.account {
+  width: 100%;
+  background: lightblue; }
+
+.account-body {
+  display: flex;
+  justify-content: center; }
+
+ft-account-nav {
+  width: 100%;
+  display: flex;
+  flex-flow: column; }
+  ft-account-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    ft-account-nav ul li {
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 1.3em;
+      color: grey; }
+
 .user-nav {
   z-index: 1;
   background: #29b90b;

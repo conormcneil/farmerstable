@@ -18,4 +18,24 @@ app
     return {
       templateUrl: "partials/user-nav.html"
     }
+  })
+  .directive("ftAccountNav",function() {
+    return {
+      templateUrl: "partials/account/account-nav.html"
+    }
+  })
+  .directive("ftAccountHome",function() {
+    return {
+      templateUrl: "partials/account/account-home.html"
+    }
+  })
+  .directive("ftAccountCsa",function() {
+    return {
+      templateUrl: "partials/account/account-csa.html"
+    }
+  })
+  .directive("ftAccountSettings",function() {
+    return {
+      templateUrl: "partials/account/account-settings.html"
+    }
   });
