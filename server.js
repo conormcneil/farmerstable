@@ -10,6 +10,7 @@ var bearerToken = require('express-bearer-token');
 
 var routes = require('./routes/index');
 var signin = require('./routes/signin');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', routes);
 app.use('/signin', signin);
+app.use('/users', users);
 
 app.get('*',function(req, res) {
   res.redirect('/#' + req.originalUrl);
@@ -39,7 +41,6 @@ app.use(function(req, res, next) {
   });
 });
 // app.use('/farmers', farmers);
-// app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

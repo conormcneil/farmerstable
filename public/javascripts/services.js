@@ -127,9 +127,10 @@ app
       }
     }
   })
-  .factory("UserService",function() {
+  .factory("UserService",function($http) {
     return {
-      users: [
+      users:
+        [
         {
           id: 1,
           name: 'Conor Kingston',
