@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('username').unique();
     table.string('password');
     table.boolean('isAdmin').defaultTo(false);
+    table.boolean('isFarmer');
   })
 };
 

@@ -10,21 +10,24 @@ exports.seed = function(knex, Promise) {
           email: 'conor@ft.com',
           username: 'conor',
           password: 'conor',
-          isAdmin: true
+          isAdmin: true,
+          isFarmer: false,
         }),
         knex('users').insert({
           id: 2,
           email: 'shelby@ft.com',
           username: 'shelby',
           password: 'shelby',
-          isAdmin: true
+          isAdmin: true,
+          isFarmer: false,
         }),
         knex('users').insert({
           id: 3,
           email: 'david@ft.com',
           username: 'david',
           password: 'david',
-          isAdmin: false
+          isAdmin: false,
+          isFarmer: true,
         })
       ]);
     });
