@@ -139,10 +139,9 @@ function makeAccountController($scope,$http,$routeParams,FormService,FarmService
   $scope.user = UserService.activeUser;
   $scope.user.farm = {};
   // get farm associated with current user
-  $http.post('/users').then(function(users) {
-    console.log(users);
-    $scope.view.users = users;
+  $http.get('/users').then(function(users) {
+    console.log(users.data);
+    $scope.view.users = users.data;
   })
-  console.log($scope.view.users);
 };
 makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","FarmService","UserService"];
