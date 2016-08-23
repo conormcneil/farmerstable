@@ -131,7 +131,6 @@ makeCSAController.$inject = ['$scope','$http','$routeParams','FarmService'];
 
 app.controller("AccountController",makeAccountController);
 function makeAccountController($scope,$http,$routeParams,FormService,FarmService,UserService) {
-  console.log('account controller');
   $scope.view = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;
@@ -144,17 +143,10 @@ function makeAccountController($scope,$http,$routeParams,FormService,FarmService
     }
   };
   $scope.user = UserService.activeUser;
-  // get farm associated with current user
-  // $http.get('/users').then(function(users) {
-  //   console.log(users.data);
-  // });
   // get farm associated with current user (refactor)
   function getFarms(id) {
-    // $scope.user.farms = {};
     $http.get(`/farms/farmers/${id}`).then(function(farms) {
-      console.log(farms.data);
       $scope.user.farms = farms.data;
-      console.log($scope.user);
     });
   }
   getFarms($scope.user.id);
