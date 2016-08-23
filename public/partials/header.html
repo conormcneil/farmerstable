@@ -10,7 +10,7 @@
   <p ng-click="view.toggle('user_nav')" ng-show="view.user" class="pointer" style="display: flex; align-items: center;">{{ view.user.username }} <img ng-src="../images/dropdown_white.svg" style="height: 1.2em;"></p>
 </div>
 <div class="signin" ng-show="forms.signin">
-  <input type="text" ng-model="view.username" placeholder="username/email">
+  <input type="text" ng-model="view.username" placeholder="username/email" autofocus>
   <input type="text" ng-model="view.password" placeholder="password">
   <button ng-click="view.toggle('signin');view.signin(view.username,view.password)">Submit</button>
 </div>
