@@ -42,6 +42,7 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
 
   if(localStorage.token) {
     $scope.view.user = jwt_decode(localStorage.token).user;
+    UserService.activeUser = $scope.view.user;
   }
 
   $scope.view.toggle = function(form) {
@@ -117,6 +118,7 @@ makeUsersController.$inject = ['$scope','$http','$routeParams','UserService'];
 
 app.controller("CSAController",makeCSAController);
 function makeCSAController($scope,$http,$routeParams,FarmService) {
+  console.log('csa controller');
   $scope.view = {};
   $scope.view.greeting = 'hello CSA!';
   $scope.farm = {};
@@ -129,6 +131,7 @@ makeCSAController.$inject = ['$scope','$http','$routeParams','FarmService'];
 
 app.controller("AccountController",makeAccountController);
 function makeAccountController($scope,$http,$routeParams,FormService,FarmService,UserService) {
+  console.log('account controller');
   $scope.view = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;
@@ -141,11 +144,19 @@ function makeAccountController($scope,$http,$routeParams,FormService,FarmService
     }
   };
   $scope.user = UserService.activeUser;
-  $scope.user.farm = {};
   // get farm associated with current user
-  $http.get('/users').then(function(users) {
-    console.log(users.data);
-    $scope.view.users = users.data;
-  })
+  // $http.get('/users').then(function(users) {
+  //   console.log(users.data);
+  // });
+  // get farm associated with current user (refactor)
+  function getFarms(id) {
+    // $scope.user.farms = {};
+    $http.get(`/farms/farmers/${id}`).then(function(farms) {
+      console.log(farms.data);
+      $scope.user.farms = farms.data;
+      console.log($scope.user);
+    });
+  }
+  getFarms($scope.user.id);
 };
 makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","FarmService","UserService"];

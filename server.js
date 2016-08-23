@@ -11,6 +11,7 @@ var bearerToken = require('express-bearer-token');
 var routes = require('./routes/index');
 var signin = require('./routes/signin');
 var users = require('./routes/users');
+var farms = require('./routes/farms');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', routes);
 app.use('/signin', signin);
 app.use('/users', users);
+app.use('/farms', farms);
 
 app.get('*',function(req, res) {
   res.redirect('/#' + req.originalUrl);
@@ -36,11 +38,11 @@ app.use(function(req, res, next) {
     if (!err) {
       next();
     } else {
+      // TODO
       res.status(400).send("Stupid Question")
     }
   });
 });
-// app.use('/farmers', farmers);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -71,6 +73,7 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
+  // TODO
   res.send('you fucked up');
 });
 
