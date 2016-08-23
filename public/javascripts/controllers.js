@@ -39,6 +39,11 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
   $scope.view = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;
+
+  if(localStorage.token) {
+    $scope.view.user = jwt_decode(localStorage.token).user;
+  }
+
   $scope.view.toggle = function(form) {
     FormService.toggle(form);
     $scope.forms = FormService.forms;
@@ -50,7 +55,7 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
       password: password
     };
     $http.post('/signin',user).then(function(data) {
-      localStorage.jwt = data.data.token;
+      localStorage.token = data.data.token;
       $scope.view.user = data.data.user;
       UserService.activeUser = $scope.view.user;
     });
@@ -125,7 +130,6 @@ makeCSAController.$inject = ['$scope','$http','$routeParams','FarmService'];
 app.controller("AccountController",makeAccountController);
 function makeAccountController($scope,$http,$routeParams,FormService,FarmService,UserService) {
   $scope.view = {};
-  $scope.view.greeting = "accounts";
   $scope.forms = {};
   $scope.forms = FormService.forms;
   $scope.toggle = function(form) {
