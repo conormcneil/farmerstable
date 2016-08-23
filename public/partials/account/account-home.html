@@ -1,1 +1,14 @@
-<h1>Home</h1>
+<div class="account-home">
+  <div class="account-home-main">
+    <h1>different stuff</h1>
+  </div>
+  <!-- farm details => YOUR FARM -->
+  <aside class="account-home-aside">
+    <!-- TODO: link to edit form -->
+    <h3>Your Farm <a href="">(edit)</a></h3>
+    <h4>{{ user.farm.name }}</h4>
+    <h6><img ng-src="../images/map_icon.svg" style="height: 1.2em;"> {{ user.farm.address }}</h6>
+    <h6><img ng-src="../images/phone_icon.svg" style="height: 1.2em;"> {{ user.farm.contact_phone }}</h6>
+    <h6><img ng-src="../images/mail_icon_black.svg" style="height: 1.2em;"> {{ user.farm.contact_email }}</h6>
+  </aside>
+</div>

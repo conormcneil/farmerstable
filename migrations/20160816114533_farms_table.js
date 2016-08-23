@@ -7,6 +7,8 @@ exports.up = function(knex, Promise) {
     table.integer('owner_id');
     table.string('image_url');
     table.string('address');
+    table.string('contact_phone');
+    table.string('contact_email');
     table.string('markets');
     table.string('csa');
     table.string('products');

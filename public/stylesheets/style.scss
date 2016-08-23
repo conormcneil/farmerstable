@@ -168,6 +168,15 @@ ft-account-nav {
     }
   }
 }
+ft-account-home {
+  width: 90%;
+  .account-home {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
 ft-account-csa {
   margin-top: 25px;
   width: 90%;

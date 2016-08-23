@@ -1,9 +1,6 @@
 require('dotenv').config();
 var express = require('express');
-// var path = require('path');
-// var favicon = require('serve-favicon');
 var logger = require('morgan');
-// var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
 var bearerToken = require('express-bearer-token');
@@ -12,23 +9,20 @@ var routes = require('./routes/index');
 var signin = require('./routes/signin');
 var users = require('./routes/users');
 var farms = require('./routes/farms');
-
 var app = express();
 
 app.use(bearerToken());
 app.use(express.static('public'));
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/signin', signin);
 app.use('/users', users);
 app.use('/farms', farms);
 
+// redirect from # to remove from URL
 app.get('*',function(req, res) {
   res.redirect('/#' + req.originalUrl);
 });

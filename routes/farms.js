@@ -3,8 +3,11 @@ var router = express.Router();
 var knex = require('../db/knex');
 
 
-router.get('/', function(req, res, next) {
-  res.send('respond with a farmer');
+router.get('/all', function(req, res, next) {
+  knex('farms')
+    .then(function(data) {
+      res.json(data);
+    })
 });
 
 router.get('/farmers/:id', function(req, res, next) {

@@ -70,63 +70,63 @@ app
       }
     }
   })
-  .factory("FarmService",function() {
-    return {
-      farms: [
-        {
-          id: 1,
-          csa_id: 1,
-          name: 'Shady Spring Farms, LLC',
-          owner_id: 1,
-          image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
-          address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
-          contact_phone: '520-555-6789',
-          contact_email: 'john@shadyspringfarms.com',
-          markets: [
-            {
-              id: 1010544,
-              name: 'Heirloom Farmers Market at Trail Dust Town'
-            },
-            {
-              id: 1008718,
-              name: 'Rincon Valley Farmers Market'
-            }
-          ],
-          csa: [
-            {
-              name: "Fall Vegetables",
-              produce: ['cucumbers','cilantro','heirloom pumpkins','green onions','butternut squash','shishito peppers'],
-              details: 'Our Fall Vegetables CSA is 6-weeks long and can be picked up Mondays OR Wednesdays from 4:00PM-7:00PM at the McNulty Recreation Center.'
-            }
-          ],
-          products: ['eggs','dried herbs','heirloom tomatoes','cucumbers','asparagus','green beans','bell peppers','sunflowers']
-        },
-        {
-          id: 2,
-          csa_id: 2,
-          name: 'Northbreeze Meadows',
-          owner_id: 2,
-          image_url: "http://www.myashevillerealestate.com/images/cms/4/photo-1.jpg",
-          contact_phone: '520-555-9876',
-          contact_email: 'linda@nbmfarm.com',
-          address: '2420 N Palo Santo Dr, Tucson, AZ 85745',
-          markets: [
-            {
-              id: 1010543,
-              name: 'Heirloom Rillito Park Farmers Market'
-            }
-          ],
-          csa: ['Summer Vegetables'],
-          products: ['pork','beef','chicken','eggs']
-        }
-      ],
-      getFarm: function(id) {
-        return this.farms.filter(function(e) {
-          return e.id === parseInt(id);
-        })
-      }
-    }
-  })
+  // .factory("FarmService",function() {
+  //   return {
+  //     farms: [
+  //       {
+  //         id: 1,
+  //         csa_id: 1,
+  //         name: 'Shady Spring Farms, LLC',
+  //         owner_id: 1,
+  //         image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
+  //         address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
+  //         contact_phone: '520-555-6789',
+  //         contact_email: 'john@shadyspringfarms.com',
+  //         markets: [
+  //           {
+  //             id: 1010544,
+  //             name: 'Heirloom Farmers Market at Trail Dust Town'
+  //           },
+  //           {
+  //             id: 1008718,
+  //             name: 'Rincon Valley Farmers Market'
+  //           }
+  //         ],
+  //         csa: [
+  //           {
+  //             name: "Fall Vegetables",
+  //             produce: ['cucumbers','cilantro','heirloom pumpkins','green onions','butternut squash','shishito peppers'],
+  //             details: 'Our Fall Vegetables CSA is 6-weeks long and can be picked up Mondays OR Wednesdays from 4:00PM-7:00PM at the McNulty Recreation Center.'
+  //           }
+  //         ],
+  //         products: ['eggs','dried herbs','heirloom tomatoes','cucumbers','asparagus','green beans','bell peppers','sunflowers']
+  //       },
+  //       {
+  //         id: 2,
+  //         csa_id: 2,
+  //         name: 'Northbreeze Meadows',
+  //         owner_id: 2,
+  //         image_url: "http://www.myashevillerealestate.com/images/cms/4/photo-1.jpg",
+  //         contact_phone: '520-555-9876',
+  //         contact_email: 'linda@nbmfarm.com',
+  //         address: '2420 N Palo Santo Dr, Tucson, AZ 85745',
+  //         markets: [
+  //           {
+  //             id: 1010543,
+  //             name: 'Heirloom Rillito Park Farmers Market'
+  //           }
+  //         ],
+  //         csa: ['Summer Vegetables'],
+  //         products: ['pork','beef','chicken','eggs']
+  //       }
+  //     ],
+  //     getFarm: function(id) {
+  //       return this.farms.filter(function(e) {
+  //         return e.id === parseInt(id);
+  //       })
+  //     }
+  //   }
+  // })
   .factory("UserService",function($http) {
     return {
       users:
