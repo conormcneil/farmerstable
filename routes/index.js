@@ -4,11 +4,7 @@ var knex = require('../db/knex');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  knex('users')
-  .then(function(users) {
-    console.log(users);
-    res.json(users);
-  });
+  res.json("no configs on index route");
 });
 
 module.exports = router;

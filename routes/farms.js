@@ -13,7 +13,6 @@ router.get('/farmers/:id', function(req, res, next) {
       owner_id: req.params.id
     })
     .then(function(farms) {
-      console.log("line 16",farms);
       res.send(farms);
     });
 });
