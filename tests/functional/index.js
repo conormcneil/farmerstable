@@ -23,8 +23,8 @@ define(function (require) {
         .findById('submit')
           .click()
           .end()
-        .findByModel('view.user.username')
-          .getVisibleText()
+        .findById('loggedinusername')
+        .getVisibleText()
           .then(function(text) {
             assert.strictEqual(text, 'conor', 'user should be logged in');
           });
