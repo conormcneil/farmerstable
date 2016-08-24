@@ -6,7 +6,7 @@
   <a href="/users/1">Users</a>
 </div>
 <div class="signin-button">
-  <p ng-click="view.toggle('signin')" ng-show="!view.user" class="pointer">Sign In</p>
+  <p ng-click="view.toggle('signin')" ng-show="!view.user" class="pointer" id="signin-button">Sign In</p>
   <p ng-click="view.toggle('user_nav')" ng-show="view.user" class="pointer" style="display: flex; align-items: center;" id='loggedinusername'>{{ view.user.username }} <img ng-src="../images/dropdown_white.svg" style="height: 1.2em;"></p>
 </div>
 <div class="signin" ng-show="forms.signin">
