@@ -4,7 +4,6 @@ define(function (require) {
 
   registerSuite({
     name: 'log in',
-
     'users log in': function() {
       return this.remote
         .get(require.toUrl('http://localhost:3000/'))
@@ -32,13 +31,23 @@ define(function (require) {
     }
   });
   registerSuite({
-    name: 'log out',
-
-    'users log out': function() {
+    name: 'account page',
+    'navigate to user account': function() {
       return this.remote
         .findById('loggedinusername')
           .click()
           .end()
+        .findById('account-button')
+        .getVisibleText()
+          .then(function(text) {
+            assert.strictEqual(text, 'Account', 'expect to find Account button');
+          });
+    }
+  });
+  registerSuite({
+    name: 'log out',
+    'users log out': function() {
+      return this.remote
         .findById('signout-button')
           .click()
           .end()
