@@ -7,12 +7,12 @@
 </div>
 <div class="signin-button">
   <p ng-click="view.toggle('signin')" ng-show="!view.user" class="pointer">Sign In</p>
-  <p ng-click="view.toggle('user_nav')" ng-show="view.user" class="pointer" style="display: flex; align-items: center;">{{ view.user.username }} <img ng-src="../images/dropdown_white.svg" style="height: 1.2em;"></p>
+  <p ng-click="view.toggle('user_nav')" ng-show="view.user" class="pointer" style="display: flex; align-items: center;" id='loggedinusername'>{{ view.user.username }} <img ng-src="../images/dropdown_white.svg" style="height: 1.2em;"></p>
 </div>
 <div class="signin" ng-show="forms.signin">
-  <input type="text" ng-model="view.username" placeholder="username/email" autofocus>
-  <input type="text" ng-model="view.password" placeholder="password">
-  <button ng-click="view.toggle('signin');view.signin(view.username,view.password)">Submit</button>
+  <input type="text" ng-model="view.username" placeholder="username/email" id="username" autofocus>
+  <input type="text" ng-model="view.password" placeholder="password" id="password">
+  <button ng-click="view.toggle('signin');view.signin(view.username,view.password)" id="submit">Submit</button>
 </div>
 <div class="signin user-nav" ng-show="forms.user_nav">
   <ft-user-nav></ft-user-nav>
