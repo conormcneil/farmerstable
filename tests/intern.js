@@ -2,6 +2,8 @@
 // These default settings work OK for most people. The options that *must* be changed below are the packages, suites,
 // excludeInstrumentation, and (if you want functional tests) functionalSuites
 define({
+	// proxyPort: 9090,
+	// proxyUrl: 'http://localhost:9090/',
 	// Default desired capabilities for all environments. Individual capabilities can be overridden by any of the
 	// specified browser environments in the `environments` array below as well. See
 	// <https://theintern.github.io/intern/#option-capabilities> for links to the different capabilities options for
@@ -10,8 +12,13 @@ define({
 	// Note that the `build` capability will be filled in with the current commit ID or build tag from the CI
 	// environment automatically
 	capabilities: {
-		// 'browserstack.selenium_version': '2.45.0'
+		'selenium_version': '2.45.0',
+		'fixSessionCapabilities': false
 	},
+
+	reporters: [
+		{id: 'Runner'}
+	],
 
 	// Browsers to run integration testing against. Options that will be permutated are browserName, version, platform,
 	// and platformVersion; any other capabilities options specified for an environment will be copied as-is. Note that
@@ -33,7 +40,9 @@ define({
 	// <https://theintern.github.io/intern/#option-useLoader> for more information.
 	loaderOptions: {
 		// Packages that should be registered with the loader in each testing environment
-		packages: [ { name: 'myPackage', location: '.' } ]
+		packages: [
+			// { name: 'myPackage', location: '.' }
+		]
 	},
 
 	// Unit test suite(s) to run in each browser

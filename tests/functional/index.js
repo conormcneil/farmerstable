@@ -23,10 +23,29 @@ define(function (require) {
         .findById('submit')
           .click()
           .end()
+        .sleep(500)
         .findById('loggedinusername')
         .getVisibleText()
           .then(function(text) {
             assert.strictEqual(text, 'conor', 'user should be logged in');
+          });
+    }
+  });
+  registerSuite({
+    name: 'log out',
+
+    'users log out': function() {
+      return this.remote
+        .findById('loggedinusername')
+          .click()
+          .end()
+        .findById('signout-button')
+          .click()
+          .end()
+        .findById('signin-button')
+        .getVisibleText()
+          .then(function(text) {
+            assert.strictEqual(text, 'Sign In', 'user should be logged out');
           });
     }
   });
