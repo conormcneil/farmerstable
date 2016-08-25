@@ -3,14 +3,14 @@ var router = express.Router();
 var knex = require('../db/knex');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/all', function(req, res, next) {
   knex('csas')
     .then(function(data) {
       res.json(data);
     });
 });
 
-router.get('/:id', function(req, res, next) {
+router.get('/details/:id', function(req, res, next) {
   knex('csas')
     .where({
       id: req.params.id

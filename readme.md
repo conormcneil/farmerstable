@@ -14,8 +14,8 @@ Requests should be formatted as follows:
 <!-- TODO provide API interface-->
 routes:
 /csa
-  /csa => returns a list of CSAs
-  /csa/:id => returns a CSA by ID
+  /csa/all => returns a list of CSAs
+  /csa/details/:id => returns a CSA by ID
 /signin
   /signin => provides signin support (validation)
 /users  

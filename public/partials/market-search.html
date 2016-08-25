@@ -1,3 +1,7 @@
-<input type="text" ng-model="view.zip">
-<button ng-click="view.getMarkets(view.zip)">Get Nearby Markets</button>
+<div>
+  <h4>Farmer's Markets are a great way to empower your food community and create meaningful connections to your food and your health.</h4>
+  <label for="zip">Search here by Zip Code to find nearby markets!</label>
+  <input type="text" ng-model="view.zip" id="zip">
+  <button ng-click="view.getMarkets(view.zip)">Get Nearby Markets</button>
+</div>
 <ft-market-list ng-show="view.markets" class="market-list"></ft-market-list>

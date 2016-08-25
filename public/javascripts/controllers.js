@@ -103,40 +103,39 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService) {
 };
 makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService'];
 
-app.controller("UsersController",makeUsersController);
-function makeUsersController($scope,$http,$routeParams,UserService) {
-  $scope.view = {};
-  $scope.view.greeting = 'hello users';
-  $scope.view.user = UserService.users[0];
-  $scope.view.getLatLng = function(address) {
-    address = address.split(' ').join('+');
-    GoogleMapsService.getLatLng(address).then(function(data) {
-      $scope.view.latLng = data.data.results[0].geometry.location;
-      console.log($scope.view.latLng);
-      var marker = new google.maps.Marker({
-          position: $scope.view.latLng,
-          map: map,
-          title: 'I did it!'
-        });
-      map.setCenter(marker.position);
-    });
-  };
-}
-makeUsersController.$inject = ['$scope','$http','$routeParams','UserService'];
+// app.controller("UsersController",makeUsersController);
+// function makeUsersController($scope,$http,$routeParams,UserService) {
+//   $scope.view = {};
+//   $scope.view.user = UserService.users[0];
+//   $scope.view.getLatLng = function(address) {
+//     address = address.split(' ').join('+');
+//     GoogleMapsService.getLatLng(address).then(function(data) {
+//       $scope.view.latLng = data.data.results[0].geometry.location;
+//       console.log($scope.view.latLng);
+//       var marker = new google.maps.Marker({
+//           position: $scope.view.latLng,
+//           map: map,
+//           title: 'I did it!'
+//         });
+//       map.setCenter(marker.position);
+//     });
+//   };
+// }
+// makeUsersController.$inject = ['$scope','$http','$routeParams','UserService'];
 
-app.controller("CSAController",makeCSAController);
-function makeCSAController($scope,$http,$routeParams) {
-  console.log('csa controller');
-  $scope.view = {};
-  $scope.view.greeting = 'hello CSA!';
-  $scope.farm = {};
-  // TODO FarmService => knex query
-  $scope.getFarm = function(id) {
-    $scope.farm = FarmService.getFarm(id)[0];
-  };
-  $scope.getFarm($routeParams.id);
-}
-makeCSAController.$inject = ['$scope','$http','$routeParams'];
+// app.controller("CSAController",makeCSAController);
+// function makeCSAController($scope,$http,$routeParams) {
+//   console.log('csa controller');
+//   $scope.view = {};
+//   $scope.view.greeting = 'hello CSA!';
+//   $scope.farm = {};
+//   // TODO FarmService => knex query
+//   $scope.getFarm = function(id) {
+//     $scope.farm = FarmService.getFarm(id)[0];
+//   };
+//   $scope.getFarm($routeParams.id);
+// }
+// makeCSAController.$inject = ['$scope','$http','$routeParams'];
 
 app.controller("AccountController",makeAccountController);
 function makeAccountController($scope,$http,$routeParams,FormService,UserService) {
@@ -157,7 +156,7 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
     $http.get(`/farms/farmers/${id}`).then(function(farm) {
       $scope.user.farm = farm.data[0];
       // use farm id to get associated csa
-      $http.get(`/csa/${$scope.user.farm.id}`).then(function(data) {
+      $http.get(`/csa/details/${$scope.user.farm.id}`).then(function(data) {
         $scope.user.farm.csa = data.data;
       });
     });

@@ -12,10 +12,10 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     .when('/farms/:id', {
       templateUrl: 'partials/farm.html'
     })
-    .when('/users/:id', {
-      templateUrl: 'partials/users.html'
-    })
-    .when('/csa/:id/:csa_id', {
+    // .when('/users/:id', {
+    //   templateUrl: 'partials/users.html'
+    // })
+    .when('/csa', {
       templateUrl: 'partials/csa.html'
     })
     .when('/account/farmer', {
