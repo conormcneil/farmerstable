@@ -12,3 +12,15 @@ The Farmer's Table API makes available data on US farms and registered Farmer's 
 Responses are in JSON format.
 Requests should be formatted as follows:
 <!-- TODO provide API interface-->
+routes:
+/csa
+  /csa => returns a list of CSAs
+  /csa/:id => returns a CSA by ID
+/signin
+  /signin => provides signin support (validation)
+/users  
+  /users => provides list of all users
+  /users/user/:id => returns a user object by ID
+/farms
+  /farms/all => provides list of all farms
+  /farms/farmers/:id => returns a farm object that a farms owns by passing farmer ID

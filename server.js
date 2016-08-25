@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
 var bearerToken = require('express-bearer-token');
 
-var routes = require('./routes/index');
+var csa = require('./routes/csa');
 var signin = require('./routes/signin');
 var users = require('./routes/users');
 var farms = require('./routes/farms');
@@ -17,7 +17,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/', routes);
+app.use('/csa', csa);
 app.use('/signin', signin);
 app.use('/users', users);
 app.use('/farms', farms);

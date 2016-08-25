@@ -11,7 +11,7 @@ exports.seed = function(knex, Promise) {
           username: 'conor',
           password: 'conor',
           isAdmin: true,
-          isFarmer: false,
+          isFarmer: true,
         }),
         knex('users').insert({
           id: 2,

@@ -4,19 +4,19 @@
     <p style="text-align: center;">Placeholder for D3 visualizations</p>
   </div>
   <table class="csa-details">
-    <th>Fall Vegetables</th>
+    <th>{{ csa.csa_name}}</th>
     <th>edit</th>
     <tr>
       <td>Pickup Location</td>
-      <td>Rillito Farmer's Market</td>
+      <td>{{ csa.pickup_location}}</td>
     </tr>
     <tr>
       <td>Pickup Times</td>
-      <td>Saturday: 8:00AM - 12:00PM</td>
+      <td>{{ csa.pickup_day }}: {{ csa.pickup_time_start }} - {{ csa.pickup_time_end}}</td>
     </tr>
     <tr>
       <td>Items</td>
-      <td>bell peppers, butternut squash, heirloom pumpkins, shishito peppers, goat cheese</td>
+      <td>{{ csa.products }}</td>
     </tr>
   </table>
 </div>
