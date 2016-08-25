@@ -10,6 +10,17 @@ router.get('/all', function(req, res, next) {
     })
 });
 
+router.get('/details/:id', function(req, res, next) {
+  knex('farms')
+    .where({
+      id: req.params.id
+    })
+    .first()
+    .then(function(data) {
+      res.json(data);
+    });
+});
+
 router.get('/farmers/:id', function(req, res, next) {
   knex('farms')
     .where({

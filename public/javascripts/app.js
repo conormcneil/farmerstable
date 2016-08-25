@@ -9,17 +9,20 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     .when('/markets', {
       templateUrl: "partials/market-search.html"
     })
-    .when('/farms/:id', {
-      templateUrl: 'partials/farm.html'
+    .when('/farms', {
+      templateUrl: 'partials/farms/farmsearch.html'
     })
-    // .when('/users/:id', {
-    //   templateUrl: 'partials/users.html'
-    // })
+    .when('/farm/details/:id', {
+      templateUrl: 'partials/farms/farm.html'
+    })
+    .when('/farm/csa/:id', {
+      templateUrl: 'partials/farms/farm-csa.html'
+    })
     .when('/csa', {
       templateUrl: 'partials/csa.html'
     })
     .when('/account/farmer', {
-      templateUrl: 'partials/account/farmer-account.html'
+      templateUrl: 'partials/accounts/farmer-account.html'
     })
     .otherwise({
       redirectTo: '/'

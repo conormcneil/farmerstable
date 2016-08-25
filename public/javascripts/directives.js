@@ -21,21 +21,21 @@ app
   })
   .directive("ftAccountNav",function() {
     return {
-      templateUrl: "partials/account/account-nav.html"
+      templateUrl: "partials/accounts/account-nav.html"
     }
   })
   .directive("ftAccountHome",function() {
     return {
-      templateUrl: "partials/account/account-home.html"
+      templateUrl: "partials/accounts/account-home.html"
     }
   })
   .directive("ftAccountCsa",function() {
     return {
-      templateUrl: "partials/account/account-csa.html"
+      templateUrl: "partials/accounts/account-csa.html"
     }
   })
   .directive("ftAccountSettings",function() {
     return {
-      templateUrl: "partials/account/account-settings.html"
+      templateUrl: "partials/accounts/account-settings.html"
     }
   });

@@ -24,12 +24,8 @@ function makeFarmersTableController($scope,$http,MarketService,GoogleMapsService
     MarketService.getMarketById(id).then(function(data) {
       $scope.view.market = data.data.marketdetails;
       $scope.view.market.id = id;
-      console.log($scope.view.market);
     });
   };
-  $scope.view.getLatLng = function(address) {
-    console.log(address);
-  }
 };
 makeFarmersTableController.$inject = ['$scope','$http','MarketService','GoogleMapsService'];
 
@@ -73,22 +69,40 @@ makeHeaderController.$inject = ['$scope','$http','MarketService','FormService','
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
-function makeFarmsController($scope,$http,$routeParams,GoogleMapsService) {
-  console.log('farms controller');
+function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserService) {
   $scope.view = {};
+  // if user is logged in retrieve their info from Service: "activeUser"
+  if(localStorage.token) {
+    $scope.view.user = jwt_decode(localStorage.token).user;
+    UserService.activeUser = $scope.view.user;
+  }
+
+  // Do I ever have to retrieve ALL farms?
+  // Right now: YES, until my API returns nearest farms by zip
   $scope.farms = {};
-  // TODO FarmService => knex query
-  // $scope.farms = FarmService.farms;
   $http.get('/farms/all').then(function(data) {
     $scope.farms = data.data;
-    console.log($scope.farms);
   });
-  $scope.getFarm = function(id) {
-    // TODO FarmService => knex query
-    $scope.farm = FarmService.getFarm(id)[0];
-    $scope.view.getLatLng($scope.farm.address);
+
+  // if url has route param: id, set this to active farm
+  if($routeParams.id) {
+    $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
+      $scope.farm = data.data;
+      $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
+        $scope.farm.csa = data.data;
+      })
+    });
   };
-  $scope.view.getLatLng = function(address) {
+  window.setTimeout(() => {
+    console.log($scope.farm.csa);
+  },500);
+
+  // $scope.getFarm = function(id) {
+  //   // TODO FarmService => knex query
+  //   $scope.farm = FarmService.getFarm(id)[0];
+  //   $scope.view.getLatLng($scope.farm.address);
+  // };
+  $scope.view.centerMap = function(address) {
     address = address.split(' ').join('+');
     GoogleMapsService.getLatLng(address).then(function(data) {
       $scope.view.latLng = data.data.results[0].geometry.location;
@@ -101,7 +115,36 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService) {
   };
   // $scope.getFarm($routeParams.id);
 };
-makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService'];
+makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService'];
+
+app.controller("AccountController",makeAccountController);
+function makeAccountController($scope,$http,$routeParams,FormService,UserService) {
+  $scope.view = {};
+  $scope.forms = {};
+  $scope.forms = FormService.forms;
+  $scope.toggle = function(form) {
+    if ($scope.forms[form] === true) {
+      return;
+    } else {
+      FormService.toggle(form);
+      $scope.forms = FormService.forms;
+    }
+  };
+  $scope.user = UserService.activeUser;
+  // get farm associated with current user (refactor)
+  function getFarms(id) {
+    $http.get(`/farms/farmers/${id}`).then(function(farm) {
+      $scope.user.farm = farm.data[0];
+      // use farm id to get associated csa
+      $http.get(`/csa/details/${$scope.user.farm.id}`).then(function(data) {
+        $scope.user.farm.csa = data.data;
+      });
+    });
+  }
+  getFarms($scope.user.id);
+};
+makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","UserService"];
+
 
 // app.controller("UsersController",makeUsersController);
 // function makeUsersController($scope,$http,$routeParams,UserService) {
@@ -136,31 +179,3 @@ makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsServic
 //   $scope.getFarm($routeParams.id);
 // }
 // makeCSAController.$inject = ['$scope','$http','$routeParams'];
-
-app.controller("AccountController",makeAccountController);
-function makeAccountController($scope,$http,$routeParams,FormService,UserService) {
-  $scope.view = {};
-  $scope.forms = {};
-  $scope.forms = FormService.forms;
-  $scope.toggle = function(form) {
-    if ($scope.forms[form] === true) {
-      return;
-    } else {
-      FormService.toggle(form);
-      $scope.forms = FormService.forms;
-    }
-  };
-  $scope.user = UserService.activeUser;
-  // get farm associated with current user (refactor)
-  function getFarms(id) {
-    $http.get(`/farms/farmers/${id}`).then(function(farm) {
-      $scope.user.farm = farm.data[0];
-      // use farm id to get associated csa
-      $http.get(`/csa/details/${$scope.user.farm.id}`).then(function(data) {
-        $scope.user.farm.csa = data.data;
-      });
-    });
-  }
-  getFarms($scope.user.id);
-};
-makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","UserService"];

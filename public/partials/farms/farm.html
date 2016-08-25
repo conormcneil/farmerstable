@@ -1,0 +1,5 @@
+<div class="farm" ng-controller="FarmsController">
+  <h1 ng-click="view.centerMap(farm.address)" class="pointer">{{ farm.name }}</h1>
+  <img ng-src="{{ farm.image_url }}" style="height: 320px;">
+  <a href="/farm/csa/{{ farm.id }}">Check out the {{ farm.name }} CSA!</a>
+</div>

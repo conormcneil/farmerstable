@@ -1,7 +1,10 @@
 <div ng-controller="FarmsController" class="farm">
 
+  <label for="zip">Zip Code</label>
+  <input type="number" placeholder="ex. 12345" autofocus>
+  <input type="submit" ng-click="view.getFarms()">
   <div ng-repeat="farm in farms">
-    <h1>{{ farm.name }}</h1>
+    <h1><a href="/farm/details/{{ farm.id }}">{{ farm.name }}</a></h1>
   </div>
 
   <!-- <div class="farm-description">

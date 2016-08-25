@@ -23,4 +23,5 @@ routes:
   /users/user/:id => returns a user object by ID
 /farms
   /farms/all => provides list of all farms
+  /farms/details/:id => provides farm object by farm ID
   /farms/farmers/:id => returns a farm object that a farms owns by passing farmer ID
