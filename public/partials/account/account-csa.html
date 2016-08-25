@@ -4,19 +4,23 @@
     <p style="text-align: center;">Placeholder for D3 visualizations</p>
   </div>
   <table class="csa-details">
-    <th>{{ csa.csa_name}}</th>
+    <th>{{ user.farm.csa.csa_name}}</th>
     <th>edit</th>
     <tr>
       <td>Pickup Location</td>
-      <td>{{ csa.pickup_location}}</td>
+      <td>{{ user.farm.csa.pickup_location}}</td>
     </tr>
     <tr>
       <td>Pickup Times</td>
-      <td>{{ csa.pickup_day }}: {{ csa.pickup_time_start }} - {{ csa.pickup_time_end}}</td>
+      <td>{{ user.farm.csa.pickup_day }}: {{ user.farm.csa.pickup_time_start }} - {{ user.farm.csa.pickup_time_end}}</td>
+    </tr>
+    <tr>
+      <td>Schedule</td>
+      <td>{{ user.farm.csa.start_date | date }} - {{ user.farm.csa.end_date | date }}</td>
     </tr>
     <tr>
       <td>Items</td>
-      <td>{{ csa.products }}</td>
+      <td>{{ user.farm.csa.products }}</td>
     </tr>
   </table>
 </div>

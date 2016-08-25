@@ -156,6 +156,10 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
   function getFarms(id) {
     $http.get(`/farms/farmers/${id}`).then(function(farm) {
       $scope.user.farm = farm.data[0];
+      // use farm id to get associated csa
+      $http.get(`/csa/${$scope.user.farm.id}`).then(function(data) {
+        $scope.user.farm.csa = data.data;
+      });
     });
   }
   getFarms($scope.user.id);
