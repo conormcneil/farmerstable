@@ -5,14 +5,24 @@
   <a href="/markets">Markets</a>
   <!-- <a href="/users/1">Users</a> -->
 </div>
-<div class="signin-button">
-  <p ng-click="view.toggle('signin')" ng-show="!view.user" class="pointer" id="signin-button">Sign In</p>
+<div class="user-dropdown">
+  <div class='signin-box'>
+    <p ng-click="view.toggle('signin')" ng-show="!view.user" class="pointer" id="signin-button">Sign In</p>
+    <p>or</p>
+    <p ng-click="view.toggle('signup')" ng-show="!view.user" class="pointer" id="signin-button">Sign Up</p>
+  </div>
   <p ng-click="view.toggle('user_nav')" ng-show="view.user" class="pointer" style="display: flex; align-items: center;" id='loggedinusername'>{{ view.user.username }} <img ng-src="../images/dropdown_white.svg" style="height: 1.2em;"></p>
 </div>
 <div class="signin" ng-show="forms.signin">
   <input type="text" ng-model="view.username" placeholder="username/email" id="username" autofocus>
-  <input type="text" ng-model="view.password" placeholder="password" id="password">
+  <input type="password" ng-model="view.password" placeholder="password" id="password">
   <button ng-click="view.toggle('signin');view.signin(view.username,view.password)" id="submit">Submit</button>
+</div>
+<div class="signup" ng-show="forms.signup">
+  <input type="text" ng-model="view.signupUsername" placeholder="Choose a username" autofocus>
+  <input type="password" ng-model="view.signupPassword" placeholder="Choose password">
+  <input type="password" ng-model="view.signupPasswordConfirm" placeholder="Confirm password">
+  <button ng-click="view.signup(view.signupUsername,view.signupPassword,view.signupPasswordConfirm)">Create Account</button>
 </div>
 <div class="signin user-nav" ng-show="forms.user_nav">
   <ft-user-nav></ft-user-nav>

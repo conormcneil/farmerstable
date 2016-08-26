@@ -32,7 +32,7 @@ a, a * {
   align-items: center; }
   .header a, .header p {
     padding: 10px; }
-  .header .signin {
+  .header .signin, .header .signup {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -40,21 +40,29 @@ a, a * {
     top: 45px;
     border: none;
     z-index: 1; }
-    .header .signin input, .header .signin button {
+    .header .signin input, .header .signin button, .header .signup input, .header .signup button {
       margin: 0;
       padding: 0;
       height: 40px;
       width: 175px;
       border: none;
       border-bottom: 1px solid grey; }
-    .header .signin input {
+    .header .signin input, .header .signup input {
       padding: 5px; }
-    .header .signin button {
+    .header .signin button, .header .signup button {
       width: 190px;
       margin-right: -5px;
       border: none; }
-  .header .signin-button:active {
+  .header .user-dropdown:active {
     background: rgba(0, 0, 0, 0.1); }
+  .header .signin-box {
+    font-size: 0.7em;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-right: 15px; }
+    .header .signin-box * {
+      margin: 0;
+      padding: 0; }
 
 #map {
   opacity: 0.87;

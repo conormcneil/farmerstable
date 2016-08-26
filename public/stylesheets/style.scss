@@ -38,7 +38,7 @@ a, a * {
   a, p {
     padding: 10px;
   }
-  .signin {
+  .signin, .signup {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -63,8 +63,18 @@ a, a * {
       border: none;
     }
   }
-  .signin-button:active {
+  .user-dropdown:active {
     background: rgba(0,0,0,0.1);
+  }
+  .signin-box {
+    font-size: 0.7em;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-right: 15px;
+    * {
+      margin: 0;
+      padding: 0;
+    }
   }
 }
 #map {

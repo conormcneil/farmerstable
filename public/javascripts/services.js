@@ -54,6 +54,7 @@ app
     return {
       forms: {
         signin: false,
+        signup: false,
         user_nav: false,
         account_home: true,
         account_csa: false,

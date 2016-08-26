@@ -60,10 +60,22 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
     $scope.view.password = '';
   };
   $scope.view.signout = function() {
-    $scope.view.user = null;
+    delete $scope.view.user;
     $scope.forms['user_nav'] = false;
     delete localStorage.token;
-  }
+  };
+  $scope.view.signup = function(username, password, passwordConfirm) {
+    if (password === passwordConfirm) {
+      var user = {
+        username: username,
+        password: password
+      }
+    }
+    $http.post('/users/new',user).then(function(data) {
+      console.log(data);
+    });
+  };
+
 };
 makeHeaderController.$inject = ['$scope','$http','MarketService','FormService','UserService'];
 
