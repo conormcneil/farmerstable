@@ -64,4 +64,6 @@ define(function (require) {
 
   // Test signin/signup forms clear on submit
   // no text left in boxes/no $scope.view.signin/$scope.view.signup objects
+
+  // Test signup => isFarmer logic
 });

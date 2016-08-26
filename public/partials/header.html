@@ -23,13 +23,15 @@
   <input type="text" ng-model="view.signup.username" placeholder="Choose a username">
   <input type="password" ng-model="view.signup.password" placeholder="Choose password">
   <input type="password" ng-model="view.signup.passwordConfirm" placeholder="Confirm password">
-  <input type="radio" name="is-farmer" value="Milk">
-  <input type="radio" name="is-farmer" value="Butter" checked>
-  <!-- <select name="is-farmer" id="is-farmer" ng-model="view.signup.isFarmer">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select> -->
-  <button ng-click="view.signup(view.signup.email,view.signup.username,view.signup.password,view.signup.passwordConfirm,view.signup.isFarmer);view.toggle('signup')">Create Account</button>
+  <aside class="radio-option">
+    <input type="radio" name="is-farmer" ng-model="view.signup.isFarmer" value="true" checked>
+    <label for="is-farmer">I'm a farmer</label>
+  </aside>
+  <aside class="radio-option">
+    <input type="radio" name="is-farmer" ng-model="view.signup.isNotFarmer" value="false">
+    <label for="is-farmer">I'm a consumer</label>
+  </aside>
+  <button ng-click="view.signup(view.signup.email,view.signup.username,view.signup.password,view.signup.passwordConfirm,view.signup.isFarmer,view.signup.isNotFarmer);view.toggle('signup')">Create Account</button>
 </form>
 <div class="signin user-nav" ng-show="forms.user_nav">
   <ft-user-nav></ft-user-nav>

@@ -33,16 +33,18 @@ a, a * {
   .header a, .header p {
     padding: 10px; }
   .header .signin, .header .signup {
+    border: 1px solid black;
     display: flex;
+    color: black;
     flex-direction: column;
     position: absolute;
     right: 0;
     top: 55px;
-    border: none;
     z-index: 1; }
     .header .signin input, .header .signin button, .header .signup input, .header .signup button {
       margin: 0;
       padding: 0;
+      z-index: 0;
       height: 40px;
       width: 175px;
       border: none;
@@ -50,9 +52,19 @@ a, a * {
     .header .signin input, .header .signup input {
       padding: 5px; }
     .header .signin button, .header .signup button {
-      width: 190px;
+      width: 185px;
       margin-right: -5px;
       border: none; }
+    .header .signin .radio-option, .header .signup .radio-option {
+      width: 100%;
+      display: flex;
+      align-items: center; }
+      .header .signin .radio-option input, .header .signup .radio-option input {
+        width: 10%;
+        margin-left: 10px;
+        margin-right: 5px; }
+      .header .signin .radio-option label, .header .signup .radio-option label {
+        width: 75%; }
   .header .user-dropdown:active {
     background: rgba(0, 0, 0, 0.1); }
   .header .signin-box {

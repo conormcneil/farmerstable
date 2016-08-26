@@ -66,7 +66,9 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
     $scope.forms['user_nav'] = false;
     delete localStorage.token;
   };
-  $scope.view.signup = function(email, username, password, passwordConfirm, isFarmer) {
+  $scope.view.signup = function(email, username, password, passwordConfirm, farmerResponse) {
+    var isFarmer = farmerResponse || false;
+    console.log(isFarmer);
     if (password === passwordConfirm) {
       var user = {
         email: email,
