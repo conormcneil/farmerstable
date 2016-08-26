@@ -13,17 +13,24 @@
   </div>
   <p ng-click="view.toggle('user_nav')" ng-show="view.user" class="pointer" style="display: flex; align-items: center;" id='loggedinusername'>{{ view.user.username }} <img ng-src="../images/dropdown_white.svg" style="height: 1.2em;"></p>
 </div>
-<div class="signin" ng-show="forms.signin">
-  <input type="text" ng-model="view.username" placeholder="username/email" id="username" autofocus>
-  <input type="password" ng-model="view.password" placeholder="password" id="password">
-  <button ng-click="view.toggle('signin');view.signin(view.username,view.password)" id="submit">Submit</button>
-</div>
-<div class="signup" ng-show="forms.signup">
-  <input type="text" ng-model="view.signupUsername" placeholder="Choose a username" autofocus>
-  <input type="password" ng-model="view.signupPassword" placeholder="Choose password">
-  <input type="password" ng-model="view.signupPasswordConfirm" placeholder="Confirm password">
-  <button ng-click="view.signup(view.signupUsername,view.signupPassword,view.signupPasswordConfirm)">Create Account</button>
-</div>
+<form class="signin" ng-show="forms.signin">
+  <input type="text" ng-model="view.signin.username" placeholder="username/email" id="username" autofocus>
+  <input type="password" ng-model="view.signin.password" placeholder="password" id="password">
+  <button ng-click="view.toggle('signin');view.signin(view.signin.username,view.signin.password)" id="submit">Submit</button>
+</form>
+<form class="signup" ng-show="forms.signup">
+  <input type="text" ng-model="view.signup.email" placeholder="Enter your email address" autofocus>
+  <input type="text" ng-model="view.signup.username" placeholder="Choose a username">
+  <input type="password" ng-model="view.signup.password" placeholder="Choose password">
+  <input type="password" ng-model="view.signup.passwordConfirm" placeholder="Confirm password">
+  <input type="radio" name="is-farmer" value="Milk">
+  <input type="radio" name="is-farmer" value="Butter" checked>
+  <!-- <select name="is-farmer" id="is-farmer" ng-model="view.signup.isFarmer">
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+  </select> -->
+  <button ng-click="view.signup(view.signup.email,view.signup.username,view.signup.password,view.signup.passwordConfirm,view.signup.isFarmer);view.toggle('signup')">Create Account</button>
+</form>
 <div class="signin user-nav" ng-show="forms.user_nav">
   <ft-user-nav></ft-user-nav>
 </div>

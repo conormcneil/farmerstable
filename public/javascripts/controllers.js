@@ -56,23 +56,30 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
       $scope.view.user = data.data.user;
       UserService.activeUser = $scope.view.user;
     });
-    $scope.view.username = '';
-    $scope.view.password = '';
+    // empty signin form
+    delete $scope.view.signin;
+    // $scope.view.username = '';
+    // $scope.view.password = '';
   };
   $scope.view.signout = function() {
     delete $scope.view.user;
     $scope.forms['user_nav'] = false;
     delete localStorage.token;
   };
-  $scope.view.signup = function(username, password, passwordConfirm) {
+  $scope.view.signup = function(email, username, password, passwordConfirm, isFarmer) {
     if (password === passwordConfirm) {
       var user = {
+        email: email,
         username: username,
-        password: password
+        password: password,
+        isFarmer: isFarmer
       }
-    }
+    };
+    // empty signup form
+    delete $scope.view.signup;
+
     $http.post('/users/new',user).then(function(data) {
-      console.log(data);
+      // console.log(data);
     });
   };
 

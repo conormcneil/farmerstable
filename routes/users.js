@@ -13,8 +13,10 @@ router.get('/', function(req, res, next) {
 router.post('/new', function(req, res, next) {
   knex('users')
     .insert({
+      email: req.body.email,
       username: req.body.username,
-      password: req.body.password
+      password: req.body.password,
+      isFarmer: req.body.isFarmer
     })
     .then(function(data) {
       res.json(data);
