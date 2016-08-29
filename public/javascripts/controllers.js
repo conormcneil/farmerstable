@@ -42,8 +42,15 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
   }
 
   $scope.view.toggle = function(form) {
-    FormService.toggle(form);
-    $scope.forms = FormService.forms;
+    if ($scope.forms[form] === true) {
+      $scope.forms[form] = false;
+    } else {
+      $scope.forms.signin = false;
+      $scope.forms.signup = false;
+      // ^^^ close all active header forms first, then:
+      FormService.toggle(form);
+      $scope.forms = FormService.forms;
+    }
   };
   $scope.view.signin = function(username,password) {
     // TODO: bcrypt here

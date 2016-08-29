@@ -71,7 +71,7 @@ a, a * {
         margin-right: 5px; }
       .header .signin .radio-option label, .header .signup .radio-option label {
         width: 75%; }
-  .header .user-dropdown:active {
+  .header .signin-box .pointer:active {
     background: rgba(0, 0, 0, 0.1); }
   .header .signin-box {
     font-size: 0.7em;
