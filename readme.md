@@ -25,3 +25,10 @@ routes:
   /farms/all => provides list of all farms
   /farms/details/:id => provides farm object by farm ID
   /farms/farmers/:id => returns a farm object that a farms owns by passing farmer ID
+
+
+
+
+
+## BUGLIST
+## /farms- zip code '20001' returns pittsburgh farm as every other result

@@ -156,7 +156,7 @@ a, a * {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  flex-flow: row wrap; }
+  flex-flow: column wrap; }
   .farm .farm-title {
     width: 100%;
     text-align: center; }

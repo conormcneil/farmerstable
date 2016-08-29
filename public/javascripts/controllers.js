@@ -111,13 +111,16 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     $http.get(url).then(function(data) {
       $scope.view.searchOrigin = data.data.results[0].geometry.location;
       console.log($scope.view.zipCode,$scope.view.searchOrigin);
-    });
-    // post to /farms/all and retrieve farms by zip
-    var zipObj = {
-      zip: zip
-    }
-    $http.post('/farms/all',zipObj).then(function(data) {
-      $scope.farms = data.data;
+      // post to /farms/all and retrieve farms by zip
+      var zipObj = {
+        zip: zip,
+        lat: $scope.view.searchOrigin.lat,
+        lng: $scope.view.searchOrigin.lng
+      }
+      $http.post('/farms/all',zipObj).then(function(data) {
+        $scope.farms = data.data;
+        console.log($scope.farms);
+      });
     });
   };
 
