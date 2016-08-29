@@ -1,0 +1,84 @@
+$font1: 'Pacifico', cursive;
+$font2: 'Permanent Marker', cursive;
+$font3: 'Shadows Into Light Two', cursive;
+$font4: 'Reenie Beanie', cursive;
+$color1: rgba(240,135,8,1); // too orange, doesnt stick out
+$color2: rgba(245,0,19,1); //
+
+
+.curtain {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: url('../images/stock/corn.jpg');
+  // background: url('../images/stock/peppers-colorful.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  // display: none;
+}
+.curtain-title {
+  color: $color1;
+  text-align: center;
+  margin-top: 3vh;
+  margin-bottom: 0;
+  width: 100%;
+  font: {
+    family: $font3;
+    size: 6em;
+  }
+}
+.curtain-intro {
+  color: $color1;
+  font-family: $font3;
+  font-size: 1.5em;
+  width: 50%;
+  text-align: right;
+}
+.curtain-body {
+  background: rgba(255,255,255,0.87);
+  width: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-top: 0;
+  p {
+    padding: 5px;
+    text-align: center;
+  }
+}
+.curtain-users {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.curtain-signup-form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  // background: red;
+  width: 90%;
+  input {
+    background: rgba(255,255,255,0);
+    padding: 5px;
+    width: 50%;
+    border: none;
+  }
+  input:not(:last-child) {
+    border-bottom: 1px solid grey;
+  }
+  label {
+    margin: 5px;
+  }
+}

@@ -2,7 +2,9 @@
 <html lang="en" ng-app="farmersTableApp">
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker|Reenie+Beanie|Shadows+Into+Light+Two" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheets/style.css">
+  <link rel="stylesheet" href="./stylesheets/curtain.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" charset="utf-8"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
@@ -20,6 +22,7 @@
   <!-- Added below line to pass protractor tests: can be deleted along with 'has title' protractor test -->
   <!-- <h1 id="site-title">Angular Farmer's Table</h1> -->
 
+  <ft-curtain></ft-curtain>
   <ft-header class="header shadow" ng-controller="HeaderController"></ft-header>
   <div id="map"></div>
 

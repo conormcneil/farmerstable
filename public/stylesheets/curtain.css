@@ -1,0 +1,68 @@
+.curtain {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: url("../images/stock/corn.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+
+.curtain-title {
+  color: #f08708;
+  text-align: center;
+  margin-top: 3vh;
+  margin-bottom: 0;
+  width: 100%;
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: 6em; }
+
+.curtain-intro {
+  color: #f08708;
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: 1.5em;
+  width: 50%;
+  text-align: right; }
+
+.curtain-body {
+  background: rgba(255, 255, 255, 0.87);
+  width: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-top: 0; }
+  .curtain-body p {
+    padding: 5px;
+    text-align: center; }
+
+.curtain-users {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+
+.curtain-signup-form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 90%; }
+  .curtain-signup-form input {
+    background: rgba(255, 255, 255, 0);
+    padding: 5px;
+    width: 50%;
+    border: none; }
+  .curtain-signup-form input:not(:last-child) {
+    border-bottom: 1px solid grey; }
+  .curtain-signup-form label {
+    margin: 5px; }
+
+/*# sourceMappingURL=curtain.css.map */

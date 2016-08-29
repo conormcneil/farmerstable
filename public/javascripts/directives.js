@@ -4,6 +4,11 @@ app
       templateUrl: "partials/header.html"
     }
   })
+  .directive("ftCurtain",function() {
+    return {
+      templateUrl: "partials/curtain.html"
+    }
+  })
   .directive("ftMarketList",function() {
     return {
       templateUrl: "partials/market-list.html"
