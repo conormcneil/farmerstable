@@ -18,7 +18,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  // height: 200vh;
   overflow-x: hidden;
   font-variant: small-caps;
   font-family: Tahoma;
@@ -30,8 +29,6 @@ a, a * {
 .header {
   height: 55px;
   width: 100vw;
-  // margin-top: -5px;
-  // margin-left: -5px;
   background: $primary;
   color: white;
   font-family: $font3;
@@ -111,7 +108,6 @@ a, a * {
   opacity: 0.87;
   height: 30%;
   width: 100vw;
-  // margin-left: -5px;
   margin-bottom: 25px;
   margin-top: 55px;
   box-shadow: 0px 0px 5px 0px black;
