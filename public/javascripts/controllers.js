@@ -65,8 +65,6 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
     });
     // empty signin form
     delete $scope.view.signin;
-    // $scope.view.username = '';
-    // $scope.view.password = '';
   };
   $scope.view.signout = function() {
     delete $scope.view.user;
@@ -107,10 +105,21 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
 
   // Do I ever have to retrieve ALL farms?
   // Right now: YES, until my API returns nearest farms by zip
-  $scope.farms = {};
-  $http.get('/farms/all').then(function(data) {
-    $scope.farms = data.data;
-  });
+  // $scope.farms = {};
+  $scope.view.zipDecode = function(zip) {
+    var url = 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zip;
+    $http.get(url).then(function(data) {
+      $scope.view.searchOrigin = data.data.results[0].geometry.location;
+      console.log($scope.view.zipCode,$scope.view.searchOrigin);
+    });
+    // post to /farms/all and retrieve farms by zip
+    var zipObj = {
+      zip: zip
+    }
+    $http.post('/farms/all',zipObj).then(function(data) {
+      $scope.farms = data.data;
+    });
+  };
 
   // if url has route param: id, set this to active farm
   if($routeParams.id) {
@@ -123,7 +132,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   };
   // uncomment here to see $scope.farm object
   // window.setTimeout(() => {
-  //   console.log($scope.farm.csa);
+  //   console.log($scope.farm,$scope.farm.csa);
   // },500);
 
   $scope.view.centerMap = function(address) {
