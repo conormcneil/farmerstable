@@ -2,6 +2,8 @@
 $primary: rgba(41,185,11,1);
 $secondary: rgba(12,0,254,1);
 $tertiary: rgba(134,54,8,1);
+$font3: 'Shadows Into Light Two', cursive;
+$color1: rgba(240,135,8,1); // too orange, doesnt stick out
 
 ::-webkit-scrollbar {
     display: none;
@@ -31,12 +33,19 @@ a, a * {
   margin-left: -5px;
   background: $primary;
   color: white;
+  font-family: $font3;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
   a, p {
     padding: 10px;
+  }
+  .header-title {
+    position: absolute;
+    left: 41vw;
+    font-size: 2em;
+    color: rgba(255,255,255,0.95);
   }
   .signin, .signup {
     // border: none;

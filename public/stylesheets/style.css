@@ -26,12 +26,18 @@ a, a * {
   margin-left: -5px;
   background: #29b90b;
   color: white;
+  font-family: "Shadows Into Light Two", cursive;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center; }
   .header a, .header p {
     padding: 10px; }
+  .header .header-title {
+    position: absolute;
+    left: 41vw;
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.95); }
   .header .signin, .header .signup {
     border: 1px solid black;
     display: flex;
