@@ -37,7 +37,7 @@ a, a * {
     padding: 10px; }
   .header .header-title {
     position: absolute;
-    left: 41vw;
+    left: 44vw;
     font-size: 2em;
     color: rgba(255, 255, 255, 0.95); }
   .header .signin, .header .signup {
@@ -83,6 +83,29 @@ a, a * {
     .header .signin-box * {
       margin: 0;
       padding: 0; }
+
+.home {
+  width: 90%;
+  display: flex;
+  justify-content: space-between; }
+  .home .home-box {
+    margin: 15px;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center; }
+  .home .home-box-title {
+    margin-top: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center; }
+    .home .home-box-title img {
+      padding-right: 10px;
+      height: 3em; }
+  .home p {
+    padding: 5px;
+    text-align: center; }
 
 #map {
   opacity: 0.87;

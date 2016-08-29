@@ -4,6 +4,7 @@ $secondary: rgba(12,0,254,1);
 $tertiary: rgba(134,54,8,1);
 $font3: 'Shadows Into Light Two', cursive;
 $color1: rgba(240,135,8,1); // too orange, doesnt stick out
+$testBorder: 1px solid black;
 
 ::-webkit-scrollbar {
     display: none;
@@ -45,7 +46,7 @@ a, a * {
   }
   .header-title {
     position: absolute;
-    left: 41vw;
+    left: 44vw;
     font-size: 2em;
     color: rgba(255,255,255,0.95);
   }
@@ -104,6 +105,40 @@ a, a * {
     }
   }
 }
+// partials/home
+.home {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  .home-box {
+    margin: 15px;
+    border: $testBorder;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .home-box-title {
+    margin-top: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    img {
+      padding-right: 10px;
+      height: 3em;
+    }
+  }
+  p {
+    padding: 5px;
+    text-align: center;
+  }
+  .discover {
+    // background: url("../images/stock/outdoor-market.jpg");
+    // background-size: cover;
+    // background-position: center;
+  }
+}
+
 #map {
   opacity: 0.87;
   height: 30%;
