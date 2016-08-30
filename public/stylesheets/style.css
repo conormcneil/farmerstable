@@ -185,6 +185,11 @@ a, a * {
 .back-button {
   width: 100%;
   display: inline-block; }
+  .back-button button {
+    background: #29b90b;
+    color: white;
+    border: none;
+    border-radius: 3px; }
 
 .farm {
   width: 100%;
@@ -198,11 +203,13 @@ a, a * {
   .farm .farm-dynamic {
     width: 50%; }
   .farm .farm-details {
-    border: 1px solid black;
     display: flex;
-    flex-flow: column nowrap; }
+    flex-flow: column nowrap;
+    border-radius: 3px; }
     .farm .farm-details img {
-      height: 225px; }
+      height: 225px;
+      box-shadow: 0px 0px 3px 0px black;
+      border-radius: 3px; }
     .farm .farm-details h5 {
       margin: 0;
       padding: 0;
@@ -213,14 +220,22 @@ a, a * {
     .farm .farm-details .icon {
       padding-left: 5px;
       padding-right: 10px;
-      height: 15px; }
+      height: 15px;
+      box-shadow: none; }
   .farm .follow-button {
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 10px;
     border: none;
     background: #29b90b;
     color: white;
     width: 150px; }
+  .farm .farm-description, .farm .farm-details {
+    width: 45%; }
+    .farm .farm-description .farm-phone, .farm .farm-description .farm-email, .farm .farm-description .farm-address, .farm .farm-details .farm-phone, .farm .farm-details .farm-email, .farm .farm-details .farm-address {
+      display: flex;
+      align-items: center; }
+      .farm .farm-description .farm-phone img, .farm .farm-description .farm-email img, .farm .farm-description .farm-address img, .farm .farm-details .farm-phone img, .farm .farm-details .farm-email img, .farm .farm-details .farm-address img {
+        padding-right: 5px; }
   .farm button {
     width: 100px; }
 
@@ -258,6 +273,11 @@ ft-account-home {
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around; }
+    ft-account-home .account-home .account-home-aside h6 {
+      display: flex;
+      align-items: center; }
+      ft-account-home .account-home .account-home-aside h6 img {
+        padding-right: 5px; }
 
 ft-account-csa {
   margin-top: 25px;

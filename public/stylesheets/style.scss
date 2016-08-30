@@ -221,6 +221,12 @@ a, a * {
 .back-button {
   width: 100%;
   display: inline-block;
+  button {
+    background: $primary;
+    color: white;
+    border: none;
+    border-radius: 3px;
+  }
 }
 .farm {
   width: 100%;
@@ -236,11 +242,13 @@ a, a * {
     width: 50%;
   }
   .farm-details {
-    border: $testBorder;
     display: flex;
     flex-flow: column nowrap;
+    border-radius: 3px;
     img {
       height: 225px;
+      box-shadow: 0px 0px 3px 0px black;
+      border-radius: 3px;
     }
     h5 {
       margin: 0;
@@ -254,26 +262,27 @@ a, a * {
       padding-left: 5px;
       padding-right: 10px;
       height: 15px;
+      box-shadow: none;
     }
   }
   .follow-button {
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 10px;
     border: none;
     background: $primary;
     color: white;
     width: 150px;
   }
-  // .farm-description, .farm-details {
-  //   width: 45%;
-  //   // .farm-phone, .farm-email, .farm-address {
-  //   //   display: flex;
-  //   //   align-items: center;
-  //   //   // img {
-  //   //   //   padding-right: 5px;
-  //   //   // }
-  //   // }
-  // }
+  .farm-description, .farm-details {
+    width: 45%;
+    .farm-phone, .farm-email, .farm-address {
+      display: flex;
+      align-items: center;
+      img {
+        padding-right: 5px;
+      }
+    }
+  }
   button {
     width: 100px;
   }
@@ -316,6 +325,15 @@ ft-account-home {
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
+    .account-home-aside {
+      h6 {
+        display: flex;
+        align-items: center;
+        img {
+          padding-right: 5px;
+        }
+      }
+    }
   }
 }
 ft-account-csa {

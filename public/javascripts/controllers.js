@@ -122,6 +122,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   function reverseGeo() {
+    // add default location in case !localStorage.mapConditions
     var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
     var currentLat = currentCenter['center']['lat'];
     var currentLng = currentCenter['center']['lng'];
@@ -150,9 +151,9 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   // uncomment here to see $scope.farm object
-  // window.setTimeout(() => {
-  //   console.log($scope.farm,$scope.farm.csa);
-  // },500);
+  window.setTimeout(() => {
+    console.log($scope.farm,$scope.farm.csa);
+  },500);
 
   $scope.view.centerMap = function(address) {
     address = address.split(' ').join('+');

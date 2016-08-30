@@ -13,7 +13,7 @@ router.get('/all', function(req, res, next) {
 router.get('/details/:id', function(req, res, next) {
   knex('csas')
     .where({
-      id: req.params.id
+      farm_id: req.params.id
     })
     .first()
     .then(function(data) {

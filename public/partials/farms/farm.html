@@ -1,13 +1,17 @@
 <div class="farm-container">
   <div class="back-button">
-    <a href="/farms"><button>Back to Farms</button></a>
+    <a href="/farms"><button class="shadow pointer">Back to Farms</button></a>
   </div>
   <div class="farm" ng-controller="FarmsController">
     <div class="farm-dynamic">
       <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer">{{ farm.name }}</h1>
-      <h1>Updates</h1>
+      <div class="farm-csa">
+        <h4>CSA Box</h4>
+        <h4>{{farm.csa.csa_name}}</h4>
+        <h4>{{farm.csa.products}}</h4>
+      </div>
     </div>
-    <div class="farm-details">
+    <div class="farm-details shadow">
       <img ng-src="{{ farm.image_url }}">
       <button class="follow-button shadow pointer">+ Follow this Farm</button>
       <h5><img class="icon" ng-src="../images/icons/phone_icon.svg">{{farm.contact_phone}}</h5>
