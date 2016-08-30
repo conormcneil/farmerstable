@@ -10,7 +10,7 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 92vh;
   overflow-x: hidden;
   font-variant: small-caps;
   font-family: Tahoma; }
@@ -202,6 +202,17 @@ a, a * {
     font-family: "Shadows Into Light Two", cursive; }
   .farm .farm-dynamic {
     width: 50%; }
+    .farm .farm-dynamic .farm-csa .farm-csa-title {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-around; }
+      .farm .farm-dynamic .farm-csa .farm-csa-title button {
+        border: none;
+        border-radius: 3px;
+        background: #29b90b;
+        color: white;
+        height: 20px; }
   .farm .farm-details {
     display: flex;
     flex-flow: column nowrap;

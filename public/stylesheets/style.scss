@@ -18,7 +18,7 @@ $testBorder: 1px solid black;
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 92vh;
   overflow-x: hidden;
   font-variant: small-caps;
   font-family: Tahoma;
@@ -240,6 +240,21 @@ a, a * {
   }
   .farm-dynamic {
     width: 50%;
+    .farm-csa {
+      .farm-csa-title {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        button {
+          border: none;
+          border-radius: 3px;
+          background: $primary;
+          color: white;
+          height: 20px;
+        }
+      }
+    }
   }
   .farm-details {
     display: flex;

@@ -144,10 +144,8 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   // if url has route param: id, set this to active farm
   if($routeParams.id) {
     $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
-      console.log('get farm data',data);
       $scope.farm = data.data;
       $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
-        console.log('get csa data',data);
         // console.log(data.data.products);
         var tempArr = data.data.products.split(',');
         var productsArr = tempArr.map(e => {

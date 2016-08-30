@@ -6,8 +6,12 @@
     <div class="farm-dynamic">
       <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer">{{ farm.name }}</h1>
       <div class="farm-csa">
-        <h4>CSA Box</h4>
-        <h4>{{farm.csa.csa_name}}</h4>
+        <div class="farm-csa-title">
+          <h3>Current CSA: {{farm.csa.csa_name}}</h3>
+          <button class="pointer shadow">Sign up</button>
+        </div>
+        <h5>Starts: {{farm.csa.start_date | date}}</h5>
+        <h5>Ends: {{farm.csa.end_date | date}}</h5>
         <li class="product-list" ng-repeat="product in farm.csa.products track by $index">{{product}}</li>
       </div>
     </div>
