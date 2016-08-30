@@ -126,10 +126,10 @@ a, a * {
   .home-boxes {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
   }
   .home-box {
-    margin: 30px;
-    border: $testBorder;
+    width: 30%;
     display: flex;
     flex-flow: column;
     align-items: center;

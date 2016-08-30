@@ -102,10 +102,10 @@ a, a * {
   flex-flow: column; }
   .home .home-boxes {
     display: flex;
-    flex-flow: row nowrap; }
+    flex-flow: row nowrap;
+    justify-content: space-between; }
   .home .home-box {
-    margin: 30px;
-    border: 1px solid black;
+    width: 30%;
     display: flex;
     flex-flow: column;
     align-items: center;
