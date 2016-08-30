@@ -109,9 +109,16 @@ a, a * {
     }
   }
 }
+.content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 95vw;
+}
+
 // partials/home
 .home {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-flow: column;
@@ -120,7 +127,7 @@ a, a * {
     flex-flow: row nowrap;
   }
   .home-box {
-    margin: 15px;
+    margin: 30px;
     border: $testBorder;
     display: flex;
     flex-flow: column;
@@ -202,10 +209,6 @@ a, a * {
 }
 .csa-description {
   width: 40%;
-}
-.content {
-  display: flex;
-  justify-content: center;
 }
 
 // partials/farm/:id

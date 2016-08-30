@@ -88,8 +88,14 @@ a, a * {
       margin: 0;
       padding: 0; }
 
+.content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 95vw; }
+
 .home {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-flow: column; }
@@ -97,7 +103,7 @@ a, a * {
     display: flex;
     flex-flow: row nowrap; }
   .home .home-box {
-    margin: 15px;
+    margin: 30px;
     border: 1px solid black;
     display: flex;
     flex-flow: column;
@@ -169,10 +175,6 @@ a, a * {
 
 .csa-description {
   width: 40%; }
-
-.content {
-  display: flex;
-  justify-content: center; }
 
 .farm {
   width: 100%;
