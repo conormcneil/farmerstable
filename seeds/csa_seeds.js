@@ -28,6 +28,18 @@ exports.seed = function(knex, Promise) {
           pickup_time_end: '7:00PM',
           start_date: '09/10/2016',
           end_date: '10/22/2016'
+        }),
+        knex('csas').insert({
+          id: 3,
+          farm_id: 5,
+          csa_name: 'Annie\'s Fruit Harvest',
+          products: 'gala apples, pink lady apples, peaches, pears, jam',
+          pickup_location: 'Apple Annie\'s Orchards',
+          pickup_day: 'Saturday',
+          pickup_time_start: '8:00AM',
+          pickup_time_end: '1:00PM',
+          start_date: '07/15/2016',
+          end_date: '11/02/2016'
         })
       ]);
     });

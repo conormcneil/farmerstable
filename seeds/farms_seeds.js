@@ -54,6 +54,18 @@ exports.seed = function(knex, Promise) {
           address: '7340 Butler St, Pittsburgh, PA 15206',
           lat: '40.487607',
           lng: '-79.9198828'
+        }),
+        knex('farms').insert({
+          id: 5,
+          csa_id: 3,
+          name: "Apple Annie's",
+          owner_id: 4,
+          image_url: 'http://www.appleannies.com/-Images/-Orchards/OrchardEntrance.jpg',
+          contact_phone: '520-384-4685',
+          contact_email: 'appleanniesfarm@yahoo.com',
+          address: '6405 W Williams Rd Willcox, AZ 85643',
+          lat: '32.38509768029149',
+          lng: '-109.9296312197085'
         })
       ]);
     });

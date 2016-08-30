@@ -11,7 +11,7 @@ exports.seed = function(knex, Promise) {
           username: 'conor',
           password: 'conor',
           isAdmin: true,
-          isFarmer: true,
+          isFarmer: true
         }),
         knex('users').insert({
           id: 2,
@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
           username: 'shelby',
           password: 'shelby',
           isAdmin: true,
-          isFarmer: false,
+          isFarmer: false
         }),
         knex('users').insert({
           id: 3,
@@ -27,7 +27,15 @@ exports.seed = function(knex, Promise) {
           username: 'david',
           password: 'david',
           isAdmin: false,
-          isFarmer: true,
+          isFarmer: true
+        }),
+        knex('users').insert({
+          id: 4,
+          email: 'annie@appleannie.com',
+          username: 'annie',
+          password: 'annie',
+          isAdmin: false,
+          isFarmer: true
         })
       ]);
     });
