@@ -113,7 +113,8 @@ a, a * {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  width: 95vw;
+  width: 95%;
+  min-width: 730px;
 }
 
 // partials/home
@@ -212,25 +213,67 @@ a, a * {
 }
 
 // partials/farm/:id
+.farm-container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+.back-button {
+  width: 100%;
+  display: inline-block;
+}
 .farm {
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  flex-flow: column wrap;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  color: $color1;
   .farm-title {
-    width: 100%;
     text-align: center;
+    font-family: $font3;
   }
-  .farm-description, .farm-details {
-    width: 45%;
-    .farm-phone, .farm-email, .farm-address {
+  .farm-dynamic {
+    width: 50%;
+  }
+  .farm-details {
+    border: $testBorder;
+    display: flex;
+    flex-flow: column nowrap;
+    img {
+      height: 225px;
+    }
+    h5 {
+      margin: 0;
+      padding: 0;
+      padding-top: 5px;
+      padding-bottom: 5px;
       display: flex;
       align-items: center;
-      img {
-        padding-right: 5px;
-      }
+    }
+    .icon {
+      padding-left: 5px;
+      padding-right: 10px;
+      height: 15px;
     }
   }
+  .follow-button {
+    margin: 0 auto;
+    margin-top: 5px;
+    border: none;
+    background: $primary;
+    color: white;
+    width: 150px;
+  }
+  // .farm-description, .farm-details {
+  //   width: 45%;
+  //   // .farm-phone, .farm-email, .farm-address {
+  //   //   display: flex;
+  //   //   align-items: center;
+  //   //   // img {
+  //   //   //   padding-right: 5px;
+  //   //   // }
+  //   // }
+  // }
   button {
     width: 100px;
   }
