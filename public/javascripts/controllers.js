@@ -128,7 +128,9 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + currentLat + ',' + currentLng).then(function(data) {
       var currentZip = data.data.results[0].address_components[data.data.results[0].address_components.length-1].long_name;
       var currentObj = {
-        zip: currentZip
+        zip: currentZip,
+        lat: currentLat,
+        lng: currentLng
       };
       $http.post('/farms/all',currentObj).then(function(data) {
         delete $scope.farms;
