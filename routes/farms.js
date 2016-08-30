@@ -17,39 +17,39 @@ router.post('/all', function(req, res, next) {
   }
   knex('farms')
     .then(function(data) {
-      var output = {};
+      var output = [];
       for (var i = 0; i < data.length; i++) {
-        // add each farm to output object
-        output[data[i].id] = data[i];
+        // add each farm to output array
+        output.push(data[i]);
         // calculate distance from origin
         var distanceFromOrigin = Math.sqrt(Math.pow((data[i].lng - origin.lng),2) + Math.pow((data[i].lat - origin.lat),2));
-        // attach to output object
-        output[data[i].id]['distanceFromOrigin'] = distanceFromOrigin;
+        // attach to output arary
+        data[i]['distanceFromOrigin'] = distanceFromOrigin;
       };
-      // sort output object into sorted array to respond to request
-      var sortedArray = [];
-      var keys = Object.keys(output);
-
-      // sort happening here
-      for (var i = 0; i < keys.length; i++) {
-        if (sortedArray.length === 0) {
-          sortedArray.push(output[keys[i]]);
-        } else {
-          for (var j = 0; j < sortedArray.length; j++) {
-            if (output[keys[i]].distanceFromOrigin < sortedArray[j].distanceFromOrigin) {
-              // insert object at this point in the array
-              sortedArray.splice(j, 0, output[keys[i]]);
-              j++;
-            }
-          }
-          sortedArray.push(output[keys[i]]);
+      function getMax(arr) {
+        if (arr.length === 0) {
+          return false;
         }
+        var max = -Infinity;
+        var indexOfMax = -1;
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i]['distanceFromOrigin'] > max) {
+            max = arr[i]['distanceFromOrigin'];
+            indexOfMax = i;
+          }
+        }
+        return indexOfMax;
       }
-      // always return <10 results
-      if (sortedArray.length > 10) {
-        sortedArray.splice(10,sortedArray.length);
-      };
-      res.json(sortedArray);
+      var finalSort = [];
+      function sortFarms(arr) {
+        if (arr.length === 0) {
+          return finalSort;
+        }
+        var indexOfMax = getMax(arr);
+        finalSort.unshift(arr.splice(indexOfMax,1)[0]);
+        return sortFarms(arr);
+      }
+      res.json(sortFarms(output));
     });
 });
 

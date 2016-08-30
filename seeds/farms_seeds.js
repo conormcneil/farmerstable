@@ -13,13 +13,9 @@ exports.seed = function(knex, Promise) {
           image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
           contact_phone: '520-555-6789',
           contact_email: 'conor@shadyspringfarms.com',
-          // address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
-          // test address
-          address: '2200 W Alameda Dr, Tempe, AZ 85282',
+          address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
           lat: '33.4009387',
           lng: '-111.9704112',
-          markets: '',
-          csa: '',
           products: 'eggs, dried herbs, heirloom tomatoes, cucumbers, asparagus, green beans, bell peppers, sunflowers'
         }),
         knex('farms').insert({
@@ -33,8 +29,6 @@ exports.seed = function(knex, Promise) {
           address: '2420 N Palo Santo Dr, Tucson, AZ 85745',
           lat: '32.253603',
           lng: '-111.018735',
-          markets: '',
-          csa: '',
           products: 'pork, beef, chicken, eggs'
         }),
         knex('farms').insert({
@@ -47,10 +41,7 @@ exports.seed = function(knex, Promise) {
           contact_email: 'conor@ft.com',
           address: '2920 Zoo Dr, San Diego, CA 92101',
           lat: '32.7337409',
-          lng: '-117.1482836',
-          markets: '',
-          csa: '',
-          products: ''
+          lng: '-117.1482836'
         }),
         knex('farms').insert({
           id: 4,
@@ -62,10 +53,7 @@ exports.seed = function(knex, Promise) {
           contact_email: 'conor@ft.com',
           address: '7340 Butler St, Pittsburgh, PA 15206',
           lat: '40.487607',
-          lng: '-79.9198828',
-          markets: '',
-          csa: '',
-          products: ''
+          lng: '-79.9198828'
         })
       ]);
     });

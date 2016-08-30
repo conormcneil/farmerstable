@@ -105,12 +105,10 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
 
   // Do I ever have to retrieve ALL farms?
   // Right now: YES, until my API returns nearest farms by zip
-  // $scope.farms = {};
   $scope.view.zipDecode = function(zip) {
     var url = 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zip;
     $http.get(url).then(function(data) {
       $scope.view.searchOrigin = data.data.results[0].geometry.location;
-      console.log($scope.view.zipCode,$scope.view.searchOrigin);
       // post to /farms/all and retrieve farms by zip
       var zipObj = {
         zip: zip,
@@ -118,11 +116,27 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
         lng: $scope.view.searchOrigin.lng
       }
       $http.post('/farms/all',zipObj).then(function(data) {
+        delete $scope.farms;
         $scope.farms = data.data;
-        console.log($scope.farms);
       });
     });
   };
+  function reverseGeo() {
+    var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
+    var currentLat = currentCenter['center']['lat'];
+    var currentLng = currentCenter['center']['lng'];
+    $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + currentLat + ',' + currentLng).then(function(data) {
+      var currentZip = data.data.results[0].address_components[data.data.results[0].address_components.length-1].long_name;
+      var currentObj = {
+        zip: currentZip
+      };
+      $http.post('/farms/all',currentObj).then(function(data) {
+        delete $scope.farms;
+        $scope.farms = data.data;
+      })
+    });
+  };
+  reverseGeo();
 
   // if url has route param: id, set this to active farm
   if($routeParams.id) {
