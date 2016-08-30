@@ -114,6 +114,11 @@ a, a * {
   width: 90%;
   display: flex;
   justify-content: space-between;
+  flex-flow: column;
+  .home-boxes {
+    display: flex;
+    flex-flow: row nowrap;
+  }
   .home-box {
     margin: 15px;
     border: $testBorder;
@@ -136,10 +141,19 @@ a, a * {
     padding: 5px;
     text-align: center;
   }
-  .discover {
-    // background: url("../images/stock/outdoor-market.jpg");
-    // background-size: cover;
-    // background-position: center;
+  aside {
+    display: flex;
+    justify-content: center;
+    button {
+      height: 75px;
+      width: 253px;
+      background: $secondary;
+      color: rgba(255,255,255,0.87);
+      border: none;
+      border-radius: 10px;
+      font-variant: small-caps;
+      font-size: 1.7em;
+    }
   }
 }
 

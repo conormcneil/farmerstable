@@ -91,7 +91,11 @@ a, a * {
 .home {
   width: 90%;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-flow: column; }
+  .home .home-boxes {
+    display: flex;
+    flex-flow: row nowrap; }
   .home .home-box {
     margin: 15px;
     border: 1px solid black;
@@ -110,6 +114,18 @@ a, a * {
   .home p {
     padding: 5px;
     text-align: center; }
+  .home aside {
+    display: flex;
+    justify-content: center; }
+    .home aside button {
+      height: 75px;
+      width: 253px;
+      background: #0c00fe;
+      color: rgba(255, 255, 255, 0.87);
+      border: none;
+      border-radius: 10px;
+      font-variant: small-caps;
+      font-size: 1.7em; }
 
 #map {
   opacity: 0.87;
