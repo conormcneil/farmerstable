@@ -145,14 +145,16 @@ a, a * {
     display: flex;
     justify-content: center;
     button {
-      height: 75px;
+      height: 55px;
       width: 253px;
       background: $secondary;
       color: rgba(255,255,255,0.87);
       border: none;
-      border-radius: 10px;
+      border-radius: 3px;
       font-variant: small-caps;
       font-size: 1.7em;
+      font-family: $font3;
+      margin-top: 25px;
     }
   }
 }
@@ -225,6 +227,9 @@ a, a * {
         padding-right: 5px;
       }
     }
+  }
+  button {
+    width: 100px;
   }
 }
 

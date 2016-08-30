@@ -31,4 +31,4 @@ routes:
 
 
 ## BUGLIST
-## /farms- zip code '20001' returns pittsburgh farm as every other result
+## Haversine formula for lat/lng => miles(https://en.wikipedia.org/wiki/Haversine_formula)

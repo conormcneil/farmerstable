@@ -14,8 +14,8 @@ exports.seed = function(knex, Promise) {
           contact_phone: '520-555-6789',
           contact_email: 'conor@shadyspringfarms.com',
           address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',
-          lat: '33.4009387',
-          lng: '-111.9704112',
+          lat: '32.22867',
+          lng: '-110.754803',
           products: 'eggs, dried herbs, heirloom tomatoes, cucumbers, asparagus, green beans, bell peppers, sunflowers'
         }),
         knex('farms').insert({
@@ -27,8 +27,8 @@ exports.seed = function(knex, Promise) {
           contact_phone: '520-555-9876',
           contact_email: 'shelby@nbmfarm.com',
           address: '2420 N Palo Santo Dr, Tucson, AZ 85745',
-          lat: '32.253603',
-          lng: '-111.018735',
+          lat: '32.252254',
+          lng: '-111.017386',
           products: 'pork, beef, chicken, eggs'
         }),
         knex('farms').insert({
@@ -64,8 +64,8 @@ exports.seed = function(knex, Promise) {
           contact_phone: '520-384-4685',
           contact_email: 'appleanniesfarm@yahoo.com',
           address: '6405 W Williams Rd Willcox, AZ 85643',
-          lat: '32.38509768029149',
-          lng: '-109.9296312197085'
+          lat: '32.3837487',
+          lng: '-109.9309802'
         })
       ]);
     });

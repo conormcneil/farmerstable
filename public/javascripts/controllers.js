@@ -95,7 +95,7 @@ makeHeaderController.$inject = ['$scope','$http','MarketService','FormService','
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
-function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserService) {
+function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserService,FormService) {
   $scope.view = {};
   // if user is logged in retrieve their info from Service: "activeUser"
   if(localStorage.token) {
@@ -163,8 +163,22 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       map.setCenter(marker.position);
     });
   };
+
+  $scope.forms = {};
+  $scope.forms = FormService.forms;
+  $scope.view.toggle = function(form) {
+    if ($scope.forms[form]) {
+      $scope.forms[form] = false;
+    } else {
+      $scope.forms.signin = false;
+      $scope.forms.signup = false;
+      // ^^^ close all active header forms first, then:
+      FormService.toggle(form);
+      $scope.forms = FormService.forms;
+    }
+  };
 };
-makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService'];
+makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService'];
 
 app.controller("AccountController",makeAccountController);
 function makeAccountController($scope,$http,$routeParams,FormService,UserService) {
