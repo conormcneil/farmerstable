@@ -8,7 +8,7 @@
       <div class="farm-csa">
         <h4>CSA Box</h4>
         <h4>{{farm.csa.csa_name}}</h4>
-        <h4>{{farm.csa.products}}</h4>
+        <li class="product-list" ng-repeat="product in farm.csa.products track by $index">{{product}}</li>
       </div>
     </div>
     <div class="farm-details shadow">

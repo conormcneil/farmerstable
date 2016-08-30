@@ -144,16 +144,25 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   // if url has route param: id, set this to active farm
   if($routeParams.id) {
     $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
+      console.log('get farm data',data);
       $scope.farm = data.data;
       $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
+        console.log('get csa data',data);
+        // console.log(data.data.products);
+        var tempArr = data.data.products.split(',');
+        var productsArr = tempArr.map(e => {
+          return e.trim();
+        });
         $scope.farm.csa = data.data;
-      })
+        $scope.farm.csa.products = productsArr;
+      });
     });
   };
   // uncomment here to see $scope.farm object
-  window.setTimeout(() => {
-    console.log($scope.farm,$scope.farm.csa);
-  },500);
+  // window.setTimeout(() => {
+  //   console.log($scope.farm);
+  //   console.log($scope.farm.csa);
+  // },1000);
 
   $scope.view.centerMap = function(address) {
     address = address.split(' ').join('+');
@@ -167,7 +176,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
 
-  $scope.forms = {};
   $scope.forms = FormService.forms;
   $scope.view.toggle = function(form) {
     if ($scope.forms[form]) {
