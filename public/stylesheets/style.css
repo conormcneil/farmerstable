@@ -40,11 +40,12 @@ a, a * {
     font-size: 1.8em; }
   .header .header-title {
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 34vw;
+    display: flex;
+    left: 32vw;
     font-size: 5em;
     color: #ffc107; }
+    .header .header-title a {
+      text-align: center; }
   .header .user-dropdown {
     display: flex;
     flex-flow: row;

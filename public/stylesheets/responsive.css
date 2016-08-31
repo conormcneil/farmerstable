@@ -1,11 +1,12 @@
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .header .header-title {
-    top: 0; } }
+    top: 0;
+    left: 29vw; } }
 @media (max-width: 1024px) {
-  body {
-    background: red; } }
+  .header .header-title {
+    left: 20vw; } }
 @media (max-width: 768px) {
-  body {
-    background: blue; } }
+  .header .header-title {
+    left: 16vw; } }
 
 /*# sourceMappingURL=responsive.css.map */
