@@ -1,9 +1,8 @@
 $font1: 'Pacifico', cursive;
-$font2: 'Permanent Marker', cursive;
 $font3: 'Shadows Into Light Two', cursive;
-$font4: 'Reenie Beanie', cursive;
 $color1: rgba(240,135,8,1); // too orange, doesnt stick out
 $color2: rgba(245,0,19,1); //
+$green: rgba(156,39,176,1);
 
 
 .curtain {
@@ -13,7 +12,7 @@ $color2: rgba(245,0,19,1); //
   left: 0;
   margin: 0;
   padding: 0;
-  background: url('../images/stock/corn.jpg');
+  background: url('../images/tomatoes.jpg');
   // background: url('../images/stock/peppers-colorful.jpg');
   background-size: cover;
   background-position: center;
@@ -23,17 +22,34 @@ $color2: rgba(245,0,19,1); //
   display: flex;
   flex-flow: column;
   align-items: center;
-  display: none;
+  // display: none;
 }
 .curtain-title {
-  color: $color1;
+  color: $green;
   text-align: center;
   margin-top: 3vh;
   margin-bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
   font: {
-    family: $font3;
+    family: $font1;
     size: 6em;
+  }
+  .title-wrap {
+    background: rgba(255,255,255,0.77);
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 0.5em;
+    }
   }
 }
 .curtain-intro {

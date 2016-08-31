@@ -5,7 +5,7 @@
   left: 0;
   margin: 0;
   padding: 0;
-  background: url("../images/stock/corn.jpg");
+  background: url("../images/tomatoes.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -13,17 +13,31 @@
   width: 100vw;
   display: flex;
   flex-flow: column;
-  align-items: center;
-  display: none; }
+  align-items: center; }
 
 .curtain-title {
-  color: #f08708;
+  color: #9c27b0;
   text-align: center;
   margin-top: 3vh;
   margin-bottom: 0;
   width: 100%;
-  font-family: "Shadows Into Light Two", cursive;
+  display: flex;
+  justify-content: center;
+  font-family: "Pacifico", cursive;
   font-size: 6em; }
+  .curtain-title .title-wrap {
+    background: rgba(255, 255, 255, 0.77);
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center; }
+    .curtain-title .title-wrap h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 0.5em; }
 
 .curtain-intro {
   color: #f08708;

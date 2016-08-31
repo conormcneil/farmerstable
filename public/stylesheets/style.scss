@@ -1,10 +1,18 @@
 // Variables
-$primary: rgba(41,185,11,1);
-$secondary: rgba(12,0,254,1);
+// $primary: rgba(41,185,11,1);
+// $primary: rgba(11,141,43,1);
+// $primary: rgba(76,175,80,1);
+$primary: rgba(85,139,47,1);
+// $secondary: rgba(12,0,254,1);
+$secondary: rgba(3,169,244,1);
 $tertiary: rgba(134,54,8,1);
 $font3: 'Shadows Into Light Two', cursive;
 $color1: rgba(240,135,8,1); // something brigher maybe?
 $testBorder: 1px solid black;
+
+$darkorange: rgba(255,87,34,1);
+$orange: rgba(255,152,0,1);
+
 
 ::-webkit-scrollbar {
     display: none;
@@ -14,6 +22,9 @@ $testBorder: 1px solid black;
 }
 .shadow {
   box-shadow: 0px 0px 5px 0px black;
+}
+button {
+  font-weight: 900;
 }
 body {
   margin: 0;
@@ -28,16 +39,16 @@ a, a * {
   color: inherit;
 }
 .header {
-  height: 55px;
+  height: 185px;
   width: 100vw;
-  background: $primary;
-  color: white;
+  // background: $primary;
+  color: black;
   font-family: $font3;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
@@ -46,9 +57,9 @@ a, a * {
   }
   .header-title {
     position: absolute;
-    left: 44vw;
-    font-size: 2em;
-    color: rgba(255,255,255,0.87);
+    left: 34vw;
+    font-size: 5em;
+    color: #795548;
   }
   .signin, .signup {
     // border: none;
@@ -76,7 +87,7 @@ a, a * {
       width: 185px;
       margin-right: -5px;
       border: none;
-      background: $color1;
+      background: $orange;
       color: white;
       font-variant: small-caps;
     }
@@ -156,7 +167,7 @@ a, a * {
       height: 55px;
       width: 253px;
       background: $secondary;
-      color: rgba(255,255,255,0.87);
+      color: $orange;
       border: none;
       border-radius: 3px;
       font-variant: small-caps;
@@ -172,7 +183,7 @@ a, a * {
   height: 30%;
   width: 100vw;
   margin-bottom: 25px;
-  margin-top: 55px;
+  // margin-top: 185px;
   box-shadow: 0px 0px 5px 0px black;
   z-index: 0;
 }
@@ -223,7 +234,7 @@ a, a * {
   display: inline-block;
   button {
     background: $primary;
-    color: white;
+    color: $orange;
     border: none;
     border-radius: 3px;
   }
@@ -233,10 +244,12 @@ a, a * {
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
-  color: $color1;
+  color: $orange;
   .farm-title {
     text-align: center;
     font-family: $font3;
+    font-size: 3em;
+    margin-bottom: 0;
   }
   .farm-dynamic {
     width: 50%;
@@ -250,8 +263,12 @@ a, a * {
           border: none;
           border-radius: 3px;
           background: $primary;
-          color: white;
+          color: $orange;
           height: 20px;
+        }
+        button, h3 {
+          margin: 0;
+          margin-top: 10px;
         }
       }
     }
@@ -260,8 +277,8 @@ a, a * {
     display: flex;
     flex-flow: column nowrap;
     border-radius: 3px;
-    img {
-      height: 225px;
+    img:not(.icon) {
+      width: 100%;
       box-shadow: 0px 0px 3px 0px black;
       border-radius: 3px;
     }
@@ -285,7 +302,7 @@ a, a * {
     margin-top: 10px;
     border: none;
     background: $primary;
-    color: white;
+    color: $orange;
     width: 150px;
   }
   .farm-description, .farm-details {

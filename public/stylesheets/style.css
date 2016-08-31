@@ -7,6 +7,9 @@
 .shadow {
   box-shadow: 0px 0px 5px 0px black; }
 
+button {
+  font-weight: 900; }
+
 body {
   margin: 0;
   padding: 0;
@@ -20,16 +23,14 @@ a, a * {
   color: inherit; }
 
 .header {
-  height: 55px;
+  height: 185px;
   width: 100vw;
-  background: #29b90b;
-  color: white;
+  color: black;
   font-family: "Shadows Into Light Two", cursive;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 3; }
@@ -37,9 +38,9 @@ a, a * {
     padding: 10px; }
   .header .header-title {
     position: absolute;
-    left: 44vw;
-    font-size: 2em;
-    color: rgba(255, 255, 255, 0.87); }
+    left: 34vw;
+    font-size: 5em;
+    color: #795548; }
   .header .signin, .header .signup {
     border: 1px solid black;
     display: flex;
@@ -63,7 +64,7 @@ a, a * {
       width: 185px;
       margin-right: -5px;
       border: none;
-      background: #f08708;
+      background: #ff9800;
       color: white;
       font-variant: small-caps; }
     .header .signin .radio-option, .header .signup .radio-option {
@@ -127,8 +128,8 @@ a, a * {
     .home aside button {
       height: 55px;
       width: 253px;
-      background: #0c00fe;
-      color: rgba(255, 255, 255, 0.87);
+      background: #03a9f4;
+      color: #ff9800;
       border: none;
       border-radius: 3px;
       font-variant: small-caps;
@@ -141,7 +142,6 @@ a, a * {
   height: 30%;
   width: 100vw;
   margin-bottom: 25px;
-  margin-top: 55px;
   box-shadow: 0px 0px 5px 0px black;
   z-index: 0; }
 
@@ -186,8 +186,8 @@ a, a * {
   width: 100%;
   display: inline-block; }
   .back-button button {
-    background: #29b90b;
-    color: white;
+    background: #558b2f;
+    color: #ff9800;
     border: none;
     border-radius: 3px; }
 
@@ -196,10 +196,12 @@ a, a * {
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
-  color: #f08708; }
+  color: #ff9800; }
   .farm .farm-title {
     text-align: center;
-    font-family: "Shadows Into Light Two", cursive; }
+    font-family: "Shadows Into Light Two", cursive;
+    font-size: 3em;
+    margin-bottom: 0; }
   .farm .farm-dynamic {
     width: 50%; }
     .farm .farm-dynamic .farm-csa .farm-csa-title {
@@ -210,15 +212,18 @@ a, a * {
       .farm .farm-dynamic .farm-csa .farm-csa-title button {
         border: none;
         border-radius: 3px;
-        background: #29b90b;
-        color: white;
+        background: #558b2f;
+        color: #ff9800;
         height: 20px; }
+      .farm .farm-dynamic .farm-csa .farm-csa-title button, .farm .farm-dynamic .farm-csa .farm-csa-title h3 {
+        margin: 0;
+        margin-top: 10px; }
   .farm .farm-details {
     display: flex;
     flex-flow: column nowrap;
     border-radius: 3px; }
-    .farm .farm-details img {
-      height: 225px;
+    .farm .farm-details img:not(.icon) {
+      width: 100%;
       box-shadow: 0px 0px 3px 0px black;
       border-radius: 3px; }
     .farm .farm-details h5 {
@@ -237,8 +242,8 @@ a, a * {
     margin: 0 auto;
     margin-top: 10px;
     border: none;
-    background: #29b90b;
-    color: white;
+    background: #558b2f;
+    color: #ff9800;
     width: 150px; }
   .farm .farm-description, .farm .farm-details {
     width: 45%; }
@@ -307,7 +312,7 @@ ft-account-csa {
 
 .user-nav {
   z-index: 1;
-  background: #29b90b;
+  background: #558b2f;
   padding: 10px;
   padding-top: 2px;
   padding-bottom: 3px; }
