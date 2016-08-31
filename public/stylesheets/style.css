@@ -272,8 +272,7 @@ a, a * {
     width: 100px; }
 
 .account {
-  width: 100%;
-  background: lightblue; }
+  width: 100%; }
 
 .account-body {
   display: flex;
