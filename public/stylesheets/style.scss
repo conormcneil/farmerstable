@@ -1,18 +1,8 @@
 // Variables
-// $primary: rgba(41,185,11,1);
-// $primary: rgba(11,141,43,1);
-// $primary: rgba(76,175,80,1);
-$primary: rgba(85,139,47,1);
-// $secondary: rgba(12,0,254,1);
-$secondary: rgba(3,169,244,1);
-$tertiary: rgba(134,54,8,1);
 $font3: 'Shadows Into Light Two', cursive;
-$color1: rgba(240,135,8,1); // something brigher maybe?
+$primary: rgba(63,81,181,1);
+$accent: rgba(255,193,7,1);
 $testBorder: 1px solid black;
-
-$darkorange: rgba(255,87,34,1);
-$orange: rgba(255,152,0,1);
-
 
 ::-webkit-scrollbar {
     display: none;
@@ -47,7 +37,7 @@ a, a * {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   // position: fixed;
   top: 0;
   left: 0;
@@ -55,11 +45,20 @@ a, a * {
   a, p {
     padding: 10px;
   }
+  .user-dropdown {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
   .header-title {
     position: absolute;
     left: 34vw;
-    font-size: 5em;
-    color: #795548;
+    font-size: 4em;
+    color: $accent;
   }
   .signin, .signup {
     // border: none;
@@ -87,7 +86,7 @@ a, a * {
       width: 185px;
       margin-right: -5px;
       border: none;
-      background: $orange;
+      background: $accent;
       color: white;
       font-variant: small-caps;
     }
@@ -166,8 +165,8 @@ a, a * {
     button {
       height: 55px;
       width: 253px;
-      background: $secondary;
-      color: $orange;
+      background: $primary;
+      color: $accent;
       border: none;
       border-radius: 3px;
       font-variant: small-caps;
@@ -234,7 +233,7 @@ a, a * {
   display: inline-block;
   button {
     background: $primary;
-    color: $orange;
+    color: $accent;
     border: none;
     border-radius: 3px;
   }
@@ -244,7 +243,7 @@ a, a * {
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
-  color: $orange;
+  color: $accent;
   .farm-title {
     text-align: center;
     font-family: $font3;
@@ -263,7 +262,7 @@ a, a * {
           border: none;
           border-radius: 3px;
           background: $primary;
-          color: $orange;
+          color: $accent;
           height: 20px;
         }
         button, h3 {
@@ -302,7 +301,7 @@ a, a * {
     margin-top: 10px;
     border: none;
     background: $primary;
-    color: $orange;
+    color: $accent;
     width: 150px;
   }
   .farm-description, .farm-details {

@@ -5,7 +5,8 @@
   <div class="farm" ng-controller="FarmsController">
     <div class="farm-dynamic">
       <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer">{{ farm.name }}</h1>
-      <div class="farm-csa">
+      <!-- show if this farm's CSA exists -->
+      <div class="farm-csa" ng-show="farm.csa">
         <div class="farm-csa-title">
           <h3>Current CSA: {{farm.csa.csa_name}}</h3>
           <button class="pointer shadow">Sign up</button>
@@ -14,13 +15,18 @@
         <h5>Ends: {{farm.csa.end_date | date}}</h5>
         <li class="product-list" ng-repeat="product in farm.csa.products track by $index">{{product}}</li>
       </div>
+      <!-- show if this farm's CSA does NOT exist -->
+      <div class="farm-csa" ng-show="!farm.csa">
+        <h4 style="text-align: center;">This farm does not currently offer any CSAs</h4>
+        <p><a href="mailto:{{ farm.contact_email }}" style="text-decoration: underline;">Email the farm</a> to ask what options might be available!</p>
+      </div>
     </div>
     <div class="farm-details shadow">
       <img ng-src="{{ farm.image_url }}">
       <button class="follow-button shadow pointer">+ Follow this Farm</button>
       <h5><img class="icon" ng-src="../images/icons/phone_icon.svg">{{farm.contact_phone}}</h5>
-      <h5><img class="icon" ng-src="../images/icons/mail_icon_black.svg">{{farm.contact_email}}</h5>
-      <h5><img class="icon" ng-src="../images/icons/globe_black.svg">{{farm.address}}</h5>
+      <h5><img class="icon" ng-src="../images/icons/mail_icon_black.svg"><a href="mailto:{{farm.contact_email}}" class="pointer">{{farm.contact_email}}</h5>
+      <h5><img class="icon" ng-src="../images/icons/globe_black.svg">{{farm.address}}</a></h5>
     </div>
   </div>
 </div>

@@ -13,7 +13,8 @@
   width: 100vw;
   display: flex;
   flex-flow: column;
-  align-items: center; }
+  align-items: center;
+  display: none; }
 
 .curtain-title {
   color: #9c27b0;

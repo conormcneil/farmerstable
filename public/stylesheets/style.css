@@ -30,17 +30,24 @@ a, a * {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   top: 0;
   left: 0;
   z-index: 3; }
   .header a, .header p {
     padding: 10px; }
+  .header .user-dropdown {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end; }
+    .header .user-dropdown p {
+      margin: 0;
+      padding: 0; }
   .header .header-title {
     position: absolute;
     left: 34vw;
-    font-size: 5em;
-    color: #795548; }
+    font-size: 4em;
+    color: #ffc107; }
   .header .signin, .header .signup {
     border: 1px solid black;
     display: flex;
@@ -64,7 +71,7 @@ a, a * {
       width: 185px;
       margin-right: -5px;
       border: none;
-      background: #ff9800;
+      background: #ffc107;
       color: white;
       font-variant: small-caps; }
     .header .signin .radio-option, .header .signup .radio-option {
@@ -128,8 +135,8 @@ a, a * {
     .home aside button {
       height: 55px;
       width: 253px;
-      background: #03a9f4;
-      color: #ff9800;
+      background: #3f51b5;
+      color: #ffc107;
       border: none;
       border-radius: 3px;
       font-variant: small-caps;
@@ -186,8 +193,8 @@ a, a * {
   width: 100%;
   display: inline-block; }
   .back-button button {
-    background: #558b2f;
-    color: #ff9800;
+    background: #3f51b5;
+    color: #ffc107;
     border: none;
     border-radius: 3px; }
 
@@ -196,7 +203,7 @@ a, a * {
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
-  color: #ff9800; }
+  color: #ffc107; }
   .farm .farm-title {
     text-align: center;
     font-family: "Shadows Into Light Two", cursive;
@@ -212,8 +219,8 @@ a, a * {
       .farm .farm-dynamic .farm-csa .farm-csa-title button {
         border: none;
         border-radius: 3px;
-        background: #558b2f;
-        color: #ff9800;
+        background: #3f51b5;
+        color: #ffc107;
         height: 20px; }
       .farm .farm-dynamic .farm-csa .farm-csa-title button, .farm .farm-dynamic .farm-csa .farm-csa-title h3 {
         margin: 0;
@@ -242,8 +249,8 @@ a, a * {
     margin: 0 auto;
     margin-top: 10px;
     border: none;
-    background: #558b2f;
-    color: #ff9800;
+    background: #3f51b5;
+    color: #ffc107;
     width: 150px; }
   .farm .farm-description, .farm .farm-details {
     width: 45%; }
@@ -312,7 +319,7 @@ ft-account-csa {
 
 .user-nav {
   z-index: 1;
-  background: #558b2f;
+  background: #3f51b5;
   padding: 10px;
   padding-top: 2px;
   padding-bottom: 3px; }

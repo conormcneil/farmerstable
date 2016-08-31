@@ -7,12 +7,12 @@
   <a href="/" style="font-weight: 900;">Farmer's Table</a>
 </div>
 <div class="user-dropdown">
-  <div class='signin-box'>
-    <p ng-click="view.toggle('signin')" ng-show="!view.user" class="pointer" id="signin-button">Sign In</p>
+  <div class='signin-box' ng-show="!view.user">
+    <p ng-click="view.toggle('signin')" class="pointer" id="signin-button">Sign In</p>
     <p>or</p>
-    <p ng-click="view.toggle('signup')" ng-show="!view.user" class="pointer" id="signin-button">Sign Up</p>
+    <p ng-click="view.toggle('signup')" class="pointer" id="signin-button">Sign Up</p>
   </div>
-  <p ng-click="view.toggle('user_nav')" ng-show="view.user" class="pointer" style="display: flex; align-items: center;" id='loggedinusername'>{{ view.user.username }} <img ng-src="../images/dropdown_white.svg" style="height: 1.2em;"></p>
+  <p ng-click="view.toggle('user_nav')" class="pointer username-box" style="display: flex; align-items: center;" id='loggedinusername'>{{ view.user.username }} <img ng-src="../images/dropdown_white.svg" style="height: 1.2em;"></p>
 </div>
 <form class="signin" ng-show="forms.signin">
   <input type="text" ng-model="view.signin.username" placeholder="username/email" id="username" autofocus>
