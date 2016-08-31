@@ -36,6 +36,14 @@ exports.seed = function(knex, Promise) {
           password: 'annie',
           isAdmin: false,
           isFarmer: true
+        }),
+        knex('users').insert({
+          id: 5,
+          email: 'user@user.com',
+          username: 'user',
+          password: 'user',
+          isAdmin: false,
+          isFarmer: false
         })
       ]);
     });
