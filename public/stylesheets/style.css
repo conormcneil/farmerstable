@@ -36,18 +36,23 @@ a, a * {
   z-index: 3; }
   .header a, .header p {
     padding: 10px; }
+  .header .top-nav {
+    font-size: 1.8em; }
+  .header .header-title {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 34vw;
+    font-size: 5em;
+    color: #ffc107; }
   .header .user-dropdown {
     display: flex;
     flex-flow: row;
-    align-items: flex-end; }
+    align-items: flex-end;
+    font-size: 1.8em; }
     .header .user-dropdown p {
       margin: 0;
       padding: 0; }
-  .header .header-title {
-    position: absolute;
-    left: 34vw;
-    font-size: 4em;
-    color: #ffc107; }
   .header .signin, .header .signup {
     border: 1px solid black;
     display: flex;
@@ -55,14 +60,18 @@ a, a * {
     flex-direction: column;
     position: absolute;
     right: 0;
-    top: 55px;
-    z-index: 1; }
+    top: 185px;
+    z-index: 1;
+    background: white;
+    width: 90px;
+    text-align: center;
+    font-size: 1.2em; }
     .header .signin input, .header .signin button, .header .signup input, .header .signup button {
       margin: 0;
       padding: 0;
       z-index: 0;
       height: 40px;
-      width: 175px;
+      width: 200px;
       border: none;
       border-bottom: 1px solid grey; }
     .header .signin input, .header .signup input {
@@ -323,5 +332,7 @@ ft-account-csa {
   padding: 10px;
   padding-top: 2px;
   padding-bottom: 3px; }
+  .user-nav a {
+    padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
