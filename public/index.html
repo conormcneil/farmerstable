@@ -5,6 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker|Reenie+Beanie|Shadows+Into+Light+Two" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheets/style.css">
   <link rel="stylesheet" href="./stylesheets/curtain.css">
+  <link rel="stylesheet" href="./stylesheets/responsive.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" charset="utf-8"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
@@ -15,12 +16,12 @@
   <script src="./javascripts/directives.js" charset="utf-8"></script>
   <script src="./javascripts/filters.js" charset="utf-8"></script>
   <script src="./javascripts/jwtdecode.js"></script>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> disables zoom -->
+  <meta name="viewport" content="width=device-width"/>
   <base href="/">
   <title>Angular Farmer's Table</title>
 </head>
 <body ng-controller='FarmersTableController'>
-  <!-- Added below line to pass protractor tests: can be deleted along with 'has title' protractor test -->
-  <!-- <h1 id="site-title">Angular Farmer's Table</h1> -->
 
   <ft-curtain></ft-curtain>
   <ft-header class="header shadow" ng-controller="HeaderController"></ft-header>
