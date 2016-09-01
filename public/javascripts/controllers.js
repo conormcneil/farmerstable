@@ -204,29 +204,33 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
     }
   };
   $scope.user = UserService.activeUser;
-  // get farm associated with current user (refactor)
-  function getFarms(id) {
-    if($scope.user.isFarmer) {
-      $http.get(`/farms/farmers/${id}`).then(function(farm) {
-        $scope.user.farm = farm.data[0];
-        // use farm id to get associated csa
-        $http.get(`/csa/details/${$scope.user.farm.id}`).then(function(data) {
-          $scope.user.farm.csa = data.data;
-        });
-      });
-    } else {
-      // get farms that the user follows
-    }
-  };
+  // get farm associated with current farmer
+  if($scope.user.isFarmer) {
+    getFarms($scope.user.id);
+  } else {
+    // get CSAs that the user follows
+    userCsas($scope.user.id);
+  }
 
   // CSA TAB //
+  // FARMERS //
+  function getFarms(id) {
+    console.log('isFarmer');
+    $http.get(`/farms/farmers/${id}`).then(function(farm) {
+      $scope.user.farm = farm.data[0];
+      // use farm id to get associated csa
+      $http.get(`/csa/details/${$scope.user.farm.id}`).then(function(data) {
+        $scope.user.farm.csa = data.data;
+      });
+    });
+  };
+  // USERS //
   function userCsas(id) {
     $http.get(`/csa/user/${id}`).then(function(data) {
       $scope.user.csas = data.data;
       console.log($scope.user.csas);
     });
   };
-  userCsas($scope.user.id);
 
 
   // getFarms($scope.user.id);
