@@ -1,1 +1,20 @@
-// 1st breakpoint: ~920px
+// title begins to superimpose over nav-bar
+@media (max-width: 1280px) {
+  .header .header-title {
+    top: 0;
+    left: 29vw;
+  }
+}
+
+// iPad Lanscape (<1024px)
+@media (max-width: 1024px) {
+  .header .header-title {
+    left: 20vw;
+  }
+}
+// iPad Portrait (<768px)
+@media (max-width: 768px) {
+  .header .header-title {
+    left: 16vw;
+  }
+}

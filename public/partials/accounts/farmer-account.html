@@ -1,10 +1,23 @@
-<div class="account" ng-controller="AccountController">
+<!-- show if user is farmer -->
+<div class="account" ng-show="user.isFarmer" ng-controller="AccountController">
   <ft-account-nav></ft-account-nav>
   <div class="account-body">
     <ft-account-home ng-show="forms.account_home"></ft-account-home>
     <ft-account-csa ng-show="forms.account_csa"></ft-account-csa>
     <ft-account-settings ng-show="forms.account_settings"></ft-account-settings>
   </div>
+  <h1>user is farmer</h1>
+</div>
+
+<!-- show if user is NOT farmer -->
+<div class="account" ng-show="!user.isFarmer" ng-controller="AccountController">
+  <ft-account-nav></ft-account-nav>
+  <div class="account-body">
+    <ft-account-home ng-show="forms.account_home"></ft-account-home>
+    <ft-account-csa ng-show="forms.account_csa"></ft-account-csa>
+    <ft-account-settings ng-show="forms.account_settings"></ft-account-settings>
+  </div>
+  <h1>user is NOT farmer</h1>
 </div>
 
 <!-- <div class="account" ng-show="!view.user.isFarmer">

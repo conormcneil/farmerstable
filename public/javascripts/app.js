@@ -21,7 +21,7 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     .when('/csa', {
       templateUrl: 'partials/csa.html'
     })
-    .when('/account/farmer', {
+    .when('/myaccount/', {
       templateUrl: 'partials/accounts/farmer-account.html'
     })
     .otherwise({

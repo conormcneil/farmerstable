@@ -1,11 +1,13 @@
-<!-- <ul ng-show="view.user.isFarmer"> -->
-<ul>
+<!-- user is farmer -->
+<ul ng-show="user.isFarmer">
   <li ng-click="toggle('account_home')" class="pointer">Your Farm</li>
   <li ng-click="toggle('account_csa')" class="pointer">CSA</li>
   <li ng-click="toggle('account_settings')" class="pointer">Account Settings</li>
 </ul>
-<!-- <ul ng-show="!view.user.isFarmer">
-  <li ng-click="toggle('account_home')" class="pointer">Home</li>
-  <li ng-click="toggle('account_csa')" class="pointer">Manage Subscriptions</li>
+
+<!-- user is NOT farmer -->
+<ul ng-show="!user.isFarmer">
+  <li ng-click="toggle('account_home')" class="pointer">Your Farms</li>
+  <li ng-click="toggle('account_csa')" class="pointer">CSA</li>
   <li ng-click="toggle('account_settings')" class="pointer">Account Settings</li>
-</ul> -->
+</ul>

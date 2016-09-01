@@ -74,4 +74,15 @@ router.get('/farmers/:id', function(req, res, next) {
     });
 });
 
+// get farms being followed by user_id
+router.get('/following/users/:id', function(req, res, next) {
+  knex('farms_followers')
+    .where({
+      user_id: req.params.id
+    })
+    .then(function(data) {
+      res.json(data);
+    });
+});
+
 module.exports = router;

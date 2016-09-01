@@ -44,6 +44,14 @@ exports.seed = function(knex, Promise) {
           password: 'user',
           isAdmin: false,
           isFarmer: false
+        }),
+        knex('users').insert({
+          id: 6,
+          email: 'notfarmer@notfarmer.com',
+          username: 'notfarmer',
+          password: 'notfarmer',
+          isAdmin: false,
+          isFarmer: false
         })
       ]);
     });
