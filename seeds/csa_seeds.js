@@ -40,6 +40,18 @@ exports.seed = function(knex, Promise) {
           pickup_time_end: '1:00PM',
           start_date: '07/15/2016',
           end_date: '11/02/2016'
+        }),
+        knex('csas').insert({
+          id: 4,
+          farm_id: 6,
+          csa_name: 'Munson Seasonal CSA',
+          products: 'butternut squash, big pumpkins, sweet corn, peaches, eggplant',
+          pickup_location: 'Boulder Farmer\'s Market',
+          pickup_day: "Saturday",
+          pickup_time_start: '8:00AM',
+          pickup_time_end: '1:00PM',
+          start_date: '01/01/2016',
+          end_date: '12/31/2016'
         })
       ]);
     });

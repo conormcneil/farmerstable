@@ -52,6 +52,14 @@ exports.seed = function(knex, Promise) {
           password: 'notfarmer',
           isAdmin: false,
           isFarmer: false
+        }),
+        knex('users').insert({
+          id: 7,
+          email: 'munsonfarms@concast.net',
+          username: 'munsonfarms',
+          password: 'munsonfarms',
+          isAdmin: false,
+          isFarmer: true
         })
       ]);
     });

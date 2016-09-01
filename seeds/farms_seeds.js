@@ -66,6 +66,18 @@ exports.seed = function(knex, Promise) {
           address: '6405 W Williams Rd Willcox, AZ 85643',
           lat: '32.3837487',
           lng: '-109.9309802'
+        }),
+        knex('farms').insert({
+          id: 6,
+          csa_id: 4,
+          name: 'Munson Farms',
+          owner_id: 7,
+          image_url: 'http://theteacupincident.typepad.com/.a/6a0134829002b6970c0134864ebbc9970c-600wi',
+          contact_phone: '415-298-1500',
+          contact_email: 'munsonfarms@comcast.net',
+          address: '7355 Valmont Rd, Boulder, CO 80301',
+          lat: '40.034011',
+          lng: '-105.18034'
         })
       ]);
     });
