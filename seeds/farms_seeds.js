@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise) {
           csa_id: 1,
           name: 'Shady Spring Farms',
           owner_id: 1,
-          image_url: 'http://nortonfarmkennels.com/temp-site/img/bg-3.jpg',
+          image_url: 'http://www.schwabinsagency.com/img/~www.schwabinsagency.com/farm%20pic.jpg',
           contact_phone: '520-555-6789',
           contact_email: 'conor@shadyspringfarms.com',
           address: '590 N Tanque Verde Loop Rd, Tucson, AZ 85748',

@@ -193,6 +193,14 @@ a, a * {
 .csa-description {
   width: 40%; }
 
+.farm-search .nearby-farm {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between; }
+  .farm-search .nearby-farm img {
+    height: 75px; }
+
 .farm-container {
   width: 100%;
   display: flex;

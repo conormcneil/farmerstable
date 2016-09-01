@@ -1,11 +1,12 @@
-<div ng-controller="FarmsController" class="farm">
+<div ng-controller="FarmsController" class="farm-search">
   <button ng-click="view.toggle('zip_search')">Search by zip code</button>
   <div class="zip-search" ng-show='forms.zip_search'>
     <label for="zip">Zip Code</label>
     <input type="number" ng-model="view.zipCode" placeholder="12345" autofocus>
     <button ng-click="view.zipDecode(view.zipCode)">Search</button>
   </div>
-  <div ng-repeat="farm in farms">
+  <div ng-repeat="farm in farms" class="nearby-farm">
     <h1><a href="/farm/details/{{ farm.id }}">{{ farm.name }}</a></h1>
+    <img ng-src="{{farm.image_url}}">
   </div>
 </div>
