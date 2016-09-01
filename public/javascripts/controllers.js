@@ -73,7 +73,6 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
   };
   $scope.view.signup = function(email, username, password, passwordConfirm, farmerResponse) {
     var isFarmer = farmerResponse || false;
-    console.log(isFarmer);
     if (password === passwordConfirm) {
       var user = {
         email: email,
@@ -85,7 +84,6 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
     // empty signup form
     delete $scope.view.signup;
 
-    // $http.post('/users/new',user);
     $http.post('/users/new',user).then(function(data) {
       // console.log(data);
     });
@@ -215,49 +213,25 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
   // CSA TAB //
   // FARMERS //
   function getFarms(id) {
-    console.log('isFarmer');
     $http.get(`/farms/farmers/${id}`).then(function(farm) {
       $scope.user.farm = farm.data[0];
       // use farm id to get associated csa
       $http.get(`/csa/details/${$scope.user.farm.id}`).then(function(data) {
         $scope.user.farm.csa = data.data;
+        (function(csa_id) {
+          $http.get(`/csa/customers/${csa_id}`).then(function(data) {
+            $scope.user.farm.csa.customers = data.data;
+          });
+        })($scope.user.farm.csa.id);
       });
-    });
+    })
   };
   // USERS //
   function userCsas(id) {
     $http.get(`/csa/user/${id}`).then(function(data) {
       $scope.user.csas = data.data;
-      console.log($scope.user.csas);
     });
   };
 
-
-  // getFarms($scope.user.id);
-  // function setFollows(array) {
-  //   $scope.user.follows = array;
-  //   console.log($scope.user.follows);
-  // };
-  // // get farms that user follows
-  // function getFollows(id) {
-  //   $http.get(`/farms/following/users/${id}`).then(function(data) {
-  //     console.log(data.data);
-  //     var farmIds = data.data.map(e => {return e.farm_id});
-  //     var follows = [];
-  //     for (var i = 0; i <= farmIds.length; i++) {
-  //       if (i === farmIds.length) {
-  //         console.log('last loop');
-  //         window.setTimeout(setFollows(follows),2000);
-  //         break;
-  //       } else {
-  //         $http.get('/farms/details/'+farmIds[i]).then(function(data) {
-  //           follows.push(data.data);
-  //           console.log(follows);
-  //         })
-  //       }
-  //     }
-  //   });
-  // };
-  // getFollows($scope.user.id);
 };
 makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","UserService"];

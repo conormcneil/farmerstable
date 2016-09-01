@@ -27,12 +27,22 @@ router.get('/user/:id', function(req, res, next) {
       user_id: req.params.id
     })
     // ^^^ takes care of altering users_csas table:
-    // now join here?
+    // now join here
     .innerJoin('csas','users_csas.csa_id','csas.id')
     .then(function(data) {
-      // console.log(data); // data is array of csa_ids
       res.json(data);
     });
 });
+
+router.get('/customers/:id', function(req, res, next) {
+  knex('users_csas')
+    .where({
+      csa_id: req.params.id
+    })
+    .innerJoin('users','users_csas.user_id','users.id')
+    .then(function(data) {
+      res.json(data)
+    })
+})
 
 module.exports = router;

@@ -1,8 +1,15 @@
 <!-- user is a farmer -->
 <div class="row row1" ng-show="user.isFarmer">
-  <div class="csa-metrics">
-    <img ng-src="../../images/graph.jpg">
-    <p style="text-align: center;">Placeholder for D3 visualizations</p>
+  <div class="csa-customers">
+    <h4 style="margin-bottom: 0;">CSA Customers</h4>
+    <table>
+      <th>Username</th>
+      <th>Email</th>
+      <tr ng-repeat="customer in user.farm.csa.customers">
+        <td>{{ customer.username }}</td>
+        <td>{{ customer.email }}</td>
+      </tr>
+    </table>
   </div>
   <table class="csa-details">
     <th>{{ user.farm.csa.csa_name}}</th>
@@ -29,13 +36,10 @@
 
 <!-- user is NOT farmer -->
 <div class="user-account-csa row row1" ng-show="!user.isFarmer">
-  <!-- <h5>Your CSAs</h5> -->
+  <h5>Your CSAs</h5>
   <div ng-repeat="csa in user.csas" class="user-csa">
     <p><a href="/farm/details/{{csa.farm_id}}">{{ csa.csa_name }}</a></p>
     <p>{{csa.products}}</p>
     <p>Pickup Time/Day/Location details</p>
-    <!-- <aside class="csa-products">
-      <p ng-repeat="product in csa.products">{{product}}</p>
-    </aside> -->
   </div>
 </div>
