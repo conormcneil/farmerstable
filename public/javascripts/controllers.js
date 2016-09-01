@@ -135,6 +135,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       $http.post('/farms/all',currentObj).then(function(data) {
         delete $scope.farms;
         $scope.farms = data.data;
+        console.log($scope.farms);
       })
     });
   };
@@ -152,6 +153,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
         });
         $scope.farm.csa = data.data;
         $scope.farm.csa.products = productsArr;
+        console.log($scope.farm.csa);
       });
     });
   };

@@ -194,10 +194,17 @@ a, a * {
   width: 40%; }
 
 .farm-search .nearby-farm {
+  padding: 5px;
+  color: #ffc107;
   border: 1px solid black;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: space-between; }
+  .farm-search .nearby-farm .nearby-farm-title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center; }
   .farm-search .nearby-farm img {
     height: 75px; }
 
