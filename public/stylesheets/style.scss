@@ -15,6 +15,11 @@ $testBorder: 1px solid black;
 }
 button {
   font-weight: 900;
+  background: $primary;
+  color: $accent;
+  border: none;
+  border-radius: 3px;
+  font-variant: small-caps;
 }
 body {
   margin: 0;
@@ -23,6 +28,7 @@ body {
   overflow-x: hidden;
   font-variant: small-caps;
   font-family: Tahoma;
+  margin-bottom: 300px;
 }
 a, a * {
   text-decoration: none;
@@ -96,8 +102,6 @@ a, a * {
       width: 185px;
       margin-right: -5px;
       border: none;
-      background: $accent;
-      color: white;
       font-variant: small-caps;
     }
     .radio-option {
@@ -175,11 +179,6 @@ a, a * {
     button {
       height: 55px;
       width: 253px;
-      background: $primary;
-      color: $accent;
-      border: none;
-      border-radius: 3px;
-      font-variant: small-caps;
       font-size: 1.7em;
       font-family: $font3;
       margin-top: 25px;
@@ -241,12 +240,7 @@ a, a * {
 .back-button {
   width: 100%;
   display: inline-block;
-  button {
-    background: $primary;
-    color: $accent;
-    border: none;
-    border-radius: 3px;
-  }
+  color: $accent;
 }
 .farm {
   width: 100%;
@@ -269,10 +263,6 @@ a, a * {
         align-items: center;
         justify-content: space-around;
         button {
-          border: none;
-          border-radius: 3px;
-          background: $primary;
-          color: $accent;
           height: 20px;
         }
         button, h3 {
@@ -309,9 +299,6 @@ a, a * {
   .follow-button {
     margin: 0 auto;
     margin-top: 10px;
-    border: none;
-    background: $primary;
-    color: $accent;
     width: 150px;
   }
   .farm-description, .farm-details {

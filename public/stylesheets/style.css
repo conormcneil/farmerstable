@@ -8,7 +8,12 @@
   box-shadow: 0px 0px 5px 0px black; }
 
 button {
-  font-weight: 900; }
+  font-weight: 900;
+  background: #3f51b5;
+  color: #ffc107;
+  border: none;
+  border-radius: 3px;
+  font-variant: small-caps; }
 
 body {
   margin: 0;
@@ -16,7 +21,8 @@ body {
   height: 92vh;
   overflow-x: hidden;
   font-variant: small-caps;
-  font-family: Tahoma; }
+  font-family: Tahoma;
+  margin-bottom: 300px; }
 
 a, a * {
   text-decoration: none;
@@ -81,8 +87,6 @@ a, a * {
       width: 185px;
       margin-right: -5px;
       border: none;
-      background: #ffc107;
-      color: white;
       font-variant: small-caps; }
     .header .signin .radio-option, .header .signup .radio-option {
       width: 100%;
@@ -145,11 +149,6 @@ a, a * {
     .home aside button {
       height: 55px;
       width: 253px;
-      background: #3f51b5;
-      color: #ffc107;
-      border: none;
-      border-radius: 3px;
-      font-variant: small-caps;
       font-size: 1.7em;
       font-family: "Shadows Into Light Two", cursive;
       margin-top: 25px; }
@@ -201,12 +200,8 @@ a, a * {
 
 .back-button {
   width: 100%;
-  display: inline-block; }
-  .back-button button {
-    background: #3f51b5;
-    color: #ffc107;
-    border: none;
-    border-radius: 3px; }
+  display: inline-block;
+  color: #ffc107; }
 
 .farm {
   width: 100%;
@@ -227,10 +222,6 @@ a, a * {
       align-items: center;
       justify-content: space-around; }
       .farm .farm-dynamic .farm-csa .farm-csa-title button {
-        border: none;
-        border-radius: 3px;
-        background: #3f51b5;
-        color: #ffc107;
         height: 20px; }
       .farm .farm-dynamic .farm-csa .farm-csa-title button, .farm .farm-dynamic .farm-csa .farm-csa-title h3 {
         margin: 0;
@@ -258,9 +249,6 @@ a, a * {
   .farm .follow-button {
     margin: 0 auto;
     margin-top: 10px;
-    border: none;
-    background: #3f51b5;
-    color: #ffc107;
     width: 150px; }
   .farm .farm-description, .farm .farm-details {
     width: 45%; }
