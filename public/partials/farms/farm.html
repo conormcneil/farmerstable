@@ -9,7 +9,7 @@
       <div class="farm-csa" ng-show="farm.csa">
         <div class="farm-csa-title">
           <h3>Current CSA: {{farm.csa.csa_name}}</h3>
-          <button class="pointer shadow">Sign up</button>
+          <button class="pointer shadow" ng-click="view.csaSignup(view.user,farm.csa)">Sign up</button>
         </div>
         <h5>Starts: {{farm.csa.start_date | date}}</h5>
         <h5>Ends: {{farm.csa.end_date | date}}</h5>

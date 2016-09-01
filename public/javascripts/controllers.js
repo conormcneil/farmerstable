@@ -185,6 +185,17 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       $scope.forms = FormService.forms;
     }
   };
+
+  // CSA SIGNUP //
+  $scope.view.csaSignup = function(user,csa) {
+    var request = {
+      user: user,
+      csa: csa
+    };
+    $http.post('/csa/signup',request).then(function(data) {
+      console.log(data);
+    });
+  };
 };
 makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService'];
 

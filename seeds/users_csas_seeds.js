@@ -10,11 +10,13 @@ exports.seed = function(knex, Promise) {
           user_id: 5,
           csa_id: 1
         }),
-        knex('users_csas').insert({
-          id: 2,
-          user_id: 5,
-          csa_id: 2
-        }),
+        // temporarily remove this data to test signup for csa feature
+        // test is: sign up user_id: 5 for csa_id: 2
+        // knex('users_csas').insert({
+        //   id: 2,
+        //   user_id: 5,
+        //   csa_id: 2
+        // }),
         knex('users_csas').insert({
           id: 3,
           user_id: 5,

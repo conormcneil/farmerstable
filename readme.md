@@ -34,3 +34,4 @@ routes:
 1. Seeds with IDs cause first (n) of new user posts to fail until pkey_id begins incrementing after seed IDs.
 
 ## Haversine formula for lat/lng => miles(https://en.wikipedia.org/wiki/Haversine_formula)
+## I think that public/javascripts/controllers.js can be reduced to a single controller; maybe two?

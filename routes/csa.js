@@ -42,7 +42,18 @@ router.get('/customers/:id', function(req, res, next) {
     .innerJoin('users','users_csas.user_id','users.id')
     .then(function(data) {
       res.json(data)
+    });
+});
+
+router.post('/signup', function(req, res, next) {
+  knex('users_csas')
+    .insert({
+      user_id: req.body.user.id,
+      csa_id: req.body.csa.id
     })
-})
+    .then(function(data) {
+      res.json(data);
+    });
+});
 
 module.exports = router;

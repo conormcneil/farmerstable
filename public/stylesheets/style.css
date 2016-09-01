@@ -333,4 +333,11 @@ ft-account-csa {
   .user-nav a {
     padding: 0; }
 
+.confirm {
+  height: 300px;
+  width: 300px;
+  background: black;
+  color: white;
+  z-index: 5; }
+
 /*# sourceMappingURL=style.css.map */
