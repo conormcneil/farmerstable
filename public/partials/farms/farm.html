@@ -5,6 +5,8 @@
   <div class="farm" ng-controller="FarmsController">
     <div class="farm-dynamic">
       <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer">{{ farm.name }}</h1>
+      <p class="success-message" ng-show="message.success">{{ message.success }}</p>
+      <p class="error" ng-show="message.error">{{ message.error }}</p>
       <!-- show if this farm's CSA exists -->
       <div class="farm-csa" ng-show="farm.csa">
         <div class="farm-csa-title">

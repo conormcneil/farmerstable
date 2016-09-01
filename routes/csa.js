@@ -47,12 +47,24 @@ router.get('/customers/:id', function(req, res, next) {
 
 router.post('/signup', function(req, res, next) {
   knex('users_csas')
-    .insert({
+    .where({
       user_id: req.body.user.id,
       csa_id: req.body.csa.id
     })
     .then(function(data) {
-      res.json(data);
+      console.log("+++++++++++++++++++",data);
+      if(data.length > 0) { // user is already signed up for this csa
+        res.json('duplicate signup');
+      } else { // user is NOT signed up for this csa
+        knex('users_csas')
+        .insert({
+          user_id: req.body.user.id,
+          csa_id: req.body.csa.id
+        })
+        .then(function(data) {
+          res.json(data);
+        });
+      };
     });
 });
 

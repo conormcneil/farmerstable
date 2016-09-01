@@ -135,7 +135,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       $http.post('/farms/all',currentObj).then(function(data) {
         delete $scope.farms;
         $scope.farms = data.data;
-        console.log($scope.farms);
       })
     });
   };
@@ -153,7 +152,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
         });
         $scope.farm.csa = data.data;
         $scope.farm.csa.products = productsArr;
-        console.log($scope.farm.csa);
       });
     });
   };
@@ -195,7 +193,15 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       csa: csa
     };
     $http.post('/csa/signup',request).then(function(data) {
-      console.log(data);
+      $scope.message = {};
+      if(data.data === 'duplicate signup') { // if successful request
+        $scope.message.error = 'You\'ve already signed up for this CSA'
+      } else if(data.status !== 200) {
+        $scope.message.error = 'Something really weird just happened.'
+      }
+      else {
+        $scope.message.success = 'Successful signup!'
+      }
     });
   };
 };
