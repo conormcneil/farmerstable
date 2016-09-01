@@ -32,6 +32,7 @@ routes:
 
 ## BUGLIST
 1. Seeds with IDs cause first (n) of new user posts to fail until pkey_id begins incrementing after seed IDs.
+2. Prevent access to '/myaccount' if user is not signed in (route auth)
 
 ## Haversine formula for lat/lng => miles(https://en.wikipedia.org/wiki/Haversine_formula)
 ## I think that public/javascripts/controllers.js can be reduced to a single controller; maybe two?
