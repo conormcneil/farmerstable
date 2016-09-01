@@ -314,12 +314,22 @@ ft-account-csa {
     ft-account-csa .row1 .csa-details {
       margin: 0 auto; }
 
+.user-account-csa {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+
+.user-csa {
+  margin: 15px;
+  padding: 5px; }
+
 .user-nav {
   z-index: 1;
-  background: #3f51b5;
-  padding: 10px;
   padding-top: 2px;
   padding-bottom: 3px; }
+  .user-nav ft-user-nav {
+    display: flex;
+    flex-flow: column; }
   .user-nav a {
     padding: 0; }
 

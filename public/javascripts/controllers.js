@@ -214,33 +214,46 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
           $scope.user.farm.csa = data.data;
         });
       });
+    } else {
+      // get farms that the user follows
     }
-  }
-  getFarms($scope.user.id);
-  function setFollows(array) {
-    $scope.user.follows = array;
-    console.log($scope.user.follows);
   };
-  // get farms that user follows
-  function getFollows(id) {
-    $http.get(`/farms/following/users/${id}`).then(function(data) {
-      console.log(data.data);
-      var farmIds = data.data.map(e => {return e.farm_id});
-      var follows = [];
-      for (var i = 0; i <= farmIds.length; i++) {
-        if (i === farmIds.length) {
-          console.log('last loop');
-          window.setTimeout(setFollows(follows),2000);
-          break;
-        } else {
-          $http.get('/farms/details/'+farmIds[i]).then(function(data) {
-            follows.push(data.data);
-            console.log(follows);
-          })
-        }
-      }
+
+  // CSA TAB //
+  function userCsas(id) {
+    $http.get(`/csa/user/${id}`).then(function(data) {
+      $scope.user.csas = data.data;
+      console.log($scope.user.csas);
     });
   };
-  getFollows($scope.user.id);
+  userCsas($scope.user.id);
+
+
+  // getFarms($scope.user.id);
+  // function setFollows(array) {
+  //   $scope.user.follows = array;
+  //   console.log($scope.user.follows);
+  // };
+  // // get farms that user follows
+  // function getFollows(id) {
+  //   $http.get(`/farms/following/users/${id}`).then(function(data) {
+  //     console.log(data.data);
+  //     var farmIds = data.data.map(e => {return e.farm_id});
+  //     var follows = [];
+  //     for (var i = 0; i <= farmIds.length; i++) {
+  //       if (i === farmIds.length) {
+  //         console.log('last loop');
+  //         window.setTimeout(setFollows(follows),2000);
+  //         break;
+  //       } else {
+  //         $http.get('/farms/details/'+farmIds[i]).then(function(data) {
+  //           follows.push(data.data);
+  //           console.log(follows);
+  //         })
+  //       }
+  //     }
+  //   });
+  // };
+  // getFollows($scope.user.id);
 };
 makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","UserService"];

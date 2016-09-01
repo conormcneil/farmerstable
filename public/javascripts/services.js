@@ -14,13 +14,13 @@ app
   .factory("FormService",function($http) {
     return {
       forms: {
-        signin: false,
-        signup: false,
-        user_nav: false,
-        account_home: true,
-        account_csa: false,
-        account_settings: false,
-        zip_search: false
+        signin: false, // false
+        signup: false, // false
+        user_nav: false, // false
+        account_home: false, // true
+        account_csa: true, // false
+        account_settings: false, // false
+        zip_search: false // false
       },
       toggle: function(form) {
         if (form === 'account_home' || form === 'account_csa' || form === 'account_settings') {

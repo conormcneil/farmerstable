@@ -382,14 +382,27 @@ ft-account-csa {
     }
   }
 }
+.user-account-csa {
+  // background: red;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.user-csa {
+  // background: blue;
+  margin: 15px;
+  padding: 5px;
+}
 
 // user-nav
 .user-nav {
   z-index: 1;
-  background: $primary;
-  padding: 10px;
   padding-top: 2px;
   padding-bottom: 3px;
+  ft-user-nav {
+    display: flex;
+    flex-flow: column;
+  }
   a {
     padding: 0;
   }

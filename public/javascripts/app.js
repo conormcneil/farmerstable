@@ -22,7 +22,7 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
       templateUrl: 'partials/csa.html'
     })
     .when('/myaccount/', {
-      templateUrl: 'partials/accounts/farmer-account.html'
+      templateUrl: 'partials/accounts/account.html'
     })
     .otherwise({
       redirectTo: '/'
