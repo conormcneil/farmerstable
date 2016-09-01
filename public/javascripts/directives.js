@@ -11,12 +11,12 @@ app
   })
   .directive("ftMarketList",function() {
     return {
-      templateUrl: "partials/market-list.html"
+      templateUrl: "partials/markets/market-list.html"
     }
   })
   .directive("ftMarketDetails",function() {
     return {
-      templateUrl: "partials/market-details.html"
+      templateUrl: "partials/markets/market-details.html"
     }
   })
   .directive("ftUserNav",function() {

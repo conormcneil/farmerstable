@@ -7,7 +7,7 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
       templateUrl: 'partials/home.html'
     })
     .when('/markets', {
-      templateUrl: "partials/market-search.html"
+      templateUrl: "partials/markets/market-search.html"
     })
     .when('/farms', {
       templateUrl: 'partials/farms/farm-search.html'

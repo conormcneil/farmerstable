@@ -19,7 +19,8 @@ button {
   color: #ffc107;
   border: none;
   border-radius: 3px;
-  font-variant: small-caps; }
+  font-variant: small-caps;
+  cursor: pointer; }
 
 body {
   margin: 0;

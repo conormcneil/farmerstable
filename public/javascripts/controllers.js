@@ -1,9 +1,20 @@
 // FarmersTableController
 app.controller('FarmersTableController',makeFarmersTableController);
-function makeFarmersTableController($scope,$http,MarketService,GoogleMapsService){
+function makeFarmersTableController($scope,$http,GoogleMapsService){
+
+  function getMarketsByZip(zip) {
+    var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip;
+    return $http.get(url);
+  }
+  function getMarketById(id) {
+    var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + id;
+    return $http.get(url);
+  }
+
   $scope.view = {};
   $scope.view.getMarkets = function(zip) {
-    MarketService.getMarketsByZip(zip).then(function(data) {
+    // +++++++++++++++++++++++++++++++
+    getMarketsByZip(zip).then(function(data) {
       var results = data.data.results;
       $scope.view.moreMarkets = results.splice(12,results.length-1);
       $scope.view.markets = results.map(function(e) {
@@ -21,17 +32,18 @@ function makeFarmersTableController($scope,$http,MarketService,GoogleMapsService
     });
   };
   $scope.view.marketInfo = function(id) {
-    MarketService.getMarketById(id).then(function(data) {
+    // +++++++++++++++++++++++++++++++
+    getMarketById(id).then(function(data) {
       $scope.view.market = data.data.marketdetails;
       $scope.view.market.id = id;
     });
   };
 };
-makeFarmersTableController.$inject = ['$scope','$http','MarketService','GoogleMapsService'];
+makeFarmersTableController.$inject = ['$scope','$http','GoogleMapsService'];
 
 // HeaderController
 app.controller('HeaderController',makeHeaderController);
-function makeHeaderController($scope,$http,MarketService,FormService,UserService) {
+function makeHeaderController($scope,$http,FormService,UserService) {
   $scope.view = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;
@@ -90,7 +102,7 @@ function makeHeaderController($scope,$http,MarketService,FormService,UserService
   };
 
 };
-makeHeaderController.$inject = ['$scope','$http','MarketService','FormService','UserService'];
+makeHeaderController.$inject = ['$scope','$http','FormService','UserService'];
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
