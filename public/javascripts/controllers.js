@@ -204,6 +204,9 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     };
     $http.post('/csa/signup',request).then(function(data) {
       $scope.message = {};
+      // TODO put this line into api route to respond with specific errors
+      // anticipate specific errors and respond to user with specific error messages
+      // res.status(400).send("Stupid Question")
       if(data.data === 'duplicate signup') { // if successful request
         $scope.message.error = 'You\'ve already signed up for this CSA'
       } else if(data.status !== 200) {
