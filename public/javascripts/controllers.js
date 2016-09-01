@@ -1,6 +1,6 @@
 // FarmersTableController
 app.controller('FarmersTableController',makeFarmersTableController);
-function makeFarmersTableController($scope,$http,GoogleMapsService){
+function makeFarmersTableController($scope,$http){
 
   function getMarketsByZip(zip) {
     var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip;
@@ -13,7 +13,6 @@ function makeFarmersTableController($scope,$http,GoogleMapsService){
 
   $scope.view = {};
   $scope.view.getMarkets = function(zip) {
-    // +++++++++++++++++++++++++++++++
     getMarketsByZip(zip).then(function(data) {
       var results = data.data.results;
       $scope.view.moreMarkets = results.splice(12,results.length-1);
@@ -32,14 +31,13 @@ function makeFarmersTableController($scope,$http,GoogleMapsService){
     });
   };
   $scope.view.marketInfo = function(id) {
-    // +++++++++++++++++++++++++++++++
     getMarketById(id).then(function(data) {
       $scope.view.market = data.data.marketdetails;
       $scope.view.market.id = id;
     });
   };
 };
-makeFarmersTableController.$inject = ['$scope','$http','GoogleMapsService'];
+makeFarmersTableController.$inject = ['$scope','$http'];
 
 // HeaderController
 app.controller('HeaderController',makeHeaderController);
