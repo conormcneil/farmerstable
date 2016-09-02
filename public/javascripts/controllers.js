@@ -1,44 +1,3 @@
-// FarmersTableController
-app.controller('FarmersTableController',makeFarmersTableController);
-function makeFarmersTableController($scope,$http){
-
-  function getMarketsByZip(zip) {
-    var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip;
-    return $http.get(url);
-  }
-  function getMarketById(id) {
-    var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + id;
-    return $http.get(url);
-  }
-
-  $scope.view = {};
-  $scope.view.getMarkets = function(zip) {
-    getMarketsByZip(zip).then(function(data) {
-      var results = data.data.results;
-      $scope.view.moreMarkets = results.splice(12,results.length-1);
-      $scope.view.markets = results.map(function(e) {
-        e.marketname = e.marketname.split('');
-        if (e.marketname[0] === 'D') {
-          e.marketname = e.marketname.join('');
-          return e;
-        }
-        e.distanceFromZip = e.marketname.splice(0,4);
-        e.distanceFromZip.splice(3,1);
-        e.distanceFromZip = e.distanceFromZip.join('');
-        e.marketname = e.marketname.join('');
-        return e;
-      });
-    });
-  };
-  $scope.view.marketInfo = function(id) {
-    getMarketById(id).then(function(data) {
-      $scope.view.market = data.data.marketdetails;
-      $scope.view.market.id = id;
-    });
-  };
-};
-makeFarmersTableController.$inject = ['$scope','$http'];
-
 // HeaderController
 app.controller('HeaderController',makeHeaderController);
 function makeHeaderController($scope,$http,FormService,UserService) {
@@ -93,12 +52,10 @@ function makeHeaderController($scope,$http,FormService,UserService) {
     };
     // empty signup form
     delete $scope.view.signup;
-
     $http.post('/users/new',user).then(function(data) {
       // console.log(data);
     });
   };
-
 };
 makeHeaderController.$inject = ['$scope','$http','FormService','UserService'];
 
@@ -106,11 +63,26 @@ makeHeaderController.$inject = ['$scope','$http','FormService','UserService'];
 app.controller("FarmsController",makeFarmsController);
 function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserService,FormService) {
   $scope.view = {};
+  $scope.message = {};
   // if user is logged in retrieve their info from Service: "activeUser"
   if(localStorage.token) {
     $scope.view.user = jwt_decode(localStorage.token).user;
     UserService.activeUser = $scope.view.user;
   }
+  // if url has route param: id, set this to active farm
+  if($routeParams.id) {
+    $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
+      $scope.farm = data.data;
+      $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
+        var tempArr = data.data.products.split(',');
+        var productsArr = tempArr.map(e => {
+          return e.trim();
+        });
+        $scope.farm.csa = data.data;
+        $scope.farm.csa.products = productsArr;
+      });
+    });
+  };
 
   // Do I ever have to retrieve ALL farms?
   // Right now: YES, until my API returns nearest farms by zip
@@ -149,28 +121,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   reverseGeo();
-
-  // if url has route param: id, set this to active farm
-  if($routeParams.id) {
-    $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
-      $scope.farm = data.data;
-      $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
-        // console.log(data.data.products);
-        var tempArr = data.data.products.split(',');
-        var productsArr = tempArr.map(e => {
-          return e.trim();
-        });
-        $scope.farm.csa = data.data;
-        $scope.farm.csa.products = productsArr;
-      });
-    });
-  };
-  // uncomment here to see $scope.farm object
-  // window.setTimeout(() => {
-  //   console.log($scope.farm);
-  //   console.log($scope.farm.csa);
-  // },1000);
-
   $scope.view.centerMap = function(address) {
     address = address.split(' ').join('+');
     GoogleMapsService.getLatLng(address).then(function(data) {
@@ -182,7 +132,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       map.setCenter(marker.position);
     });
   };
-
   $scope.forms = FormService.forms;
   $scope.view.toggle = function(form) {
     if ($scope.forms[form]) {
@@ -195,28 +144,30 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       $scope.forms = FormService.forms;
     }
   };
-
   // CSA SIGNUP //
   $scope.view.csaSignup = function(user,csa) {
-    var request = {
-      user: user,
-      csa: csa
+    if(!$scope.view.user) {
+      $scope.message.error = 'sign in or sign up to sign up for CSAs!'
+    } else {
+      var request = {
+        user: user,
+        csa: csa
+      };
+      $http.post('/csa/signup',request).then(function(data) {
+        // TODO put this line into api route to respond with specific errors
+        // anticipate specific errors and respond to user with specific error messages
+        // res.status(400).send("Stupid Question")
+        if(data.data === 'duplicate signup') { // if successful request
+          $scope.message.error = 'You\'ve already signed up for this CSA'
+        } else if(data.status !== 200) {
+          $scope.message.error = 'Something really weird just happened.'
+        }
+        else {
+          $scope.message.success = 'Successful signup!'
+        }
+      });
     };
-    $http.post('/csa/signup',request).then(function(data) {
-      $scope.message = {};
-      // TODO put this line into api route to respond with specific errors
-      // anticipate specific errors and respond to user with specific error messages
-      // res.status(400).send("Stupid Question")
-      if(data.data === 'duplicate signup') { // if successful request
-        $scope.message.error = 'You\'ve already signed up for this CSA'
-      } else if(data.status !== 200) {
-        $scope.message.error = 'Something really weird just happened.'
-      }
-      else {
-        $scope.message.success = 'Successful signup!'
-      }
-    });
-  };
+  }
 };
 makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService'];
 
@@ -241,7 +192,6 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
     // get CSAs that the user follows
     userCsas($scope.user.id);
   }
-
   // CSA TAB //
   // FARMERS //
   function getFarms(id) {
@@ -264,6 +214,47 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
       $scope.user.csas = data.data;
     });
   };
-
 };
 makeAccountController.$inject = ["$scope","$http","$routeParams","FormService","UserService"];
+
+
+// FarmersTableController
+// app.controller('FarmersTableController',makeFarmersTableController);
+// function makeFarmersTableController($scope,$http){
+//
+//   function getMarketsByZip(zip) {
+//     var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip;
+//     return $http.get(url);
+//   }
+//   function getMarketById(id) {
+//     var url = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + id;
+//     return $http.get(url);
+//   }
+//
+//   $scope.view = {};
+//   $scope.view.getMarkets = function(zip) {
+//     getMarketsByZip(zip).then(function(data) {
+//       var results = data.data.results;
+//       $scope.view.moreMarkets = results.splice(12,results.length-1);
+//       $scope.view.markets = results.map(function(e) {
+//         e.marketname = e.marketname.split('');
+//         if (e.marketname[0] === 'D') {
+//           e.marketname = e.marketname.join('');
+//           return e;
+//         }
+//         e.distanceFromZip = e.marketname.splice(0,4);
+//         e.distanceFromZip.splice(3,1);
+//         e.distanceFromZip = e.distanceFromZip.join('');
+//         e.marketname = e.marketname.join('');
+//         return e;
+//       });
+//     });
+//   };
+//   $scope.view.marketInfo = function(id) {
+//     getMarketById(id).then(function(data) {
+//       $scope.view.market = data.data.marketdetails;
+//       $scope.view.market.id = id;
+//     });
+//   };
+// };
+// makeFarmersTableController.$inject = ['$scope','$http'];

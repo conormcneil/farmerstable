@@ -6,9 +6,9 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     .when('/', {
       templateUrl: 'partials/home.html'
     })
-    .when('/markets', {
-      templateUrl: "partials/markets/market-search.html"
-    })
+    // .when('/markets', {
+    //   templateUrl: "partials/markets/market-search.html"
+    // })
     .when('/farms', {
       templateUrl: 'partials/farms/farm-search.html'
     })
@@ -35,7 +35,7 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
       var addJWT = (config.url.indexOf('http://localhost:3000') > -1);
       var addHerokuJWT = (config.url.indexOf('https://farmerstable.herokuapp.com') > -1);
       if (addHerokuJWT && localStorage.jwt || addJWT && localStorage.jwt) {
-        console.log('Adding Header', config.url);
+        // console.log('Adding Header', config.url);
         config.headers.Authorization = 'Bearer ' + localStorage.jwt;
       }
       return config;

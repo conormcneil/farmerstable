@@ -52,7 +52,6 @@ router.post('/signup', function(req, res, next) {
       csa_id: req.body.csa.id
     })
     .then(function(data) {
-      console.log("+++++++++++++++++++",data);
       if(data.length > 0) { // user is already signed up for this csa
         res.json('duplicate signup');
       } else { // user is NOT signed up for this csa

@@ -24,7 +24,7 @@ app
   })
   .factory("UserService",function($http) {
     return {
-      // set active user on signin
+      // share active user between controllers
       activeUser: {}
     }
   })
