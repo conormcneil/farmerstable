@@ -277,7 +277,9 @@ a, a * {
   justify-content: space-around;
   flex-flow: row nowrap;
   .farm-dynamic {
+    padding: 5px;
     width: 25%;
+    height: auto;
     // background: red;
     .farm-csa {
       .farm-csa-title {
@@ -296,6 +298,7 @@ a, a * {
     }
   }
   .farm-details {
+    padding: 5px;
     // background: blue;
     display: flex;
     flex-flow: column nowrap;

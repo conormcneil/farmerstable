@@ -26,6 +26,7 @@
 
     <div class="farm-posts">
       <div class="post shadow" ng-repeat="post in farm.posts">
+        <img ng-src="./images/icons/delete_black.svg" ng-show="view.editMode" class="pointer" ng-click="view.deletePost(post.id)">
         <h2 class="post-subject">{{ post.subject }}</h2>
         <p>{{ post.body }}</p>
       </div>

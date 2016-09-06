@@ -18,10 +18,6 @@ router.post('/send', function(req, res, next) {
   } else {
     var count = 0;
     req.body.sendTo.map(function(e) {
-      if (count === req.body.sendTo.length) {
-        console.log('all messages sent');
-        res.json('all messages sent');
-      }
       count++;
       var data = {
         from: req.body.sendFrom,
@@ -30,6 +26,10 @@ router.post('/send', function(req, res, next) {
         text: req.body.body
       };
       mailgun.messages().send(data, function (error, body) {
+        if (count === req.body.sendTo.length) {
+          // console.log('all messages sent');
+          res.json('all messages sent');
+        }
         console.log('message sent to: ' + e);
       });
     });

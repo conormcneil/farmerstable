@@ -1,3 +1,9 @@
+function checkConfirm(message) {
+  // $scope.view.confirmBox = true;
+  // for now, use browser confirm box; MVP+ ^^^
+  return confirm(message);
+};
+
 // HeaderController
 app.controller('HeaderController',makeHeaderController);
 function makeHeaderController($scope,$http,FormService,UserService) {
@@ -71,14 +77,30 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     $scope.view.user = jwt_decode(localStorage.token).user;
     UserService.activeUser = $scope.view.user;
   }
+
+  // get farm posts
+  getPosts = function(id) {
+    $http.post(`/farms/posts/${id}`,{id:$scope.farm.id}).then(function(data) {
+      $scope.farm.posts = data.data;
+    });
+  };
+  $scope.view.deletePost = function(id) {
+    if (checkConfirm('are you sure you want to permanently delete this post?')) {
+      $http.delete(`/farms/deletepost/${id}`).then(function(data) {
+        // console.log('deleted:',data);
+        getPosts($scope.farm.id);
+      });
+    } else {
+      return;
+    }
+  };
+
   // if url has route param: id, set this to active farm
   if($routeParams.id) {
     $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
       $scope.farm = data.data;
-      // get farm posts
-      $http.post(`/farms/posts/${$routeParams.id}`,{id:$scope.farm.id}).then(function(data) {
-        $scope.farm.posts = data.data;
-      });
+      // // get farm posts
+      getPosts($routeParams.id);
       // get csa details
       $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
         var tempArr = data.data.products.split(',');
@@ -90,6 +112,12 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       });
     });
   };
+  // console.log($routeParams.id == $scope.view.user.id);
+  if ($routeParams.id == $scope.view.user.id) {
+    $scope.view.editMode = true;
+  } else {
+    $scope.view.editMode = false;
+  }
 
   // Do I ever have to retrieve ALL farms?
   // Right now: YES, until my API returns nearest farms by zip

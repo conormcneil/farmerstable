@@ -89,6 +89,17 @@ router.post('/newpost',function(req, res, next) {
     });
 });
 
+router.delete('/deletepost/:id',function(req, res, next) {
+  knex('farm_posts')
+    .delete()
+    .where({
+      id: req.params.id
+    })
+    .then(function(data) {
+      res.json('deleted');
+    });
+});
+
 router.get('/farmers/:id', function(req, res, next) {
   knex('farms')
     .where({

@@ -231,7 +231,9 @@ a, a * {
   justify-content: space-around;
   flex-flow: row nowrap; }
   .farm .farm-dynamic {
-    width: 25%; }
+    padding: 5px;
+    width: 25%;
+    height: auto; }
     .farm .farm-dynamic .farm-csa .farm-csa-title {
       display: flex;
       flex-flow: row nowrap;
@@ -243,6 +245,7 @@ a, a * {
         margin: 0;
         margin-top: 10px; }
   .farm .farm-details {
+    padding: 5px;
     display: flex;
     flex-flow: column nowrap;
     border-radius: 3px;
