@@ -313,13 +313,22 @@ ft-account-home {
   ft-account-home .account-home {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
     justify-content: space-around; }
-    ft-account-home .account-home .account-home-aside h6 {
+    ft-account-home .account-home .account-home-main {
       display: flex;
-      align-items: center; }
+      flex-flow: column; }
+      ft-account-home .account-home .account-home-main textarea {
+        height: 250px;
+        width: 400px;
+        margin-bottom: 25px; }
+      ft-account-home .account-home .account-home-main button {
+        margin-bottom: 100px; }
+    ft-account-home .account-home .account-home-aside {
+      padding: 5px; }
       ft-account-home .account-home .account-home-aside h6 img {
         padding-right: 5px; }
+      ft-account-home .account-home .account-home-aside .account-img {
+        width: 200px; }
 
 ft-account-csa {
   margin-top: 25px;

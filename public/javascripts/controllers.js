@@ -218,12 +218,16 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
       $scope.user.csas = data.data;
     });
   };
-  $scope.view.sendMessage = function(sendFrom,sendTo,subject,body) {
-    console.log(sendFrom,sendTo,subject,body);
+  $scope.view.sendMessage = function(sendFrom,sendTo,subject,body,post) {
+    console.log(sendFrom,sendTo,subject,body,post);
+    if (post) {
+
+    }
     if (sendTo === 'all') {
-      sendTo = $scope.user.farm.csa.customers;
-      console.log(sendTo);
-      return;
+      sendTo = $scope.user.farm.csa.customers.reduce(function(prev,curr) {
+        prev.push(curr.email);
+        return prev;
+      },[]);
     }
     // 'Yo Face <conor@conorkingston.com>'
     var message = {

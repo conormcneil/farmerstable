@@ -5,17 +5,35 @@ var domain = 'conorkingston.com';
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 router.post('/send', function(req, res, next) {
-  console.log(req.body);
-  var data = {
-    from: req.body.sendFrom,
-    to: req.body.sendTo,
-    subject: req.body.subject,
-    text: req.body.body
+  if (typeof req.body.sendTo === 'string') {
+    var data = {
+      from: req.body.sendFrom,
+      to: req.body.sendTo,
+      subject: "Farmer's Table: " + req.body.subject,
+      text: req.body.body
+    };
+    mailgun.messages().send(data, function (error, body) {
+      res.json('message sent');
+    });
+  } else {
+    var count = 0;
+    req.body.sendTo.map(function(e) {
+      if (count === req.body.sendTo.length) {
+        console.log('all messages sent');
+        res.json('all messages sent');
+      }
+      count++;
+      var data = {
+        from: req.body.sendFrom,
+        to: e,
+        subject: "Farmer's Table: " + req.body.subject,
+        text: req.body.body
+      };
+      mailgun.messages().send(data, function (error, body) {
+        console.log('message sent to: ' + e);
+      });
+    });
   };
-
-  mailgun.messages().send(data, function (error, body) {
-    console.log(body);
-  });
 });
 
 module.exports = router;

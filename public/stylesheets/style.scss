@@ -382,15 +382,27 @@ ft-account-home {
   .account-home {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    // align-items: center;
     justify-content: space-around;
+    .account-home-main {
+      display: flex;
+      flex-flow: column;
+      textarea {
+        height: 250px;
+        width: 400px;
+        margin-bottom: 25px;
+      }
+      button {
+        margin-bottom: 100px;
+      }
+    }
     .account-home-aside {
-      h6 {
-        display: flex;
-        align-items: center;
-        img {
-          padding-right: 5px;
-        }
+      padding: 5px;
+      h6 img {
+        padding-right: 5px;
+      }
+      .account-img {
+        width: 200px;
       }
     }
   }
