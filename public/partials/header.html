@@ -17,7 +17,7 @@
     <p>or</p>
     <p ng-click="view.toggle('signup')" class="pointer" id="signin-button">Sign Up</p>
   </div>
-  <p ng-click="view.toggle('user_nav')" class="pointer username-box" style="display: flex; align-items: center;" id='loggedinusername'>{{ view.user.username }} <img ng-src="../images/dropdown.svg" style="height: 1.2em;"></p>
+  <p ng-click="view.toggle('user_nav')" class="pointer username-box" style="display: flex; align-items: center;" id='loggedinusername'>{{ view.user.username }}<img ng-src="../images/icons/dropdown.svg" style="height: 1.2em;"></p>
 </div>
 <form class="signin" ng-show="forms.signin">
   <input type="text" ng-model="view.signin.username" placeholder="username/email" id="username" autofocus>

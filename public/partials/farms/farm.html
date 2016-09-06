@@ -1,18 +1,19 @@
-<div class="farm-container" ng-controller="FarmsController">
-  <div class="back-button">
+<div class="farm-container" ng-controller="FarmsController" style="background: url({{farm.image_url}});background-size: cover;background-position: center;background-attachment: fixed;">
+  <!-- <div class="back-button">
     <a href="/farms"><button class="shadow pointer">Back to Farms</button></a>
-  </div>
-  <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer">{{ farm.name }}</h1>
+  </div> -->
+  <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer shadow">{{ farm.name }}</h1>
   <div class="farm">
     <div class="farm-dynamic shadow">
       <p class="success-message" ng-show="message.success">{{ message.success }}</p>
       <p class="error" ng-show="message.error">{{ message.error }}</p>
       <!-- show if this farm's CSA exists -->
       <div class="farm-csa" ng-show="farm.csa">
-        <div class="farm-csa-title">
-          <h3>Current CSA: {{farm.csa.csa_name}}</h3>
-          <button class="pointer shadow" ng-click="view.csaSignup(view.user,farm.csa)">Sign up</button>
-        </div>
+        <!-- <div>
+        </div> -->
+        <h3 class="farm-csa-title">Current CSA: </h3>
+        <h3 class="farm-csa-title">{{farm.csa.csa_name}}</h3>
+        <button class="pointer shadow" ng-click="view.csaSignup(view.user,farm.csa)" style="margin: 10px auto; height: 25px;">Sign up</button>
         <h5>Starts: {{farm.csa.start_date | date}}</h5>
         <h5>Ends: {{farm.csa.end_date | date}}</h5>
         <li class="product-list" ng-repeat="product in farm.csa.products track by $index">{{product}}</li>

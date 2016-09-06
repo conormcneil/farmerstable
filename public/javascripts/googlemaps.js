@@ -7,6 +7,7 @@ if (localStorage.getItem('lastVisit')) {
 }
 
 function initMap() {
+  console.log('initMap');
   if (localStorage.mapConditions && Date.now() < expireTime) {
     console.log('map exists');
     var mapConditions = JSON.parse(localStorage.getItem('mapConditions'));

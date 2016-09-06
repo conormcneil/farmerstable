@@ -45,7 +45,8 @@ a, a * {
   align-items: flex-end;
   top: 0;
   left: 0;
-  z-index: 3; }
+  z-index: 3;
+  font-size: 1em; }
   .header a, .header p {
     padding: 10px; }
   .header .top-nav {
@@ -62,7 +63,7 @@ a, a * {
     display: flex;
     flex-flow: row;
     align-items: flex-end;
-    font-size: 1.8em; }
+    font-size: 1.5em; }
     .header .user-dropdown p {
       margin: 0;
       padding: 0; }
@@ -121,7 +122,8 @@ a, a * {
   justify-content: center;
   margin: 0 auto;
   width: 100vw;
-  min-width: 730px; }
+  min-width: 730px;
+  flex-basis: 100%; }
 
 .home {
   height: 76vh;
@@ -224,8 +226,10 @@ a, a * {
     margin: 15px;
     padding: 5px;
     background: rgba(255, 255, 255, 0.85);
-    height: 100px;
-    width: 250px; }
+    width: 350px; }
+    .farm-search .zip-search #map {
+      width: 95%;
+      margin: 10px; }
     .farm-search .zip-search div {
       padding: 5px;
       width: 100%;
@@ -233,43 +237,55 @@ a, a * {
       justify-content: center; }
       .farm-search .zip-search div label, .farm-search .zip-search div input {
         width: 98%; }
-  .farm-search .wrap .nearby-farm {
-    min-width: 500px;
-    padding: 15px;
-    margin: 15px;
-    border: 1px solid black;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.85); }
-    .farm-search .wrap .nearby-farm * {
-      padding: 0;
-      margin: 0; }
-    .farm-search .wrap .nearby-farm .nearby-farm-title {
-      color: #ffc107;
+  .farm-search .wrap {
+    position: relative; }
+    .farm-search .wrap .nearby-farm {
+      min-width: 500px;
+      padding: 15px;
+      margin: 15px;
+      border: 1px solid black;
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
       justify-content: space-between;
-      align-items: center;
-      font-size: 1.2em; }
-    .farm-search .wrap .nearby-farm img {
-      height: 75px; }
-    .farm-search .wrap .nearby-farm .nearby-farm-available {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center; }
-      .farm-search .wrap .nearby-farm .nearby-farm-available p:not(:first-child) {
-        padding-left: 5px; }
+      background: rgba(255, 255, 255, 0.95); }
+      .farm-search .wrap .nearby-farm * {
+        padding: 0;
+        margin: 0; }
+      .farm-search .wrap .nearby-farm .nearby-farm-title {
+        color: #ffc107;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2em; }
+      .farm-search .wrap .nearby-farm img {
+        height: 75px; }
+      .farm-search .wrap .nearby-farm .nearby-farm-available {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center; }
+        .farm-search .wrap .nearby-farm .nearby-farm-available p:not(:first-child) {
+          padding-left: 5px; }
 
 .farm-container {
   width: 100%;
   display: flex;
-  flex-flow: column; }
+  flex-flow: column;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; }
+  .farm-container .farm-title {
+    background: rgba(255, 255, 255, 0.9); }
 
 .back-button {
   width: 100%;
   display: inline-block;
-  color: #ffc107; }
+  color: #ffc107;
+  margin: 15px; }
+
+.farm-details, .farm-dynamic {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 3px; }
 
 .farm {
   width: 100%;
@@ -281,16 +297,22 @@ a, a * {
     padding: 5px;
     width: 25%;
     height: auto; }
-    .farm .farm-dynamic .farm-csa .farm-csa-title {
+    .farm .farm-dynamic .farm-csa {
       display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: space-around; }
-      .farm .farm-dynamic .farm-csa .farm-csa-title button {
-        height: 20px; }
-      .farm .farm-dynamic .farm-csa .farm-csa-title button, .farm .farm-dynamic .farm-csa .farm-csa-title h3 {
-        margin: 0;
-        margin-top: 10px; }
+      flex-flow: column nowrap; }
+      .farm .farm-dynamic .farm-csa * {
+        padding: 0;
+        margin: 0; }
+      .farm .farm-dynamic .farm-csa .farm-csa-title {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around; }
+        .farm .farm-dynamic .farm-csa .farm-csa-title button {
+          height: 20px; }
+        .farm .farm-dynamic .farm-csa .farm-csa-title button, .farm .farm-dynamic .farm-csa .farm-csa-title h3 {
+          margin: 0;
+          margin-top: 10px; }
   .farm .farm-details {
     padding: 5px;
     display: flex;
@@ -332,17 +354,25 @@ a, a * {
   text-align: center;
   font-family: "Catamaran", sans-serif;
   font-size: 3em;
-  margin-bottom: 0; }
+  margin: 0;
+  margin-bottom: 25px; }
 
 .farm-posts {
   width: 40%; }
 
 .post {
+  position: relative;
   padding: 5px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 3px; }
   .post .post-subject {
     text-align: center;
     color: #ffc107; }
+  .post img {
+    position: absolute;
+    top: 0;
+    right: 0; }
 
 .account {
   width: 100%; }

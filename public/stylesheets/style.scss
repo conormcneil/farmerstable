@@ -54,6 +54,7 @@ a, a * {
   top: 0;
   left: 0;
   z-index: 3;
+  font-size: 1em;
   a, p {
     padding: 10px;
   }
@@ -74,7 +75,7 @@ a, a * {
     display: flex;
     flex-flow: row;
     align-items: flex-end;
-    font-size: 1.8em;
+    font-size: 1.5em;
     p {
       margin: 0;
       padding: 0;
@@ -147,6 +148,7 @@ a, a * {
   margin: 0 auto;
   width: 100vw;
   min-width: 730px;
+  flex-basis: 100%;
 }
 
 // partials/home
@@ -267,8 +269,12 @@ a, a * {
     margin: 15px;
     padding: 5px;
     background: rgba(255,255,255,0.85);
-    height: 100px;
-    width: 250px;
+    width: 350px;
+    #map {
+      // background: blue;
+      width: 95%;
+      margin: 10px;
+    }
     div {
       padding: 5px;
       width: 100%;
@@ -282,6 +288,7 @@ a, a * {
     }
   }
   .wrap {
+    position: relative;
     .nearby-farm {
       min-width: 500px;
       padding: 15px;
@@ -290,7 +297,7 @@ a, a * {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.95);
       * {
         padding: 0;
         margin: 0;
@@ -323,11 +330,22 @@ a, a * {
   width: 100%;
   display: flex;
   flex-flow: column;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  .farm-title {
+    background: rgba(255,255,255,0.9);
+  }
 }
 .back-button {
   width: 100%;
   display: inline-block;
   color: $accent;
+  margin: 15px;
+}
+.farm-details, .farm-dynamic {
+  background: rgba(255,255,255,0.95);
+  border-radius: 3px;
 }
 .farm {
   width: 100%;
@@ -341,6 +359,12 @@ a, a * {
     height: auto;
     // background: red;
     .farm-csa {
+      display: flex;
+      flex-flow: column nowrap;
+      * {
+        padding: 0;
+        margin: 0;
+      }
       .farm-csa-title {
         display: flex;
         flex-flow: row nowrap;
@@ -407,17 +431,26 @@ a, a * {
   text-align: center;
   font-family: $font;
   font-size: 3em;
-  margin-bottom: 0;
+  margin: 0;
+  margin-bottom: 25px;
 }
 .farm-posts {
   width: 40%;
 }
 .post {
+  position: relative;
   padding: 5px;
   margin-bottom: 15px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 3px;
   .post-subject {
     text-align: center;
     color: $accent;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 

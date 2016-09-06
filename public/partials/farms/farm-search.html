@@ -1,4 +1,8 @@
+
+
 <div ng-controller="FarmsController" class="farm-search">
+  <script src="./javascripts/googlemaps.js" charset="utf-8" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc&callback=initMap" async defer></script>
 
   <div class="wrap">
     <div ng-repeat="farm in farms" class="nearby-farm shadow">
@@ -17,12 +21,17 @@
     </div>
   </div>
 
-  <div class="zip-search shadow">
-    <button ng-click="view.toggle('zip_search')">Search by zip code</button>
-    <div ng-show='forms.zip_search'>
-      <label for="zip">Zip Code: </label>
-      <input type="text" ng-model="view.zipCode" placeholder="12345" autofocus>
+  <div class="wrap">
+    <div class="zip-search shadow">
+      <button ng-click="view.toggle('zip_search')">Search by zip code</button>
+      <div ng-show='forms.zip_search'>
+        <label for="zip">Zip Code: </label>
+        <input type="text" ng-model="view.zipCode" placeholder="12345" autofocus>
+      </div>
+      <button ng-click="view.zipDecode(view.zipCode)" ng-show="forms.zip_search">Search</button>
+      <div id="map">
+      </div>
     </div>
-    <button ng-click="view.zipDecode(view.zipCode)" ng-show="forms.zip_search">Search</button>
   </div>
+
 </div>

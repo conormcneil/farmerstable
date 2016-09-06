@@ -9,7 +9,7 @@
   .farm-search {
     padding-left: 0;
     justify-content: space-around; }
-    .farm-search .zip-search {
+    .farm-search .zip-search, .farm-search .more {
       position: static;
       flex-wrap: wrap; } }
 @media (max-width: 768px) {
