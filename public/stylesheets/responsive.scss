@@ -11,6 +11,14 @@
   .header .header-title {
     left: 20vw;
   }
+  .farm-search {
+    padding-left: 0;
+    justify-content: space-around;
+    .zip-search {
+      position: static;
+      flex-wrap: wrap;
+    }
+  }
 }
 // iPad Portrait (<768px)
 @media (max-width: 768px) {

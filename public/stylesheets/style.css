@@ -210,33 +210,55 @@ a, a * {
   background: url("../images/originals/market_eggplant2.JPG");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; }
-  .farm-search .nearby-farm {
-    width: 60%;
+  background-attachment: fixed;
+  display: flex;
+  flex-flow: row wrap;
+  padding-left: 50px; }
+  .farm-search .zip-search {
+    position: fixed;
+    right: 50px;
+    background: red;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 15px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.85);
+    height: 100px;
+    width: 250px; }
+    .farm-search .zip-search div {
+      padding: 5px;
+      width: 100%;
+      flex-flow: row;
+      justify-content: center; }
+      .farm-search .zip-search div label, .farm-search .zip-search div input {
+        width: 98%; }
+  .farm-search .wrap .nearby-farm {
+    min-width: 500px;
     padding: 15px;
-    margin: 15px auto;
+    margin: 15px;
     border: 1px solid black;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    background: white; }
-    .farm-search .nearby-farm * {
+    background: rgba(255, 255, 255, 0.85); }
+    .farm-search .wrap .nearby-farm * {
       padding: 0;
       margin: 0; }
-    .farm-search .nearby-farm .nearby-farm-title {
+    .farm-search .wrap .nearby-farm .nearby-farm-title {
       color: #ffc107;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
       font-size: 1.2em; }
-    .farm-search .nearby-farm img {
+    .farm-search .wrap .nearby-farm img {
       height: 75px; }
-    .farm-search .nearby-farm .nearby-farm-available {
+    .farm-search .wrap .nearby-farm .nearby-farm-available {
       display: flex;
       flex-flow: row nowrap;
       align-items: center; }
-      .farm-search .nearby-farm .nearby-farm-available p:not(:first-child) {
+      .farm-search .wrap .nearby-farm .nearby-farm-available p:not(:first-child) {
         padding-left: 5px; }
 
 .farm-container {

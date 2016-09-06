@@ -4,7 +4,14 @@
     left: 29vw; } }
 @media (max-width: 1024px) {
   .header .header-title {
-    left: 20vw; } }
+    left: 20vw; }
+
+  .farm-search {
+    padding-left: 0;
+    justify-content: space-around; }
+    .farm-search .zip-search {
+      position: static;
+      flex-wrap: wrap; } }
 @media (max-width: 768px) {
   .header .header-title {
     left: 16vw; } }

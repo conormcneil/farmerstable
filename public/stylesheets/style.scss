@@ -252,36 +252,67 @@ a, a * {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  .nearby-farm {
-    width: 60%;
-    padding: 15px;
-    margin: 15px auto;
-    border: 1px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  // justify-content: space-around;
+  padding-left: 50px;
+  .zip-search {
+    position: fixed;
+    right: 50px;
+    background: red;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    background: rgba(255,255,255,1);
-    * {
-      padding: 0;
-      margin: 0;
+    flex-flow: column;
+    // justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 5px;
+    background: rgba(255,255,255,0.85);
+    height: 100px;
+    width: 250px;
+    div {
+      padding: 5px;
+      width: 100%;
+      // display: flex;
+      flex-flow: row;
+      justify-content: center;
+      label, input {
+        width: 98%;
+        // background: green;
+      }
     }
-    .nearby-farm-title {
-      color: $accent;
+  }
+  .wrap {
+    .nearby-farm {
+      min-width: 500px;
+      padding: 15px;
+      margin: 15px;
+      border: 1px solid black;
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
       justify-content: space-between;
-      align-items: center;
-      font-size: 1.2em;
-    }
-    img {
-      height: 75px;
-    }
-    .nearby-farm-available {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      p:not(:first-child) {
-        padding-left: 5px;
+      background: rgba(255,255,255,0.85);
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .nearby-farm-title {
+        color: $accent;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2em;
+      }
+      img {
+        height: 75px;
+      }
+      .nearby-farm-available {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        p:not(:first-child) {
+          padding-left: 5px;
+        }
       }
     }
   }
