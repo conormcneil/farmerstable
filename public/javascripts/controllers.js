@@ -22,12 +22,14 @@ function makeHeaderController($scope,$http,FormService,UserService) {
     }
   };
   $scope.view.signin = function(username,password) {
-    // TODO: bcrypt here
     var user = {
       username: username,
       password: password
     };
     $http.post('/signin',user).then(function(data) {
+      if(data.message) {
+        console.log(data.message);
+      }
       localStorage.token = data.data.token;
       $scope.view.user = data.data.user;
       UserService.activeUser = $scope.view.user;

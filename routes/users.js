@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
+var bcrypt = require('bcrypt');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -11,11 +12,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/new', function(req, res, next) {
+  var passwordHS = bcrypt.hashSync(req.body.password,8);
   knex('users')
     .insert({
       email: req.body.email,
       username: req.body.username,
-      password: req.body.password,
+      password: passwordHS,
       isFarmer: req.body.isFarmer
     })
     .then(function(data) {
