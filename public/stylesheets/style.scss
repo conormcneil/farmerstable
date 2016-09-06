@@ -1,9 +1,9 @@
 // Variables
-$font3: 'Shadows Into Light Two', cursive;
+// $`font2`: 'Shadows Into Light Two', cursive;
 $primary: rgba(63,81,181,1);
 $accent: rgba(255,193,7,1);
 $testBorder: 1px solid black;
-$font2: 'Catamaran', sans-serif;
+$font: 'Catamaran', sans-serif;
 
 ::-webkit-scrollbar {
     display: none;
@@ -35,7 +35,7 @@ body {
   height: 92vh;
   overflow-x: hidden;
   font-variant: small-caps;
-  font-family: $font2;
+  font-family: $font;
   // margin-bottom: 300px;
 }
 a, a * {
@@ -46,7 +46,7 @@ a, a * {
   height: 185px;
   width: 100vw;
   color: black;
-  font-family: $font2;
+  font-family: $font;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -188,7 +188,7 @@ a, a * {
       height: 55px;
       width: 253px;
       font-size: 1.7em;
-      font-family: $font3;
+      font-family: $font;
       margin-top: 25px;
     }
   }
@@ -242,12 +242,12 @@ a, a * {
 .farm-search {
   .nearby-farm {
     padding: 5px;
-    color: $accent;
     border: 1px solid black;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     .nearby-farm-title {
+      color: $accent;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -275,10 +275,10 @@ a, a * {
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
-  color: $accent;
   .farm-title {
+    color: $accent;
     text-align: center;
-    font-family: $font3;
+    font-family: $font;
     font-size: 3em;
     margin-bottom: 0;
   }

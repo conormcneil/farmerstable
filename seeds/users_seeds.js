@@ -55,9 +55,25 @@ exports.seed = function(knex, Promise) {
         }),
         knex('users').insert({
           id: 7,
-          email: 'munsonfarms@concast.net',
+          email: 'munsonfarms@comcast.net',
           username: 'munsonfarms',
           password: '$2a$08$yPa1tZ9uiqMpNzbwPvCLcetZ.byO5KrnhWf4YJE8zNN9GfWh2qrP2',
+          isAdmin: false,
+          isFarmer: true
+        }),
+        knex('users').insert({
+          id: 8,
+          email: 'Info@McReillyFarms.com',
+          username: 'mcreilly',
+          password: '$2a$08$cH5S2KEsXnQ.kMOh1DiukO7B1Pew7jVexJi2dLWzIzF9BvfltwRjC',
+          isAdmin: false,
+          isFarmer: true
+        }),
+        knex('users').insert({
+          id: 9,
+          email: 'info@redwagonfarmboulder.com',
+          username: 'redwagon',
+          password: '$2a$08$uOtLHHF/23V707TT74ZcJOWd7HHZD8PXqopKl0vaV1gT/YtEW30Gu',
           isAdmin: false,
           isFarmer: true
         })

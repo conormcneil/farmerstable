@@ -9,8 +9,8 @@ app
         account_home: false, // true
         account_csa: true, // false
         account_settings: false, // false
-        zip_search: false, // false
-        curtain: false
+        zip_search: false // false
+        // curtain: false
       },
       toggle: function(form) {
         if (form === 'account_home' || form === 'account_csa' || form === 'account_settings') {

@@ -78,6 +78,30 @@ exports.seed = function(knex, Promise) {
           address: '7355 Valmont Rd, Boulder, CO 80301',
           lat: '40.034011',
           lng: '-105.18034'
+        }),
+        knex('farms').insert({
+          id: 7,
+          csa_id: null,
+          name: 'McReilly Farms',
+          owner_id: 8,
+          image_url: 'http://www.mcreillyfarms.com/uploads/1/1/9/3/11937539/2372083.jpg?1335495038',
+          contact_phone: '303-591-4529',
+          contact_email: 'Info@McReillyFarms.com',
+          address: '5875 Monarch Rd, Longmont, CO 80503',
+          lat: '40.0978319',
+          lng: '-105.217053'
+        }),
+        knex('farms').insert({
+          id: 8,
+          csa_id: null,
+          name: 'Red Wagon Farm',
+          owner_id: 9,
+          image_url: 'https://redwagoncsa.files.wordpress.com/2013/01/farmstandlaf1.jpg?w=540&h=396',
+          contact_phone: '303-555-9876',
+          contact_email: 'info@redwagonfarmboulder.com',
+          address: '7694 North 63rd Street Longmont, CO 80503',
+          lat: '40.1147551',
+          lng: '-105.2063716'
         })
       ]);
     });

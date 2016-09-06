@@ -156,7 +156,7 @@ a, a * {
       height: 55px;
       width: 253px;
       font-size: 1.7em;
-      font-family: "Shadows Into Light Two", cursive;
+      font-family: "Catamaran", sans-serif;
       margin-top: 25px; }
 
 #map {
@@ -201,12 +201,12 @@ a, a * {
 
 .farm-search .nearby-farm {
   padding: 5px;
-  color: #ffc107;
   border: 1px solid black;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between; }
   .farm-search .nearby-farm .nearby-farm-title {
+    color: #ffc107;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -228,11 +228,11 @@ a, a * {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-flow: row nowrap;
-  color: #ffc107; }
+  flex-flow: row nowrap; }
   .farm .farm-title {
+    color: #ffc107;
     text-align: center;
-    font-family: "Shadows Into Light Two", cursive;
+    font-family: "Catamaran", sans-serif;
     font-size: 3em;
     margin-bottom: 0; }
   .farm .farm-dynamic {
