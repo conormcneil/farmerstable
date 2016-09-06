@@ -28,8 +28,7 @@ body {
   height: 92vh;
   overflow-x: hidden;
   font-variant: small-caps;
-  font-family: Tahoma;
-  margin-bottom: 300px; }
+  font-family: "Catamaran", sans-serif; }
 
 a, a * {
   text-decoration: none;
@@ -39,7 +38,7 @@ a, a * {
   height: 185px;
   width: 100vw;
   color: black;
-  font-family: "Shadows Into Light Two", cursive;
+  font-family: "Catamaran", sans-serif;
   display: flex;
   justify-content: space-between;
   flex-direction: row;

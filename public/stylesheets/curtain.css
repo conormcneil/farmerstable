@@ -5,7 +5,7 @@
   left: 0;
   margin: 0;
   padding: 0;
-  background: url("../images/tomatoes.jpg");
+  background: url("../images/originals/market_flowers.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -17,11 +17,12 @@
   display: none; }
 
 .curtain-title {
-  color: #9c27b0;
-  text-align: center;
-  margin-top: 3vh;
+  color: black;
+  margin-top: 23vh;
   margin-bottom: 0;
   width: 100%;
+  height: 200px;
+  min-height: 200px;
   display: flex;
   justify-content: center;
   font-family: "Pacifico", cursive;
@@ -29,7 +30,6 @@
   .curtain-title .title-wrap {
     background: rgba(255, 255, 255, 0.77);
     width: 300px;
-    height: 300px;
     border-radius: 150px;
     display: flex;
     flex-flow: column;
@@ -41,7 +41,7 @@
       font-size: 0.5em; }
 
 .curtain-intro {
-  color: #f08708;
+  color: black;
   font-family: "Shadows Into Light Two", cursive;
   font-size: 1.5em;
   width: 50%;
@@ -49,7 +49,6 @@
 
 .curtain-body {
   background: rgba(255, 255, 255, 0.87);
-  width: 600px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
