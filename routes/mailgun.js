@@ -5,15 +5,16 @@ var domain = 'conorkingston.com';
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 router.post('/send', function(req, res, next) {
+  console.log(req.body);
   var data = {
-    from: 'Yo Face <conor@conorkingston.com>',
-    to: 'cmkingston21@me.com',
-    subject: 'This is a test',
-    text: 'Testing some Mailgun awesomness on your face!!'
+    from: req.body.sendFrom,
+    to: req.body.sendTo,
+    subject: req.body.subject,
+    text: req.body.body
   };
 
   mailgun.messages().send(data, function (error, body) {
-    res.send(body);
+    console.log(body);
   });
 });
 

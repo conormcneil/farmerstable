@@ -31,6 +31,11 @@ exports.seed = function(knex, Promise) {
           id: 5,
           user_id: 2,
           csa_id: 3
+        }),
+        knex('users_csas').insert({
+          id: 6,
+          user_id: 6,
+          csa_id: 1
         })
       ]);
     });

@@ -35,7 +35,7 @@ exports.seed = function(knex, Promise) {
           id: 3,
           csa_id: 3,
           name: 'San Diego Zoo Regional Farm',
-          owner_id: null,
+          owner_id: 3,
           image_url: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/San_Diego_Zoo_entrance_elephant.jpg',
           contact_phone: '520-555-4312',
           contact_email: 'conor@ft.com',

@@ -2,7 +2,14 @@
 <div class="account-home" ng-show="user.isFarmer">
   <div class="account-home-main">
     <h1>Send Customers a message!</h1>
-    <h6>do message stuff</h6>
+    <select name="customers" id="customers" ng-model="view.message.sendTo">
+      <option value="all">All Customers</option>
+      <option ng-repeat="customer in user.farm.csa.customers" value="{{ customer.email }}">{{ customer.username }} ({{ customer.email }})</option>
+    </select>
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" ng-model="view.message.subject">
+    <textarea ng-model="view.message.body"></textarea>
+    <button ng-click="view.sendMessage(user.email,view.message.sendTo,view.message.subject,view.message.body)">Send</button>
 
   </div>
   <aside class="account-home-aside">

@@ -177,6 +177,7 @@ app.controller("AccountController",makeAccountController);
 function makeAccountController($scope,$http,$routeParams,FormService,UserService) {
   console.log('AccountController');
   $scope.view = {};
+  $scope.view.message = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;
   $scope.toggle = function(form) {
@@ -215,6 +216,24 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
   function userCsas(id) {
     $http.get(`/csa/user/${id}`).then(function(data) {
       $scope.user.csas = data.data;
+    });
+  };
+  $scope.view.sendMessage = function(sendFrom,sendTo,subject,body) {
+    console.log(sendFrom,sendTo,subject,body);
+    if (sendTo === 'all') {
+      sendTo = $scope.user.farm.csa.customers;
+      console.log(sendTo);
+      return;
+    }
+    // 'Yo Face <conor@conorkingston.com>'
+    var message = {
+      sendFrom: sendFrom,
+      sendTo: sendTo,
+      subject: subject,
+      body: body
+    };
+    $http.post('/mailgun/send',message).then(function(data) {
+      console.log(data);
     });
   };
 };

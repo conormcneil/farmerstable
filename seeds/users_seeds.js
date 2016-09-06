@@ -39,7 +39,7 @@ exports.seed = function(knex, Promise) {
         }),
         knex('users').insert({
           id: 5,
-          email: 'user@user.com',
+          email: 'conork@me.com',
           username: 'user',
           password: '$2a$08$KpaTylD36yh7C/aHCk8wP.wiedCU4bhFahryssp6NDolDLKsgF6PW',
           isAdmin: false,
@@ -47,7 +47,7 @@ exports.seed = function(knex, Promise) {
         }),
         knex('users').insert({
           id: 6,
-          email: 'notfarmer@notfarmer.com',
+          email: 'cmk21@me.com',
           username: 'notfarmer',
           password: '$2a$08$23x8pHUEI3fN7IvFOIqTJuhwH2pWFn3VHIAmk74ogzxkRcsLnnL9i',
           isAdmin: false,
