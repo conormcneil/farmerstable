@@ -65,10 +65,24 @@ router.get('/details/:id', function(req, res, next) {
 });
 
 router.post('/posts/:id', function(req, res, next) {
-  console.log(req.body);
   knex('farm_posts')
     .where({
-      farm_id: req.body.id
+      farm_id: req.params.id
+    })
+    .then(function(data) {
+      res.json(data);
+    });
+});
+
+router.post('/newpost',function(req, res, next) {
+  console.log(req.body);
+  knex('farm_posts')
+    .insert({
+      farm_id: req.body.farm_id,
+      // sent_to: req.body.sent_to,
+      subject: req.body.subject,
+      body: req.body.body,
+      date: Date.now().toString()
     })
     .then(function(data) {
       res.json(data);

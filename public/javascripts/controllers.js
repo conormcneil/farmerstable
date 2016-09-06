@@ -223,11 +223,24 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
       $scope.user.csas = data.data;
     });
   };
+  function postToFarm(post) {
+    console.log('post message');
+    $http.post(`/farms/newpost/`,post).then(function(data) {
+      console.log("POSTED",data);
+    });
+  };
   $scope.view.sendMessage = function(sendFrom,sendTo,subject,body,post) {
-    console.log(sendFrom,sendTo,subject,body,post);
+    console.log(post);
     if (post) {
-
-    }
+      var postObj = {
+        farm_id: $scope.user.farm.id,
+        sent_to: sendTo,
+        subject: subject,
+        body: body,
+        date: Date.now().toString()
+      };
+      postToFarm(postObj);
+    };
     if (sendTo === 'all') {
       sendTo = $scope.user.farm.csa.customers.reduce(function(prev,curr) {
         prev.push(curr.email);
