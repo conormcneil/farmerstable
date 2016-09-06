@@ -8,14 +8,14 @@
   <div ng-repeat="farm in farms" class="nearby-farm shadow">
     <div class="nearby-farm-title">
       <h1><a href="/farm/details/{{ farm.id }}">{{ farm.name }}</a></h1>
-      <div>
-        <h6>CSA Available?</h6>
-        <p ng-show="farm.csa_id !== null">YES</p>
-        <p ng-show="farm.csa_id === null">NO</p>
-      </div>
       <img ng-src="{{farm.image_url}}">
     </div>
     <div class="nearby-farm-quicklook">
+      <div class="nearby-farm-available">
+        <p>CSA Available?</p>
+        <p ng-show="farm.csa_id !== null" style="color: green;">YES</p>
+        <p ng-show="farm.csa_id === null" style="color: red;">NO</p>
+      </div>
       <p>{{ farm.address }}</p>
     </div>
   </div>

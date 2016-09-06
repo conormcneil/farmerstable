@@ -247,22 +247,42 @@ a, a * {
 }
 
 .farm-search {
+  width: 100%;
+  background: url('../images/originals/market_eggplant2.JPG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   .nearby-farm {
-    padding: 5px;
-    margin: 15px;
+    width: 60%;
+    padding: 15px;
+    margin: 15px auto;
     border: 1px solid black;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    background: rgba(255,255,255,1);
+    * {
+      padding: 0;
+      margin: 0;
+    }
     .nearby-farm-title {
       color: $accent;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      font-size: 1.2em;
     }
     img {
       height: 75px;
+    }
+    .nearby-farm-available {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      p:not(:first-child) {
+        padding-left: 5px;
+      }
     }
   }
 }
