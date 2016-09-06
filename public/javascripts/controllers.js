@@ -175,6 +175,7 @@ makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsServic
 
 app.controller("AccountController",makeAccountController);
 function makeAccountController($scope,$http,$routeParams,FormService,UserService) {
+  console.log('AccountController');
   $scope.view = {};
   $scope.forms = {};
   $scope.forms = FormService.forms;

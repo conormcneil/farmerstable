@@ -49,7 +49,7 @@ a, a * {
   .header a, .header p {
     padding: 10px; }
   .header .top-nav {
-    font-size: 1.8em; }
+    font-size: 1em; }
   .header .header-title {
     position: absolute;
     display: flex;
@@ -226,8 +226,9 @@ a, a * {
 
 .farm {
   width: 100%;
+  margin-bottom: 52vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-flow: row nowrap; }
   .farm .farm-title {
     color: #ffc107;
@@ -236,7 +237,7 @@ a, a * {
     font-size: 3em;
     margin-bottom: 0; }
   .farm .farm-dynamic {
-    width: 50%; }
+    width: 70%; }
     .farm .farm-dynamic .farm-csa .farm-csa-title {
       display: flex;
       flex-flow: row nowrap;
@@ -272,7 +273,7 @@ a, a * {
     margin-top: 10px;
     width: 150px; }
   .farm .farm-description, .farm .farm-details {
-    width: 45%; }
+    width: 20%; }
     .farm .farm-description .farm-phone, .farm .farm-description .farm-email, .farm .farm-description .farm-address, .farm .farm-details .farm-phone, .farm .farm-details .farm-email, .farm .farm-details .farm-address {
       display: flex;
       align-items: center; }
