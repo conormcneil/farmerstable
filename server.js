@@ -9,6 +9,7 @@ var csa = require('./routes/csa');
 var signin = require('./routes/signin');
 var users = require('./routes/users');
 var farms = require('./routes/farms');
+var mailgun = require('./routes/mailgun');
 var app = express();
 
 app.use(bearerToken());
@@ -21,6 +22,7 @@ app.use('/csa', csa);
 app.use('/signin', signin);
 app.use('/users', users);
 app.use('/farms', farms);
+app.use('/mailgun', mailgun);
 
 // redirect from # to remove from URL
 app.get('*',function(req, res) {
