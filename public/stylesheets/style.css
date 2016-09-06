@@ -134,12 +134,14 @@ a, a * {
   flex-flow: column;
   align-items: center; }
   .home .home-boxes {
-    margin-top: 200px;
+    margin-top: 5%;
+    margin-bottom: 50px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around; }
   .home .home-box {
     width: 30%;
+    min-height: 150px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -195,9 +197,20 @@ a, a * {
       font-size: 0.8em; }
 
 .csa {
+  padding: 5px;
+  background: url("../images/originals/market_greens.JPG");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around; }
+  justify-content: space-around;
+  height: 76vh; }
+  .csa * {
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin: 0; }
   .csa .csa-title {
     width: 100%; }
 
@@ -205,7 +218,16 @@ a, a * {
   width: 40%; }
 
 .csa-description {
-  width: 40%; }
+  margin-top: 45px;
+  padding: 5px;
+  height: 305px;
+  text-align: justify;
+  width: 40%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 3px;
+  font-size: 0.9em; }
+  .csa-description h3 {
+    font-weight: 900; }
 
 .farm-search {
   width: 100%;

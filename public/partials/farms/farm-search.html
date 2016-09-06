@@ -1,8 +1,4 @@
-
-
 <div ng-controller="FarmsController" class="farm-search">
-  <script src="./javascripts/googlemaps.js" charset="utf-8" async defer></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc&callback=initMap" async defer></script>
 
   <div class="wrap">
     <div ng-repeat="farm in farms" class="nearby-farm shadow">
@@ -35,3 +31,6 @@
   </div>
 
 </div>
+
+<script src="./javascripts/googlemaps.js" charset="utf-8" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc&callback=initMap" async defer></script>
