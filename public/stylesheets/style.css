@@ -230,14 +230,8 @@ a, a * {
   display: flex;
   justify-content: space-around;
   flex-flow: row nowrap; }
-  .farm .farm-title {
-    color: #ffc107;
-    text-align: center;
-    font-family: "Catamaran", sans-serif;
-    font-size: 3em;
-    margin-bottom: 0; }
   .farm .farm-dynamic {
-    width: 70%; }
+    width: 25%; }
     .farm .farm-dynamic .farm-csa .farm-csa-title {
       display: flex;
       flex-flow: row nowrap;
@@ -251,7 +245,8 @@ a, a * {
   .farm .farm-details {
     display: flex;
     flex-flow: column nowrap;
-    border-radius: 3px; }
+    border-radius: 3px;
+    width: 25%; }
     .farm .farm-details img:not(.icon) {
       width: 100%;
       box-shadow: 0px 0px 3px 0px black;
@@ -281,6 +276,23 @@ a, a * {
         padding-right: 5px; }
   .farm button {
     width: 100px; }
+
+.farm-title {
+  color: #ffc107;
+  text-align: center;
+  font-family: "Catamaran", sans-serif;
+  font-size: 3em;
+  margin-bottom: 0; }
+
+.farm-posts {
+  width: 40%; }
+
+.post {
+  padding: 5px;
+  margin-bottom: 15px; }
+  .post .post-subject {
+    text-align: center;
+    color: #ffc107; }
 
 .account {
   width: 100%; }

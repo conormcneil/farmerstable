@@ -75,6 +75,11 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   if($routeParams.id) {
     $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
       $scope.farm = data.data;
+      // get farm posts
+      $http.post(`/farms/posts/${$routeParams.id}`,{id:$scope.farm.id}).then(function(data) {
+        $scope.farm.posts = data.data;
+      });
+      // get csa details
       $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
         var tempArr = data.data.products.split(',');
         var productsArr = tempArr.map(e => {
@@ -169,7 +174,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
         }
       });
     };
-  }
+  };
 };
 makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService'];
 

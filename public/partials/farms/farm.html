@@ -1,10 +1,10 @@
-<div class="farm-container">
+<div class="farm-container" ng-controller="FarmsController">
   <div class="back-button">
     <a href="/farms"><button class="shadow pointer">Back to Farms</button></a>
   </div>
-  <div class="farm" ng-controller="FarmsController">
-    <div class="farm-dynamic">
-      <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer">{{ farm.name }}</h1>
+  <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer">{{ farm.name }}</h1>
+  <div class="farm">
+    <div class="farm-dynamic shadow">
       <p class="success-message" ng-show="message.success">{{ message.success }}</p>
       <p class="error" ng-show="message.error">{{ message.error }}</p>
       <!-- show if this farm's CSA exists -->
@@ -23,6 +23,14 @@
         <p><a href="mailto:{{ farm.contact_email }}" style="text-decoration: underline;">Email the farm</a> to ask what options might be available!</p>
       </div>
     </div>
+
+    <div class="farm-posts">
+      <div class="post shadow" ng-repeat="post in farm.posts">
+        <h2 class="post-subject">{{ post.subject }}</h2>
+        <p>{{ post.body }}</p>
+      </div>
+    </div>
+
     <div class="farm-details shadow">
       <img ng-src="{{ farm.image_url }}">
       <button class="follow-button shadow pointer">+ Follow this Farm</button>
@@ -30,5 +38,6 @@
       <h5><img class="icon" ng-src="../images/icons/mail_icon_black.svg"><a href="mailto:{{farm.contact_email}}" class="pointer">{{farm.contact_email}}</h5>
       <h5><img class="icon" ng-src="../images/icons/globe_black.svg">{{farm.address}}</a></h5>
     </div>
+
   </div>
 </div>

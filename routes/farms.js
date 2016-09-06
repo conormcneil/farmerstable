@@ -64,6 +64,17 @@ router.get('/details/:id', function(req, res, next) {
     });
 });
 
+router.post('/posts/:id', function(req, res, next) {
+  console.log(req.body);
+  knex('farm_posts')
+    .where({
+      farm_id: req.body.id
+    })
+    .then(function(data) {
+      res.json(data);
+    });
+});
+
 router.get('/farmers/:id', function(req, res, next) {
   knex('farms')
     .where({
