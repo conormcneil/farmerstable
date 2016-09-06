@@ -5,7 +5,7 @@
     <input type="number" ng-model="view.zipCode" placeholder="12345" autofocus>
     <button ng-click="view.zipDecode(view.zipCode)">Search</button>
   </div>
-  <div ng-repeat="farm in farms" class="nearby-farm">
+  <div ng-repeat="farm in farms" class="nearby-farm shadow">
     <div class="nearby-farm-title">
       <h1><a href="/farm/details/{{ farm.id }}">{{ farm.name }}</a></h1>
       <div>
