@@ -152,11 +152,11 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   // TODO
-  if ($routeParams.id == $scope.view.user.id) {
-    $scope.view.editMode = true;
-  } else {
-    $scope.view.editMode = false;
-  }
+  // if ($routeParams.id == $scope.view.user.id) {
+  //   $scope.view.editMode = true;
+  // } else {
+  //   $scope.view.editMode = false;
+  // }
 
 
   // retrieve nearest farms and make google map automatically on route load

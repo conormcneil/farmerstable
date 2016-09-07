@@ -8,6 +8,9 @@ define(function (require) {
       return this.remote
         .get(require.toUrl('http://localhost:3000/'))
         .setFindTimeout(5000)
+        .findById('continue')
+          .click()
+          .end()
         .findById('signin-button')
           .click()
           .end()
