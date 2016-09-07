@@ -397,13 +397,18 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
       body: body
     };
     $http.post('/mailgun/send',message).then(function(data) {
-      console.log(data.data);
+      $scope.message = '';
       if (data.data === 'success' || data.data === 'success all') {
         // IF MESSAGE SENDS SUCCESSFULLY:
-        delete $scope.view.message.sendTo;
+        $scope.view.message.sendTo = 'all';
         delete $scope.view.message.subject;
         delete $scope.view.message.body;
         delete $scope.view.message.post;
+        $scope.message.success = 'message(s) sent successfully';
+        console.log($scope.message);
+      } else {
+        $scope.message.error = 'oops';
+        console.log($scope.message);
       }
     });
   };
