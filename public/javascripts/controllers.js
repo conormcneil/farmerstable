@@ -159,10 +159,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   //   $scope.view.editMode = false;
   // }
 
-  // TODO
-  function makeMarkers(arr) {
-    console.log(arr);
-  }
   // Do I ever have to retrieve ALL farms?
   // Right now: YES, until my API returns nearest farms by zip
   $scope.view.zipDecode = function(zip) {
@@ -182,6 +178,12 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       });
     });
   };
+
+  // TODO
+  function makeMarkers(arr) {
+    console.log(arr);
+  };
+  
   function nearestFarms(lat,lng) {
     // console.log(JSON.parse(localStorage.getItem('mapConditions')));
     // add default location in case !localStorage.mapConditions
