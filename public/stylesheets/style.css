@@ -40,11 +40,7 @@ a, a * {
   color: black;
   font-family: "Catamaran", sans-serif;
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: flex-end;
-  top: 0;
-  left: 0;
+  flex-direction: column;
   z-index: 3;
   font-size: 1em; }
   .header a, .header p {
@@ -52,13 +48,20 @@ a, a * {
   .header .top-nav {
     font-size: 1em; }
   .header .header-title {
-    position: absolute;
-    display: flex;
-    left: 32vw;
+    margin: 0;
+    padding: 0;
     font-size: 5em;
-    color: #ffc107; }
+    color: #ffc107;
+    width: 100%;
+    text-align: center; }
     .header .header-title a {
       text-align: center; }
+  .header .header-row2 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between; }
   .header .user-dropdown {
     display: flex;
     flex-flow: row;
@@ -122,8 +125,7 @@ a, a * {
   justify-content: center;
   margin: 0 auto;
   width: 100vw;
-  min-width: 730px;
-  flex-basis: 100%; }
+  min-width: 730px; }
 
 .home {
   height: 76vh;

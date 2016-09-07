@@ -4,7 +4,7 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
   $httpProvider.interceptors.push('jwtInterceptor');
   $routeProvider
     .when('/', {
-      templateUrl: 'partials/home.html'
+      templateUrl: 'partials/curtain.html'
     })
     .when('/home', {
       templateUrl: 'partials/home.html'
