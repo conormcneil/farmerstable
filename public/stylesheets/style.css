@@ -229,9 +229,9 @@ a, a * {
   width: 40%; }
 
 .csa-description {
-  margin-top: 45px;
-  padding: 5px;
-  height: 305px;
+  margin-top: 25px;
+  padding: 15px;
+  height: 505px;
   text-align: justify;
   width: 40%;
   background: rgba(255, 255, 255, 0.95);
