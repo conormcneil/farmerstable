@@ -209,7 +209,7 @@ a, a * {
   }
 }
 
-#map {
+.angular-google-map-container {
   display: block;
   opacity: 0.87;
   height: 250px;
@@ -595,3 +595,12 @@ ft-account-csa {
   color: white;
   z-index: 5;
 }
+
+
+//  {
+// 	position: absolute;
+// 	top: 0;
+// 	bottom: 0;
+// 	right: 0;
+// 	left: 0;
+// }

@@ -170,7 +170,7 @@ a, a * {
       font-family: "Catamaran", sans-serif;
       margin-top: 25px; }
 
-#map {
+.angular-google-map-container {
   display: block;
   opacity: 0.87;
   height: 250px;

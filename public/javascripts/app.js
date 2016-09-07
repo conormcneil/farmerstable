@@ -1,4 +1,4 @@
-var app = angular.module('farmersTableApp',['ngRoute','ngLoadScript']);
+var app = angular.module('farmersTableApp',['ngRoute','uiGmapgoogle-maps']);
 
 app.config(["$routeProvider","$locationProvider","$httpProvider",function($routeProvider,$locationProvider,$httpProvider) {
   $httpProvider.interceptors.push('jwtInterceptor');
@@ -32,6 +32,13 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     });
   $locationProvider.html5Mode(true);
 }])
+.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc',
+        v: '3.20', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
+})
 .service('jwtInterceptor',function jwtInterceptor() {
   return {
     request: function(config) {
@@ -45,38 +52,3 @@ app.config(["$routeProvider","$locationProvider","$httpProvider",function($route
     }
   }
 });
-
-/*global angular */
-(function (ng) {
-  'use strict';
-
-  var app = ng.module('ngLoadScript', []);
-
-  app.directive('script', function() {
-    return {
-      restrict: 'E',
-      scope: false,
-      link: function(scope, elem, attr)
-      {
-        if (attr.type==='text/javascript-lazy')
-        {
-          var s = document.createElement("script");
-          s.type = "text/javascript";
-          var src = elem.attr('src');
-          if(src!==undefined)
-          {
-              s.src = src;
-          }
-          else
-          {
-              var code = elem.text();
-              s.text = code;
-          }
-          document.head.appendChild(s);
-          elem.remove();
-        }
-      }
-    };
-  });
-
-}(angular));

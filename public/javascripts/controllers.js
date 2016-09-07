@@ -70,7 +70,7 @@ makeHeaderController.$inject = ['$scope','$http','FormService','UserService'];
 
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
-function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserService,FormService) {
+function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserService,FormService,uiGmapIsReady) {
   $scope.view = {};
   $scope.message = {};
   // if user is logged in retrieve their info from Service: "activeUser"
@@ -213,8 +213,28 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       });
     };
   };
+
+  $scope.map = {
+       center : {
+           latitude: 37.7749295,
+           longitude: -122.4194155
+       },
+       zoom : 14,
+       control : {}
+   };
+
+   uiGmapIsReady.promise()
+   .then(function (map_instances) {
+       var map1 = $scope.map.control.getGMap();    // get map object through $scope.map.control getGMap() function
+       var map2 = map_instances[0].map;            // get map object through array object returned by uiGmapIsReady promise
+      //  alert('map is now ready');
+      //  if(map1 === map2){
+      //      alert('map1 object is the same as map2 object');
+      //  }
+   });
+
 };
-makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService'];
+makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService','uiGmapIsReady'];
 
 app.controller("AccountController",makeAccountController);
 function makeAccountController($scope,$http,$routeParams,FormService,UserService) {
