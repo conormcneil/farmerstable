@@ -26,7 +26,7 @@
       </div>
       <button ng-click="view.zipDecode(view.zipCode)" ng-show="forms.zip_search">Search</button>
       <ui-gmap-google-map center="map.center" zoom="map.zoom" control="map.control">
-        <ui-gmap-markers models='{{ farms.markers }}'>
+        <ui-gmap-markers models='farms.markers'>
     </ui-gmap-markers>
       </ui-gmap-google-map>
     </div>
