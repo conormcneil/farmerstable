@@ -102,6 +102,54 @@ exports.seed = function(knex, Promise) {
           address: '7694 North 63rd Street Longmont, CO 80503',
           lat: '40.1147551',
           lng: '-105.2063716'
+        }),
+        knex('farms').insert({
+          id: 9,
+          csa_id: null,
+          name: 'Sprout City Farms',
+          owner_id: 10,
+          image_url: 'http://static1.squarespace.com/static/5351f2d7e4b0e65f5c1f6f81/535ae85de4b098b4209f8432/535ae85ee4b009fc847cfb6f/1398466654858/4667a26b68ff66f196b6a8989e69cc8a.jpg',
+          contact_phone: '720-319-8126',
+          contact_email: 'meg@sproutcityfarms.org',
+          address: '6700 E. Virginia Ave, SE Denver 80224',
+          lat: '39.7067576',
+          lng: '-104.9090752'
+        }),
+        knex('farms').insert({
+          id: 10,
+          csa_id: null,
+          name: 'KYV Farm',
+          owner_id: 11,
+          image_url: 'http://augustine.com/sites/default/files/articles/kyv_farms_produce_5x3.jpg',
+          contact_phone: '787-232-2234',
+          contact_email: 'info@kyvfarm.com',
+          address: '7086 County Road 16A, St Augustine, FL 32092',
+          lat: '29.9799231',
+          lng: '-81.553466'
+        }),
+        knex('farms').insert({
+          id: 11,
+          csa_id: null,
+          name: 'Jessica\'s Organic Farm',
+          owner_id: 12,
+          image_url: 'http://www.jessicasorganicfarm.com/images/jessicas/photos/1%20_%20feature%20_%20coleman.jpg',
+          contact_phone: '941-358-3895',
+          contact_email: 'info@jessicasorganicfarm.com',
+          address: '4180 47th St, Sarasota, FL 34235',
+          lat: '27.373268',
+          lng: '-82.4854759'
+        }),
+        knex('farms').insert({
+          id: 12,
+          csa_id: null,
+          name: 'Harvest Farm',
+          owner_id: 13,
+          image_url: 'https://www.harvestfarm.net/image/pfslides/PIzza-Farm-us_CC.jpg',
+          contact_phone: '970-286-5832',
+          contact_email: 'KBallantyne@DenRescue.org',
+          address: '953 Coho Run, Fort Collins, CO 80524',
+          lat: '40.5981965',
+          lng: '-104.9813514'
         })
       ]);
     });

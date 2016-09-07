@@ -336,7 +336,7 @@ a, a * {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  flex-flow: row nowrap; }
+  flex-flow: row wrap; }
   .farm .farm-dynamic {
     margin-left: 75px;
     padding: 5px;
@@ -413,12 +413,17 @@ a, a * {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 3px; }
   .post .post-subject {
-    text-align: center;
-    color: #ffc107; }
+    color: #ffc107;
+    margin-bottom: 0;
+    padding-bottom: 0; }
   .post img {
     position: absolute;
     top: 0;
     right: 0; }
+  .post .date {
+    padding: 0;
+    margin: 0;
+    font-size: 0.75em; }
 
 .account {
   width: 100%; }

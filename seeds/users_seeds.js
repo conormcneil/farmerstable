@@ -76,6 +76,38 @@ exports.seed = function(knex, Promise) {
           password: '$2a$08$uOtLHHF/23V707TT74ZcJOWd7HHZD8PXqopKl0vaV1gT/YtEW30Gu',
           isAdmin: false,
           isFarmer: true
+        }),
+        knex('users').insert({
+          id: 10,
+          email: 'info@sproutcityfarms.com',
+          username: 'sproutcityfarms',
+          password: '$2a$08$Fp4PQaDHmmL2hwJcmr8Z2eDu.gWHAGGWyMtcYxrswl0x07DE99BK.',
+          isAdmin: false,
+          isFarmer: true
+        }),
+        knex('users').insert({
+          id: 11,
+          email: 'info@kyvfarm.com',
+          username: 'kyv',
+          password: '$2a$08$gfzGhm2ZKQeOj3K9KAoHs.99Ya7su8bNPj0ecKH.8m4UmXN8nnrwm',
+          isAdmin: false,
+          isFarmer: true
+        }),
+        knex('users').insert({
+          id: 12,
+          email: 'info@jessicasorganicfarm.com',
+          username: 'jessica',
+          password: '$2a$08$/otskk8Va4Q3PrFMZb6.QOxRJviEgKHvZGEo9Auy5qqWLc08dEb7S',
+          isAdmin: false,
+          isFarmer: true
+        }),
+        knex('users').insert({
+          id: 13,
+          email: 'kballantyne@denrescue.org',
+          username: 'harvest',
+          password: '$2a$08$nsIN6RIjNyIiroIQdscMxuCoQSS51JX/uIOntwP6QdybmuMnwxjs.',
+          isAdmin: false,
+          isFarmer: true
         })
       ]);
     });

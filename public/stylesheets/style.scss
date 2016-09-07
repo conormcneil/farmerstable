@@ -389,7 +389,7 @@ a, a * {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   .farm-dynamic {
     margin-left: 75px;
     padding: 5px;
@@ -481,13 +481,20 @@ a, a * {
   background: rgba(255,255,255,0.95);
   border-radius: 3px;
   .post-subject {
-    text-align: center;
+    // text-align: center;
     color: $accent;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   img {
     position: absolute;
     top: 0;
     right: 0;
+  }
+  .date {
+    padding: 0;
+    margin: 0;
+    font-size: 0.75em;
   }
 }
 // account page
