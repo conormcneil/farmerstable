@@ -398,7 +398,7 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
         delete $scope.view.message.body;
         delete $scope.view.message.post;
         $scope.message.success = 'message(s) sent successfully';
-        console.log($scope.message);
+        console.log($scope.message.success);
       } else {
         $scope.message.error = 'oops';
         console.log($scope.message);
