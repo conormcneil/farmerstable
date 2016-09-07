@@ -113,7 +113,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   // console.log($routeParams.id == $scope.view.user.id);
-  if ($routeParams.id == $scope.view.user.id) {
+  if ($routeParams.id && $routeParams.id == $scope.view.user.id) {
     $scope.view.editMode = true;
   } else {
     $scope.view.editMode = false;
@@ -138,10 +138,18 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   function reverseGeo() {
+    console.log(JSON.parse(localStorage.getItem('mapConditions')));
     // add default location in case !localStorage.mapConditions
-    var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
-    var currentLat = currentCenter['center']['lat'];
-    var currentLng = currentCenter['center']['lng'];
+    if (JSON.parse(localStorage.getItem('mapConditions'))) {
+      var currentCenter = JSON.parse(localStorage.getItem('mapConditions')) || {};
+      var currentLat = currentCenter['center']['lat'] || '35';
+      var currentLng = currentCenter['center']['lng'] || '-105';
+    } else {
+      // set default location on geo error
+      var currentLat = 35.000;
+      var currentLng = -105.000;
+    }
+    console.log(currentLat,currentLng);
     $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + currentLat + ',' + currentLng).then(function(data) {
       var currentZip = data.data.results[0].address_components[data.data.results[0].address_components.length-1].long_name;
       var currentObj = {

@@ -10,20 +10,25 @@ router.get('/all', function(req, res, next) {
     });
 });
 router.post('/all', function(req, res, next) {
-  var zipOrigin = req.body.zip;
-  var origin = {
-    lat: req.body.lat,
-    lng: req.body.lng
+  if (req.body) {
+    var zipOrigin = req.body.zip;
+    var origin = {
+      lat: req.body.lat,
+      lng: req.body.lng
+    }
   }
   knex('farms')
     .then(function(data) {
       var output = [];
+      if (origin.lat && origin.lng) {
+        console.log('these exist:',origin.lat,origin.lng);
+      }
       for (var i = 0; i < data.length; i++) {
         // add each farm to output array
         output.push(data[i]);
         // calculate distance from origin
         var distanceFromOrigin = Math.sqrt(Math.pow((data[i].lng - origin.lng),2) + Math.pow((data[i].lat - origin.lat),2));
-        // attach to output arary
+        // attach to output array
         data[i]['distanceFromOrigin'] = distanceFromOrigin;
       };
       function getMax(arr) {
