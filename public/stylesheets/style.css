@@ -59,6 +59,8 @@ a, a * {
   .header .header-row2 {
     margin: 0;
     padding: 0;
+    padding-left: 80px;
+    padding-right: 80px;
     display: flex;
     flex-flow: row;
     justify-content: space-between; }
@@ -174,8 +176,7 @@ a, a * {
   display: block;
   opacity: 0.87;
   height: 250px;
-  width: 100vw;
-  margin-bottom: 25px;
+  width: 100%;
   box-shadow: 0px 0px 5px 0px black;
   z-index: 0; }
 
@@ -251,7 +252,7 @@ a, a * {
     padding: 5px;
     background: rgba(255, 255, 255, 0.85);
     width: 350px; }
-    .farm-search .zip-search #map {
+    .farm-search .zip-search ui-gmap-google-map {
       width: 95%;
       margin: 10px; }
     .farm-search .zip-search div {
@@ -299,13 +300,15 @@ a, a * {
   background-position: center;
   background-attachment: fixed; }
   .farm-container .farm-title {
+    margin-bottom: 0;
     background: rgba(255, 255, 255, 0.9); }
 
 .back-button {
   width: 100%;
   display: inline-block;
   color: #ffc107;
-  margin: 15px; }
+  margin: 15px;
+  margin-left: 85px; }
 
 .farm-details, .farm-dynamic {
   background: rgba(255, 255, 255, 0.95);
@@ -318,8 +321,9 @@ a, a * {
   justify-content: space-around;
   flex-flow: row nowrap; }
   .farm .farm-dynamic {
+    margin-left: 75px;
     padding: 5px;
-    width: 25%;
+    width: 20%;
     height: auto; }
     .farm .farm-dynamic .farm-csa {
       display: flex;
@@ -338,11 +342,12 @@ a, a * {
           margin: 0;
           margin-top: 10px; }
   .farm .farm-details {
+    margin-right: 75px;
     padding: 5px;
     display: flex;
     flex-flow: column nowrap;
     border-radius: 3px;
-    width: 25%; }
+    width: 20%; }
     .farm .farm-details img:not(.icon) {
       width: 100%;
       box-shadow: 0px 0px 3px 0px black;

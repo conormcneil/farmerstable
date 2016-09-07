@@ -52,6 +52,8 @@ a, a * {
   flex-direction: column;
   z-index: 3;
   font-size: 1em;
+  // padding-left: 75px;
+  // padding-right: 150px;
   a, p {
     padding: 10px;
   }
@@ -73,6 +75,8 @@ a, a * {
   .header-row2 {
     margin: 0;
     padding: 0;
+    padding-left: 80px;
+    padding-right: 80px;
     // background: red;
     display: flex;
     flex-flow: row;
@@ -213,8 +217,8 @@ a, a * {
   display: block;
   opacity: 0.87;
   height: 250px;
-  width: 100vw;
-  margin-bottom: 25px;
+  width: 100%;
+  // margin-bottom: 25px;
   // margin-top: 185px;
   box-shadow: 0px 0px 5px 0px black;
   z-index: 0;
@@ -299,10 +303,10 @@ a, a * {
     padding: 5px;
     background: rgba(255,255,255,0.85);
     width: 350px;
-    #map {
-      // background: blue;
+    ui-gmap-google-map {
       width: 95%;
       margin: 10px;
+
     }
     div {
       padding: 5px;
@@ -363,6 +367,7 @@ a, a * {
   background-position: center;
   background-attachment: fixed;
   .farm-title {
+    margin-bottom: 0;
     background: rgba(255,255,255,0.9);
   }
 }
@@ -371,6 +376,7 @@ a, a * {
   display: inline-block;
   color: $accent;
   margin: 15px;
+  margin-left: 85px;
 }
 .farm-details, .farm-dynamic {
   background: rgba(255,255,255,0.95);
@@ -383,8 +389,9 @@ a, a * {
   justify-content: space-around;
   flex-flow: row nowrap;
   .farm-dynamic {
+    margin-left: 75px;
     padding: 5px;
-    width: 25%;
+    width: 20%;
     height: auto;
     // background: red;
     .farm-csa {
@@ -410,12 +417,13 @@ a, a * {
     }
   }
   .farm-details {
+    margin-right: 75px;
     padding: 5px;
     // background: blue;
     display: flex;
     flex-flow: column nowrap;
     border-radius: 3px;
-    width: 25%;
+    width: 20%;
     img:not(.icon) {
       width: 100%;
       box-shadow: 0px 0px 3px 0px black;
@@ -595,7 +603,6 @@ ft-account-csa {
   color: white;
   z-index: 5;
 }
-
 
 //  {
 // 	position: absolute;
