@@ -163,7 +163,7 @@ a, a * {
 // partials/home
 .home {
   height: 76vh;
-  // width: 100vw;
+  width: 100%;
   background: url('../images/originals/market_flowers.JPG');
   background-position: center;
   background-size: cover;
@@ -171,8 +171,9 @@ a, a * {
   flex-flow: column;
   align-items: center;
   .home-boxes {
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom: 50px;
+    width: 85%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;

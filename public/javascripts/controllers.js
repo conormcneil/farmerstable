@@ -152,11 +152,12 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       });
     });
   };
-  if ($routeParams.id && $routeParams.id == $scope.view.user.id) {
-    $scope.view.editMode = true;
-  } else {
-    $scope.view.editMode = false;
-  }
+  // TODO
+  // if ($routeParams.id == $scope.view.user.id) {
+  //   $scope.view.editMode = true;
+  // } else {
+  //   $scope.view.editMode = false;
+  // }
 
   // TODO
   function makeMarkers(arr) {
