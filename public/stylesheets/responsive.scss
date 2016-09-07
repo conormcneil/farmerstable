@@ -29,26 +29,19 @@
 
 @media (max-width: 420px) {
   body {
-    width: 100vw;
-    .header {
-      width: 100%;
-      background: blue;
-      .header-title {
-        font-size: 1em;
-      }
-    }
-    .home {
-      width: 100%;
-      background: url('../images/originals/market_eggplant2.JPG');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      height: 152vh;
-      justify-content: center;
-      align-items: center;
-    }
+    background: blue;
   }
-  // .header .header-title {
-  //   left: 16vw;
-  // }
+  ft-header {
+    position: absolute;
+    display: inline-block;
+    background: green;
+    width: 500px;;
+    height: 500px;
+  }
+  .header .header-title {
+    left: 16vw;
+    font-size: 3em;
+    width: 100vw;
+    // background: red;
+  }
 }
