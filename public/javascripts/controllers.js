@@ -206,7 +206,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
         title: e.name
       });
     });
-    console.log($scope.markers);
+    // console.log($scope.markers);
     return $scope.markers;
   };
 
@@ -264,7 +264,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   // CSA SIGNUP //
   $scope.view.csaSignup = function(user,csa) {
     if(!$scope.view.user) {
-      $scope.message.error = 'sign in or sign up to sign up for CSAs!'
+      $scope.message.error = 'Sign in or sign up to sign up for CSAs!'
     } else {
       var request = {
         user: user,

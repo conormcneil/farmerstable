@@ -289,7 +289,6 @@ a, a * {
         .farm-search .wrap .nearby-farm .nearby-farm-available p:not(:first-child) {
           padding-left: 5px; }
     .farm-search .wrap .zip-search {
-      background: red;
       display: flex;
       flex-flow: column;
       align-items: center;
@@ -313,6 +312,7 @@ a, a * {
   width: 100%;
   display: flex;
   flex-flow: column;
+  background: red;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
@@ -334,7 +334,6 @@ a, a * {
 
 .farm {
   width: 100%;
-  margin-bottom: 52vh;
   display: flex;
   justify-content: space-around;
   flex-flow: row nowrap; }

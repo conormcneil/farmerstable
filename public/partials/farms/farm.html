@@ -1,5 +1,5 @@
 <!-- <div class="farm-container" ng-controller="FarmsController" style="background: url({{farm.image_url}});background-size: cover;background-position: center;background-attachment: fixed;"> -->
-<div class="farm-container" ng-controller="FarmsController">
+<div class="farm-container" ng-controller="FarmsController" style="background: url({{farm.image_url}});background-size: cover;background-attachment: fixed;background-position: center;">
   <h1 ng-click="view.centerMap(farm.address)" class="farm-title pointer shadow">{{ farm.name }}</h1>
   <div class="back-button">
     <a href="/farms"><button class="shadow pointer">Back to Farms</button></a>
@@ -39,15 +39,15 @@
     </div>
 
     <div class="farm-details shadow">
-      <img ng-src="{{ farm.image_url }}">
-      <button class="follow-button shadow pointer">+ Follow this Farm</button>
-      <h5><img class="icon" ng-src="../images/icons/phone_icon.svg">{{farm.contact_phone}}</h5>
-      <h5><img class="icon" ng-src="../images/icons/mail_icon_black.svg"><a href="mailto:{{farm.contact_email}}" class="pointer">{{farm.contact_email}}</h5>
-      <h5><img class="icon" ng-src="../images/icons/globe_black.svg">{{farm.address}}</a></h5>
       <ui-gmap-google-map id="farm-map" center="map.center" zoom="map.zoom" control="map.control">
         <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
         </ui-gmap-marker>
       </ui-gmap-google-map>
+      <!-- <img ng-src="{{ farm.image_url }}"> -->
+      <button class="follow-button shadow pointer">+ Follow this Farm</button>
+      <h5><img class="icon" ng-src="../images/icons/phone_icon.svg">{{farm.contact_phone}}</h5>
+      <h5><img class="icon" ng-src="../images/icons/mail_icon_black.svg"><a href="mailto:{{farm.contact_email}}" class="pointer">{{farm.contact_email}}</h5>
+      <h5><img class="icon" ng-src="../images/icons/globe_black.svg">{{farm.address}}</a></h5>
     </div>
 
   </div>
