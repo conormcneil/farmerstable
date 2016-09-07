@@ -157,7 +157,8 @@ a, a * {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.85); }
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 3px; }
   .home .home-box-title {
     margin-top: 5px;
     display: flex;
