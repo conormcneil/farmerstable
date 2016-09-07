@@ -248,32 +248,15 @@ a, a * {
   background-attachment: fixed;
   display: flex;
   flex-flow: row wrap;
-  padding-left: 50px; }
-  .farm-search .zip-search {
-    position: fixed;
-    right: 50px;
-    background: red;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin: 15px;
-    padding: 5px;
-    background: rgba(255, 255, 255, 0.85);
-    width: 350px; }
-    .farm-search .zip-search ui-gmap-google-map {
-      width: 95%;
-      margin: 10px; }
-    .farm-search .zip-search div {
-      padding: 5px;
-      width: 100%;
-      flex-flow: row;
-      justify-content: center; }
-      .farm-search .zip-search div label, .farm-search .zip-search div input {
-        width: 98%; }
+  justify-content: space-around; }
   .farm-search .wrap {
-    position: relative; }
+    position: relative;
+    width: 45%;
+    min-width: 400px;
+    height: 0%;
+    background: red; }
     .farm-search .wrap .nearby-farm {
-      min-width: 500px;
+      min-width: 400px;
       padding: 15px;
       margin: 15px;
       border: 1px solid black;
@@ -299,6 +282,26 @@ a, a * {
         align-items: center; }
         .farm-search .wrap .nearby-farm .nearby-farm-available p:not(:first-child) {
           padding-left: 5px; }
+    .farm-search .wrap .zip-search {
+      background: red;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      margin: 15px;
+      padding: 5px;
+      background: rgba(255, 255, 255, 0.85); }
+      .farm-search .wrap .zip-search ui-gmap-google-map {
+        margin: 0;
+        padding: 0;
+        width: 95%; }
+      .farm-search .wrap .zip-search div {
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        justify-content: center; }
+        .farm-search .wrap .zip-search div input {
+          width: 20%; }
 
 .farm-container {
   width: 100%;
