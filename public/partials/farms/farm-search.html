@@ -24,10 +24,10 @@
         <!-- <label for="zip">Zip Code: </label> -->
         <input type="text" ng-model="view.zipCode" placeholder="12345" autofocus>
       </div>
-      <button ng-click="view.zipDecode(view.zipCode)" ng-show="forms.zip_search">Search</button>
+      <button ng-click="view.farmSearch(view.zipCode)" ng-show="forms.zip_search">Search</button>
       <ui-gmap-google-map center="map.center" zoom="map.zoom" control="map.control">
-        <!-- <ui-gmap-markers models='farms.markers'> -->
-    </ui-gmap-markers>
+        <ui-gmap-markers models='markers' coords='"coords"'>
+        </ui-gmap-markers>
       </ui-gmap-google-map>
     </div>
   </div>

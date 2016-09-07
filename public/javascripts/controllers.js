@@ -97,8 +97,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   };
 
   function makeMarker(obj) {
-    console.log('time to make a new marker');
-    console.log(obj);
     $scope.marker = {
        id: 0,
        coords: {
@@ -159,9 +157,24 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   //   $scope.view.editMode = false;
   // }
 
-  // Do I ever have to retrieve ALL farms?
-  // Right now: YES, until my API returns nearest farms by zip
-  $scope.view.zipDecode = function(zip) {
+
+  // retrieve nearest farms and make google map automatically on route load
+  if (JSON.parse(localStorage.getItem('mapConditions'))) {
+    var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
+    var lat = currentCenter['center']['lat'];
+    var lng = currentCenter['center']['lng'];
+    makeMap(lat,lng,12);
+    nearestFarms(lat,lng); // gets nearest farms
+  } else {
+    // set default location on geo error
+    var lat = 35.000;
+    var lng = -105.000;
+    makeMap(lat,lng,12);
+    nearestFarms(lat,lng); // gets nearest farms
+  }
+  // this function is used for manual farm search by zip;
+  // takes zip code => ordered list of nearest 10 farms
+  $scope.view.farmSearch = function(zip) {
     var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip;
     $http.get(url).then(function(data) {
       $scope.view.searchOrigin = data.data.results[0].geometry.location;
@@ -174,16 +187,29 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       $http.post('/farms/all',zipObj).then(function(data) {
         delete $scope.farms;
         $scope.farms = data.data;
-        // makeMarkers($scope.farms);
+        // after search results; create map markers with new $scope.farms list
+        makeMarkers($scope.farms);
       });
     });
   };
 
-  // TODO
+  // this function takes an array of farms => sets marker for each farm on googlemap
   function makeMarkers(arr) {
-    console.log(arr);
+    $scope.markers = [];
+    var ret = arr.map(function(e) {
+      return $scope.markers.push({
+        id: $scope.markers.length,
+        coords: {
+          latitude: e.lat,
+          longitude: e.lng,
+        },
+        title: e.name
+      });
+    });
+    console.log($scope.markers);
+    return $scope.markers;
   };
-  
+
   function nearestFarms(lat,lng) {
     // console.log(JSON.parse(localStorage.getItem('mapConditions')));
     // add default location in case !localStorage.mapConditions
@@ -201,27 +227,16 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       })
     });
   };
-  function makeMap(lat,lng,zoom,marker) {
+  function makeMap(lat,lng,zoom,markers) {
     $scope.map = {
          center : {
              latitude: lat,
              longitude: lng
          },
-         zoom : zoom || 10
+         zoom : zoom || 10,
+         control : {}
      };
-  }
-  if (JSON.parse(localStorage.getItem('mapConditions'))) {
-    var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
-    var lat = currentCenter['center']['lat'];
-    var lng = currentCenter['center']['lng'];
-    nearestFarms(lat,lng); // gets nearest farms
-    makeMap(lat,lng,12);
-  } else {
-    // set default location on geo error
-    var lat = 35.000;
-    var lng = -105.000;
-    nearestFarms(lat,lng); // gets nearest farms
-    makeMap(lat,lng,12);
+    //  makeMarkers(markers);
   }
   $scope.view.centerMap = function(address) {
     address = address.split(' ').join('+');
@@ -286,46 +301,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
    .then(function (map_instances) {
        var map1 = $scope.map.control.getGMap();    // get map object through $scope.map.control getGMap() function
        var map2 = map_instances[0].map;            // get map object through array object returned by uiGmapIsReady promise
-      //  alert('map is now ready');
-      //  if(map1 === map2){
-      //      alert('map1 object is the same as map2 object');
-      //  }
    });
-  //  $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 5 };
-  //  $scope.options = {scrollwheel: false};
-  //  $scope.coordsUpdates = 0;
-  //  $scope.dynamicMoveCtr = 0;
-  //  $scope.marker = {
-  //     id: 0,
-  //     coords: {
-  //       latitude: 38.1451,
-  //       longitude: -105
-  //     },
-  //     options: {
-  //       label:'Label Test Label',
-  //       title: 'Title Test Title',
-  //       MarkerLabel: {
-  //         text: 'This is some label text.'
-  //       }
-  //     },
-  //     // events: {}
-  //     events: {
-  //       dragend: function (marker, eventName, args) {
-  //         $log.log('marker dragend');
-  //         var lat = marker.getPosition().lat();
-  //         var lon = marker.getPosition().lng();
-  //         $log.log(lat);
-  //         $log.log(lon);
-   //
-  //         $scope.marker.options = {
-  //           draggable: true,
-  //           labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
-  //           labelAnchor: "100 0",
-  //           labelClass: "marker-labels"
-  //         };
-  //       }
-  //     }
-  //   };
 
 };
 makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService','uiGmapIsReady'];

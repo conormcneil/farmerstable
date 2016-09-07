@@ -248,7 +248,8 @@ a, a * {
   background-attachment: fixed;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around; }
+  justify-content: space-around;
+  padding-bottom: 30px; }
   .farm-search .wrap {
     position: relative;
     width: 45%;
@@ -256,9 +257,11 @@ a, a * {
     height: 0%;
     background: red; }
     .farm-search .wrap .nearby-farm {
-      min-width: 400px;
       padding: 15px;
       margin: 15px;
+      padding-top: 0;
+      padding-bottom: 0;
+      min-width: 400px;
       border: 1px solid black;
       display: flex;
       flex-flow: column nowrap;
@@ -268,6 +271,8 @@ a, a * {
         padding: 0;
         margin: 0; }
       .farm-search .wrap .nearby-farm .nearby-farm-title {
+        padding: 0;
+        margin: 0;
         color: #ffc107;
         display: flex;
         flex-flow: row nowrap;
@@ -275,7 +280,8 @@ a, a * {
         align-items: center;
         font-size: 1.2em; }
       .farm-search .wrap .nearby-farm img {
-        height: 75px; }
+        height: 75px;
+        padding-top: 15px; }
       .farm-search .wrap .nearby-farm .nearby-farm-available {
         display: flex;
         flex-flow: row nowrap;
@@ -501,7 +507,8 @@ footer {
   position: fixed;
   background: rgba(255, 255, 255, 0);
   bottom: 0;
-  left: 0; }
+  left: 0;
+  padding-left: 15px; }
 
 .confirm {
   height: 300px;
