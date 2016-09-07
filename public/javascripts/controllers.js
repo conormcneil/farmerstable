@@ -136,7 +136,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
       $scope.farm = data.data; // make farm object
 
-      $scope.map = {center: {latitude: $scope.farm.lat, longitude: $scope.farm.lng }, zoom: 5 };
+      $scope.map = {center: {latitude: $scope.farm.lat, longitude: $scope.farm.lng }, zoom: 8 };
       $scope.options = {scrollwheel: false};
       $scope.coordsUpdates = 0;
       $scope.dynamicMoveCtr = 0;
