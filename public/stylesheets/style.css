@@ -260,7 +260,8 @@ a, a * {
     background: rgba(255, 255, 255, 0.65);
     position: absolute;
     display: flex;
-    justify-content: center; }
+    align-items: center;
+    padding-left: 100px; }
   .farm-search .wrap {
     margin-top: 25px;
     position: relative;
@@ -326,6 +327,73 @@ a, a * {
         justify-content: center; }
         .farm-search .wrap .zip-search div input {
           width: 20%; }
+
+.wrap-fixed {
+  margin-top: 25px;
+  position: fixed;
+  right: 45px;
+  width: 45%;
+  min-width: 400px;
+  height: 0%; }
+  .wrap-fixed .nearby-farm-main {
+    padding: 0;
+    margin: 0; }
+  .wrap-fixed .nearby-farm {
+    padding: 15px;
+    margin: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: 400px;
+    min-height: 120px;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95); }
+    .wrap-fixed .nearby-farm * {
+      padding: 0;
+      margin: 0; }
+    .wrap-fixed .nearby-farm .nearby-farm-title {
+      padding: 0;
+      margin: 0;
+      color: #ffc107;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2em; }
+    .wrap-fixed .nearby-farm img {
+      height: 75px;
+      padding-top: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .wrap-fixed .nearby-farm .nearby-farm-available {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center; }
+      .wrap-fixed .nearby-farm .nearby-farm-available p:not(:first-child) {
+        padding-left: 5px; }
+  .wrap-fixed .zip-search {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 15px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.85); }
+    .wrap-fixed .zip-search ui-gmap-google-map {
+      margin: 0;
+      padding: 0;
+      width: 95%; }
+    .wrap-fixed .zip-search div {
+      padding: 5px;
+      width: 100%;
+      display: flex;
+      flex-flow: row;
+      justify-content: center; }
+      .wrap-fixed .zip-search div input {
+        width: 20%; }
 
 .farm-container {
   width: 100%;

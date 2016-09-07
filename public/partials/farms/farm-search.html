@@ -1,5 +1,10 @@
 <div ng-controller="FarmsController" class="farm-search">
 
+  <div class="farm-search-header">
+    <label for="filter">Filter By:</label>
+    <input type="checkbox" ng-model="view.filter" name="filter" ng-click="view.filterBy(view.filter)">CSA Available
+  </div>
+
   <div class="wrap">
     <div ng-repeat="farm in farms" class="nearby-farm shadow">
       <div class="nearby-farm-main">
@@ -21,7 +26,9 @@
     </div>
   </div>
 
-  <div class="wrap">
+  <div class="wrap"></div>
+
+  <div class="wrap-fixed">
     <div class="zip-search shadow">
       <button ng-click="view.toggle('zip_search')">Search by zip code</button>
       <div ng-show='forms.zip_search'>

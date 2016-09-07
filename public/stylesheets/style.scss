@@ -300,7 +300,9 @@ a, a * {
     background: rgba(255,255,255,0.65);
     position: absolute;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    // justify-content: center;
+    padding-left: 100px;
   }
   .wrap {
     margin-top: 25px;
@@ -376,6 +378,84 @@ a, a * {
         input {
           width: 20%;
         }
+      }
+    }
+  }
+}
+.wrap-fixed {
+  margin-top: 25px;
+  position: fixed;
+  right: 45px;
+  width: 45%;
+  min-width: 400px;
+  height: 0%;
+  .nearby-farm-main {
+    padding: 0;
+    margin: 0;
+  }
+  .nearby-farm {
+    padding: 15px;
+    margin: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: 400px;
+    min-height: 120px;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.95);
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .nearby-farm-title {
+      padding: 0;
+      margin: 0;
+      color: $accent;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2em;
+    }
+    img {
+      height: 75px;
+      padding-top: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nearby-farm-available {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      p:not(:first-child) {
+        padding-left: 5px;
+      }
+    }
+  }
+  .zip-search {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 15px;
+    padding: 5px;
+    background: rgba(255,255,255,0.85);
+    ui-gmap-google-map {
+      margin: 0;
+      padding: 0;
+      width: 95%;
+    }
+    div {
+      padding: 5px;
+      width: 100%;
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      input {
+        width: 20%;
       }
     }
   }
