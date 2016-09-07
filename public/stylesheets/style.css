@@ -89,7 +89,7 @@ a, a * {
     top: 185px;
     z-index: 1;
     background: white;
-    width: 185px;
+    width: 210px;
     text-align: center;
     font-size: 1.2em; }
     .header .signin input, .header .signin button, .header .signup input, .header .signup button {

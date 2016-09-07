@@ -141,21 +141,15 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       getPosts($routeParams.id);
       // get csa details
       getCsa($scope.farm);
-      // $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
-      //   var tempArr = data.data.products.split(',');
-      //   var productsArr = tempArr.map(e => {
-      //     return e.trim();
-      //   });
-      //   $scope.farm.csa = data.data;
-      //   $scope.farm.csa.products = productsArr;
-      // });
     });
   };
   // TODO
-  // if ($routeParams.id == $scope.view.user.id) {
-  //   $scope.view.editMode = true;
-  // } else {
-  //   $scope.view.editMode = false;
+  // if ($routeParams !== undefined) {
+  //   if ($routeParams.id == $scope.view.user.id)
+  //     $scope.view.editMode = true;
+  //   } else {
+  //     $scope.view.editMode = false;
+  //   }
   // }
 
 
