@@ -1,24 +1,23 @@
 <div ng-controller="FarmsController" class="farm-search">
 
-  <div class="farm-search-header">
-    <label for="filterBool">Filter By:</label>
-    <input type="checkbox" value="filterBool" name="filterBool" ng-model="view.filterBool" ng-click="view.filterBy(view.filterBool)">CSA Available
-  </div>
-
   <div class="wrap">
     <div ng-repeat="farm in farms" class="nearby-farm shadow">
-      <div class="nearby-farm-title">
-        <h1><a href="/farm/details/{{ farm.id }}">{{ farm.name }}</a></h1>
-        <img ng-src="{{farm.image_url}}">
-      </div>
-      <div class="nearby-farm-quicklook">
-        <div class="nearby-farm-available">
-          <p>CSA Available?</p>
-          <p ng-show="farm.csa_id !== null" style="color: green;">YES</p>
-          <p ng-show="farm.csa_id === null" style="color: red;">NO</p>
+      <div class="nearby-farm-main">
+        <div class="nearby-farm-title">
+          <h1><a href="/farm/details/{{ farm.id }}">{{ farm.name }}</a></h1>
+          <!-- <img ng-src="{{farm.image_url}}"> -->
         </div>
-        <p>{{ farm.address }}</p>
+        <div class="nearby-farm-quicklook">
+          <div class="nearby-farm-available">
+            <p>CSA Available?</p>
+            <p ng-show="farm.csa_id !== null" style="color: green;">YES</p>
+            <p ng-show="farm.csa_id === null" style="color: red;">NO</p>
+          </div>
+          <p>{{ farm.address }}</p>
+        </div>
       </div>
+      <!-- IMG HERE -->
+      <img ng-src="{{farm.image_url}}">
     </div>
   </div>
 

@@ -308,16 +308,22 @@ a, a * {
     width: 45%;
     min-width: 400px;
     height: 0%;
+    .nearby-farm-main {
+      padding: 0;
+      margin: 0;
+    }
     .nearby-farm {
       padding: 15px;
       margin: 15px;
       padding-top: 0;
       padding-bottom: 0;
       min-width: 400px;
+      min-height: 120px;
       border: 1px solid black;
       display: flex;
-      flex-flow: column nowrap;
+      flex-flow: row nowrap;
       justify-content: space-between;
+      align-items: center;
       background: rgba(255,255,255,0.95);
       * {
         padding: 0;
@@ -336,6 +342,9 @@ a, a * {
       img {
         height: 75px;
         padding-top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .nearby-farm-available {
         display: flex;
