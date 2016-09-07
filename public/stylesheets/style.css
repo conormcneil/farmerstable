@@ -478,7 +478,8 @@ ft-account-home {
       ft-account-home .account-home .account-home-main button {
         margin-bottom: 100px; }
     ft-account-home .account-home .account-home-aside {
-      padding: 5px; }
+      padding: 5px;
+      height: 0%; }
       ft-account-home .account-home .account-home-aside h6 img {
         padding-right: 5px; }
       ft-account-home .account-home .account-home-aside .account-img {

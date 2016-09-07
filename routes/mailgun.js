@@ -13,7 +13,7 @@ router.post('/send', function(req, res, next) {
       text: req.body.body
     };
     mailgun.messages().send(data, function (error, body) {
-      res.json('message sent');
+      res.json('success');
     });
   } else {
     var count = 0;
@@ -28,7 +28,7 @@ router.post('/send', function(req, res, next) {
       mailgun.messages().send(data, function (error, body) {
         if (count === req.body.sendTo.length) {
           // console.log('all messages sent');
-          res.json('all messages sent');
+          res.json('success all');
         }
         console.log('message sent to: ' + e);
       });

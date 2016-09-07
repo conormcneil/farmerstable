@@ -86,7 +86,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   $scope.view.deletePost = function(id) {
-    if (checkConfirm('are you sure you want to permanently delete this post?')) {
+    if (checkConfirm('Are you sure you want to permanently delete this post?')) {
       $http.delete(`/farms/deletepost/${id}`).then(function(data) {
         // console.log('deleted:',data);
         getPosts($scope.farm.id);
@@ -152,11 +152,11 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   // TODO
-  // if ($routeParams.id == $scope.view.user.id) {
-  //   $scope.view.editMode = true;
-  // } else {
-  //   $scope.view.editMode = false;
-  // }
+  if ($routeParams.id == $scope.view.user.id) {
+    $scope.view.editMode = true;
+  } else {
+    $scope.view.editMode = false;
+  }
 
 
   // retrieve nearest farms and make google map automatically on route load
@@ -371,7 +371,8 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
     });
   };
   $scope.view.sendMessage = function(sendFrom,sendTo,subject,body,post) {
-    console.log(post);
+    // delete $scope.view.message;
+    // view.message.sendTo,view.message.subject,view.message.body,view.message.post
     if (post) {
       var postObj = {
         farm_id: $scope.user.farm.id,
@@ -396,7 +397,14 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
       body: body
     };
     $http.post('/mailgun/send',message).then(function(data) {
-      console.log(data);
+      console.log(data.data);
+      if (data.data === 'success' || data.data === 'success all') {
+        // IF MESSAGE SENDS SUCCESSFULLY:
+        delete $scope.view.message.sendTo;
+        delete $scope.view.message.subject;
+        delete $scope.view.message.body;
+        delete $scope.view.message.post;
+      }
     });
   };
 };

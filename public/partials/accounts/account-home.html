@@ -13,12 +13,17 @@
     <textarea name="body" ng-model="view.message.body"></textarea>
     <label for="post">Post this Message on my Farm's home page</label>
     <input type="checkbox" ng-model="view.message.post"></input>
+
+    <p class="success message" ng-show="message.success">{{ message.success }}</p>
+    <p class="error message" ng-show="message.error">{{ message.error }}</p>
+    
     <button ng-click="view.sendMessage(user.email,view.message.sendTo,view.message.subject,view.message.body,view.message.post)">Send</button>
   </div>
   <aside class="account-home-aside shadow">
     <h3>Your Farm <a href="">(edit)</a></h3>
     <img ng-src="{{user.farm.image_url}}" class="account-img">
-    <h2>{{ user.farm.name }}</h2>
+    <h2><a href="/farm/details/{{ user.farm.id }}">{{ user.farm.name }}</a></h2>
+    <h6><a href="/farm/details/{{ user.farm.id }}">See your farm's profile as users do</a></h6>
     <h6><img ng-src="../images/icons/map_icon.svg" style="height: 1.2em;"> {{ user.farm.address }}</h6>
     <h6><img ng-src="../images/icons/phone_icon.svg" style="height: 1.2em;"> {{ user.farm.contact_phone }}</h6>
     <h6><img ng-src="../images/icons/mail_icon_black.svg" style="height: 1.2em;"> {{ user.farm.contact_email }}</h6>
