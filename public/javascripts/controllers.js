@@ -113,11 +113,12 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
   // console.log($routeParams.id == $scope.view.user.id);
-  if ($routeParams.id && $routeParams.id == $scope.view.user.id) {
-    $scope.view.editMode = true;
-  } else {
-    $scope.view.editMode = false;
-  }
+  // TODO
+  // if ($routeParams.id && $routeParams.id == $scope.view.user.id) {
+  //   $scope.view.editMode = true;
+  // } else {
+  //   $scope.view.editMode = false;
+  // }
 
   // Do I ever have to retrieve ALL farms?
   // Right now: YES, until my API returns nearest farms by zip
