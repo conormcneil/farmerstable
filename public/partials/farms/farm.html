@@ -21,6 +21,7 @@
         <button class="pointer shadow" ng-click="view.csaSignup(view.user,farm.csa)" style="margin: 10px auto; height: 25px;">Sign up</button>
         <h5>Starts: {{farm.csa.start_date | date}}</h5>
         <h5>Ends: {{farm.csa.end_date | date}}</h5>
+        <h5>Pickup Location: {{ farm.csa.pickup_location }}</h5>
         <li class="product-list" ng-repeat="product in farm.csa.products track by $index">{{product}}</li>
       </div>
       <!-- show if this farm's CSA does NOT exist -->
