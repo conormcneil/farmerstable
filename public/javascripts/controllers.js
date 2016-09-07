@@ -96,10 +96,53 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     }
   };
 
+  function makeMarker(obj) {
+    console.log('time to make a new marker');
+    console.log(obj);
+    $scope.marker = {
+       id: 0,
+       coords: {
+         latitude: obj.lat,
+         longitude: obj.lng
+       },
+       options: {
+         label: obj.name,
+         title: obj.name,
+         MarkerLabel: {
+           text: 'Test text'
+         }
+       },
+       // events: {}
+       events: {
+         dragend: function (marker, eventName, args) {
+           $log.log('marker dragend');
+           var lat = marker.getPosition().lat();
+           var lon = marker.getPosition().lng();
+           $log.log(lat);
+           $log.log(lon);
+
+           $scope.marker.options = {
+             labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
+             labelAnchor: "100 0",
+             labelClass: "marker-labels"
+           };
+         }
+       }
+     };
+  }
+
   // if url has route param: id, set this to active farm
   if($routeParams.id) {
     $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
-      $scope.farm = data.data;
+      $scope.farm = data.data; // make farm object
+
+      $scope.map = {center: {latitude: $scope.farm.lat, longitude: $scope.farm.lng }, zoom: 5 };
+      $scope.options = {scrollwheel: false};
+      $scope.coordsUpdates = 0;
+      $scope.dynamicMoveCtr = 0;
+
+      // make marker on map from farm address
+      makeMarker($scope.farm);
       // // get farm posts
       getPosts($routeParams.id);
       // get csa details
@@ -139,25 +182,15 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       });
     });
   };
-  function reverseGeo() {
-    console.log(JSON.parse(localStorage.getItem('mapConditions')));
+  function nearestFarms(lat,lng) {
+    // console.log(JSON.parse(localStorage.getItem('mapConditions')));
     // add default location in case !localStorage.mapConditions
-    if (JSON.parse(localStorage.getItem('mapConditions'))) {
-      var currentCenter = JSON.parse(localStorage.getItem('mapConditions')) || {};
-      var currentLat = currentCenter['center']['lat'] || '35';
-      var currentLng = currentCenter['center']['lng'] || '-105';
-    } else {
-      // set default location on geo error
-      var currentLat = 35.000;
-      var currentLng = -105.000;
-    }
-    console.log(currentLat,currentLng);
-    $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + currentLat + ',' + currentLng).then(function(data) {
+    $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lng).then(function(data) {
       var currentZip = data.data.results[0].address_components[data.data.results[0].address_components.length-1].long_name;
       var currentObj = {
         zip: currentZip,
-        lat: currentLat,
-        lng: currentLng
+        lat: lat,
+        lng: lng
       };
       $http.post('/farms/all',currentObj).then(function(data) {
         delete $scope.farms;
@@ -165,7 +198,44 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       })
     });
   };
-  reverseGeo();
+  if (JSON.parse(localStorage.getItem('mapConditions'))) {
+    var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
+    var lat = currentCenter['center']['lat'];
+    var lng = currentCenter['center']['lng'];
+    nearestFarms(lat,lng); // gets nearest farms
+  } else {
+    // set default location on geo error
+    var lat = 35.000;
+    var lng = -105.000;
+    nearestFarms(lat,lng); // gets nearest farms
+  }
+  // function reverseGeo() {
+  //   console.log(JSON.parse(localStorage.getItem('mapConditions')));
+  //   // add default location in case !localStorage.mapConditions
+  //   if (JSON.parse(localStorage.getItem('mapConditions'))) {
+  //     var currentCenter = JSON.parse(localStorage.getItem('mapConditions')) || {};
+  //     var currentLat = currentCenter['center']['lat'] || '35';
+  //     var currentLng = currentCenter['center']['lng'] || '-105';
+  //   } else {
+  //     // set default location on geo error
+  //     var currentLat = 35.000;
+  //     var currentLng = -105.000;
+  //   }
+  //   console.log(currentLat,currentLng);
+  //   $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + currentLat + ',' + currentLng).then(function(data) {
+  //     var currentZip = data.data.results[0].address_components[data.data.results[0].address_components.length-1].long_name;
+  //     var currentObj = {
+  //       zip: currentZip,
+  //       lat: currentLat,
+  //       lng: currentLng
+  //     };
+  //     $http.post('/farms/all',currentObj).then(function(data) {
+  //       delete $scope.farms;
+  //       $scope.farms = data.data;
+  //     })
+  //   });
+  // };
+  // reverseGeo();
   $scope.view.centerMap = function(address) {
     address = address.split(' ').join('+');
     GoogleMapsService.getLatLng(address).then(function(data) {
@@ -214,14 +284,14 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     };
   };
 
-  $scope.map = {
-       center : {
-           latitude: 37.7749295,
-           longitude: -122.4194155
-       },
-       zoom : 14,
-       control : {}
-   };
+  // $scope.map = {
+  //      center : {
+  //          latitude: 37.7749295,
+  //          longitude: -122.4194155
+  //      },
+  //      zoom : 12,
+  //      control : {}
+  //  };
 
    uiGmapIsReady.promise()
    .then(function (map_instances) {
@@ -232,6 +302,41 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       //      alert('map1 object is the same as map2 object');
       //  }
    });
+  //  $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 5 };
+  //  $scope.options = {scrollwheel: false};
+  //  $scope.coordsUpdates = 0;
+  //  $scope.dynamicMoveCtr = 0;
+  //  $scope.marker = {
+  //     id: 0,
+  //     coords: {
+  //       latitude: 38.1451,
+  //       longitude: -105
+  //     },
+  //     options: {
+  //       label:'Label Test Label',
+  //       title: 'Title Test Title',
+  //       MarkerLabel: {
+  //         text: 'This is some label text.'
+  //       }
+  //     },
+  //     // events: {}
+  //     events: {
+  //       dragend: function (marker, eventName, args) {
+  //         $log.log('marker dragend');
+  //         var lat = marker.getPosition().lat();
+  //         var lon = marker.getPosition().lng();
+  //         $log.log(lat);
+  //         $log.log(lon);
+   //
+  //         $scope.marker.options = {
+  //           draggable: true,
+  //           labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
+  //           labelAnchor: "100 0",
+  //           labelClass: "marker-labels"
+  //         };
+  //       }
+  //     }
+  //   };
 
 };
 makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService','uiGmapIsReady'];
