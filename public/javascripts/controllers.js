@@ -71,6 +71,7 @@ makeHeaderController.$inject = ['$scope','$http','FormService','UserService'];
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
 function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserService,FormService,uiGmapIsReady) {
+  console.log('farms');
   $scope.view = {};
   $scope.message = {};
   // if user is logged in retrieve their info from Service: "activeUser"
@@ -160,12 +161,14 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
 
   // retrieve nearest farms and make google map automatically on route load
   if (JSON.parse(localStorage.getItem('mapConditions'))) {
+    console.log('if');
     var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
     var lat = currentCenter['center']['lat'];
     var lng = currentCenter['center']['lng'];
     makeMap(lat,lng,3);
     nearestFarms(lat,lng); // gets nearest farms
   } else {
+    console.log('else');
     // set default location on geo error
     var lat = 35.000;
     var lng = -105.000;
@@ -177,19 +180,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   $scope.view.farmSearch = function(zip) {
     var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip;
     $http.get(url).then(function(data) {
-      $scope.view.searchOrigin = data.data.results[0].geometry.location;
-      // post to /farms/all and retrieve farms by zip
-      var zipObj = {
-        zip: zip,
-        lat: $scope.view.searchOrigin.lat,
-        lng: $scope.view.searchOrigin.lng
-      }
-      $http.post('/farms/all',zipObj).then(function(data) {
-        delete $scope.farms;
-        $scope.farms = data.data;
-        // after search results; create map markers with new $scope.farms list
-        makeMarkers($scope.farms);
-      });
+      nearestFarms(data.data.results[0].geometry.location.lat,data.data.results[0].geometry.location.lng);
     });
   };
 
@@ -223,6 +214,8 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       $http.post('/farms/all',currentObj).then(function(data) {
         delete $scope.farms;
         $scope.farms = data.data;
+        $scope.farms.splice(10,$scope.farms.length-1);
+        console.log($scope.farms.length,$scope.farms);
         makeMarkers($scope.farms);
       })
     });
