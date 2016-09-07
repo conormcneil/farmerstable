@@ -83,7 +83,6 @@ router.post('/newpost',function(req, res, next) {
   console.log(req.body);
   knex('farm_posts')
     .insert({
-      // comments
       farm_id: req.body.farm_id,
       // sent_to: req.body.sent_to,
       subject: req.body.subject,
