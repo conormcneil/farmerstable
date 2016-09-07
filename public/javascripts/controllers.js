@@ -163,13 +163,13 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
     var lat = currentCenter['center']['lat'];
     var lng = currentCenter['center']['lng'];
-    makeMap(lat,lng,12);
+    makeMap(lat,lng,3);
     nearestFarms(lat,lng); // gets nearest farms
   } else {
     // set default location on geo error
     var lat = 35.000;
     var lng = -105.000;
-    makeMap(lat,lng,12);
+    makeMap(lat,lng,3);
     nearestFarms(lat,lng); // gets nearest farms
   }
   // this function is used for manual farm search by zip;
@@ -233,7 +233,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
              latitude: lat,
              longitude: lng
          },
-         zoom : zoom || 10,
+         zoom : zoom || 8,
          control : {}
      };
     //  makeMarkers(markers);
