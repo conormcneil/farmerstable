@@ -71,7 +71,6 @@ makeHeaderController.$inject = ['$scope','$http','FormService','UserService'];
 // FarmsController
 app.controller("FarmsController",makeFarmsController);
 function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserService,FormService,uiGmapIsReady) {
-  console.log('farms');
   $scope.view = {};
   $scope.message = {};
   // if user is logged in retrieve their info from Service: "activeUser"
@@ -160,21 +159,8 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
 
 
   // retrieve nearest farms and make google map automatically on route load
-  if (JSON.parse(localStorage.getItem('mapConditions'))) {
-    console.log('if');
-    var currentCenter = JSON.parse(localStorage.getItem('mapConditions'));
-    var lat = currentCenter['center']['lat'];
-    var lng = currentCenter['center']['lng'];
-    makeMap(lat,lng,3);
-    nearestFarms(lat,lng); // gets nearest farms
-  } else {
-    console.log('else');
-    // set default location on geo error
-    var lat = 35.000;
-    var lng = -105.000;
-    makeMap(lat,lng,3);
-    nearestFarms(lat,lng); // gets nearest farms
-  }
+  makeMap(currentLocation.lat,currentLocation.lng,3);
+  nearestFarms(currentLocation.lat,currentLocation.lng); // gets nearest farms
   // this function is used for manual farm search by zip;
   // takes zip code => ordered list of nearest 10 farms
   $scope.view.farmSearch = function(zip) {
@@ -215,7 +201,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
         delete $scope.farms;
         $scope.farms = data.data;
         $scope.farms.splice(10,$scope.farms.length-1);
-        console.log($scope.farms.length,$scope.farms);
         makeMarkers($scope.farms);
       })
     });
