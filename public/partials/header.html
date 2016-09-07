@@ -22,7 +22,7 @@
 <form class="signin" ng-show="forms.signin">
   <input type="text" ng-model="view.signin.username" placeholder="username/email" id="username" autofocus>
   <input type="password" ng-model="view.signin.password" placeholder="password" id="password">
-  <button ng-click="view.toggle('signin');view.signin(view.signin.username,view.signin.password)" id="submit" style="border-radius: 0;">Submit</button>
+  <button ng-click="view.toggle('signin');view.signin(view.signin.username,view.signin.password)" id="submit" style="border-radius: 0;">Sign In</button>
 </form>
 <form class="signup" ng-show="forms.signup">
   <input type="text" ng-model="view.signup.email" placeholder="Enter your email address" autofocus>
@@ -37,7 +37,7 @@
     <input type="radio" name="is-farmer" ng-model="view.signup.isNotFarmer" value="false">
     <label for="is-farmer">I'm a consumer</label>
   </aside>
-  <button ng-click="view.signup(view.signup.email,view.signup.username,view.signup.password,view.signup.passwordConfirm,view.signup.isFarmer,view.signup.isNotFarmer);view.toggle('signup')">Create Account</button>
+  <button ng-click="view.signup(view.signup.email,view.signup.username,view.signup.password,view.signup.passwordConfirm,view.signup.isFarmer,view.signup.isNotFarmer);view.toggle('signup')">Sign Up</button>
 </form>
 <div class="signin user-nav" ng-show="forms.user_nav">
   <ft-user-nav></ft-user-nav>

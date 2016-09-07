@@ -61,7 +61,8 @@ function makeHeaderController($scope,$http,FormService,UserService) {
     // empty signup form
     delete $scope.view.signup;
     $http.post('/users/new',user).then(function(data) {
-      // console.log(data);
+      console.log(data.config.data);
+      $scope.view.signin(data.config.data.username,data.config.data.password);
     });
   };
 };
