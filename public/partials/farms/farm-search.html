@@ -1,5 +1,10 @@
 <div ng-controller="FarmsController" class="farm-search">
 
+  <div class="farm-search-header">
+    <label for="filterBool">Filter By:</label>
+    <input type="checkbox" value="filterBool" name="filterBool" ng-model="view.filterBool" ng-click="view.filterBy(view.filterBool)">CSA Available
+  </div>
+
   <div class="wrap">
     <div ng-repeat="farm in farms" class="nearby-farm shadow">
       <div class="nearby-farm-title">

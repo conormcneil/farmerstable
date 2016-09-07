@@ -290,12 +290,20 @@ a, a * {
   flex-flow: row wrap;
   justify-content: space-around;
   padding-bottom: 30px;
+  .farm-search-header {
+    width: 100%;
+    height: 30px;
+    background: rgba(255,255,255,0.65);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
   .wrap {
+    margin-top: 25px;
     position: relative;
     width: 45%;
     min-width: 400px;
     height: 0%;
-    background: red;
     .nearby-farm {
       padding: 15px;
       margin: 15px;

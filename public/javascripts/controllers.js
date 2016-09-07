@@ -140,14 +140,15 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       // // get farm posts
       getPosts($routeParams.id);
       // get csa details
-      $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
-        var tempArr = data.data.products.split(',');
-        var productsArr = tempArr.map(e => {
-          return e.trim();
-        });
-        $scope.farm.csa = data.data;
-        $scope.farm.csa.products = productsArr;
-      });
+      getCsa($scope.farm);
+      // $http.get(`/csa/details/${$routeParams.id}`).then(function(data) {
+      //   var tempArr = data.data.products.split(',');
+      //   var productsArr = tempArr.map(e => {
+      //     return e.trim();
+      //   });
+      //   $scope.farm.csa = data.data;
+      //   $scope.farm.csa.products = productsArr;
+      // });
     });
   };
   // TODO
@@ -202,9 +203,28 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
         $scope.farms = data.data;
         $scope.farms.splice(10,$scope.farms.length-1);
         makeMarkers($scope.farms);
+        var silentArr = $scope.farms.reduce(function(prev,curr) {
+          getCsa(curr);
+          return prev;
+        },[]);
       })
     });
   };
+  function getCsa(farm) {
+    $http.get(`/csa/details/${farm.id}`).then(function(data) {
+      if (data.data) { // data.data is csa object returned from API
+        var tempArr = data.data.products.split(',');
+        var productsArr = tempArr.map(e => {
+          return e.trim();
+        });
+        farm.csa = data.data;
+        farm.csa.products = productsArr;
+        return farm;
+      } else {
+        return farm;
+      }
+    });
+  }
   function makeMap(lat,lng,zoom,markers) {
     $scope.map = {
          center : {
@@ -214,8 +234,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
          zoom : zoom || 8,
          control : {}
      };
-    //  makeMarkers(markers);
-  }
+  };
   $scope.view.centerMap = function(address) {
     address = address.split(' ').join('+');
     GoogleMapsService.getLatLng(address).then(function(data) {
@@ -275,12 +294,28 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
      };
   }
 
-   uiGmapIsReady.promise()
-   .then(function (map_instances) {
-       var map1 = $scope.map.control.getGMap();    // get map object through $scope.map.control getGMap() function
-       var map2 = map_instances[0].map;            // get map object through array object returned by uiGmapIsReady promise
-   });
+  uiGmapIsReady.promise()
+  .then(function (map_instances) {
+     var map1 = $scope.map.control.getGMap();    // get map object through $scope.map.control getGMap() function
+     var map2 = map_instances[0].map;            // get map object through array object returned by uiGmapIsReady promise
+  });
 
+  $scope.view.filterBy = function(boolean) {
+    if (boolean) {
+      var arr = $scope.farms.filter(function(e) {
+        if (e.csa) {
+          return e;
+        }
+        return;
+      });
+      $scope.farms = arr;
+      makeMarkers($scope.farms);
+      } else {
+      // get farms again
+      nearestFarms(currentLocation.lat,currentLocation.lng);
+      makeMarkers($scope.farms);
+    }
+  }
 };
 makeFarmsController.$inject = ['$scope','$http','$routeParams','GoogleMapsService','UserService','FormService','uiGmapIsReady'];
 
