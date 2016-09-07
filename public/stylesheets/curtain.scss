@@ -3,6 +3,7 @@ $font3: 'Shadows Into Light Two', cursive;
 $color1: rgba(240,135,8,1); // too orange, doesnt stick out
 $color2: rgba(245,0,19,1); //
 $green: rgba(156,39,176,1);
+$font: 'Catamaran', sans-serif;
 
 
 .curtain {
@@ -12,9 +13,7 @@ $green: rgba(156,39,176,1);
   left: 0;
   margin: 0;
   padding: 0;
-  // background: url('../images/tomatoes.jpg');
   background: url('../images/originals/market_flowers.jpg');
-  // background: url('../images/stock/peppers-colorful.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -23,82 +22,25 @@ $green: rgba(156,39,176,1);
   display: flex;
   flex-flow: column;
   align-items: center;
-  display: none;
 }
 .curtain-title {
-  color: black;;
-  // text-align: left;
+  background: rgba(255,255,255,0.77);
+  color: black;
   margin-top: 23vh;
-  margin-bottom: 0;
-  width: 100%;
-  height: 200px;
-  min-height: 200px;
-  // background: red;
-  display: flex;
-  justify-content: center;
-  font: {
-    family: $font1;
-    size: 6em;
-  }
-  .title-wrap {
-    background: rgba(255,255,255,0.77);
-    width: 300px;
-    // height: 300px;
-    border-radius: 150px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    h1 {
-      margin: 0;
-      padding: 0;
-      font-size: 0.5em;
-    }
-  }
-}
-.curtain-intro {
-  color: black;;
-  font-family: $font3;
-  font-size: 1.5em;
-  width: 50%;
-  text-align: right;
-}
-.curtain-body {
-  background: rgba(255,255,255,0.87);
-  // width: 600px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  margin-top: 0;
-  p {
-    padding: 5px;
-    text-align: center;
-  }
-}
-.curtain-users {
-  width: 100%;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  text-align: center;
   display: flex;
   flex-flow: column;
+  justify-content: center;
   align-items: center;
-}
-.curtain-signup-form {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  // background: red;
-  width: 90%;
-  input {
-    background: rgba(255,255,255,0);
-    padding: 5px;
-    width: 50%;
-    border: none;
+  font: {
+    family: $font;
+    size: 2em;
   }
-  input:not(:last-child) {
-    border-bottom: 1px solid grey;
-  }
-  label {
-    margin: 5px;
+  * {
+    margin: 0;
+    padding: 0;
   }
 }
