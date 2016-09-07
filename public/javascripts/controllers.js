@@ -164,10 +164,14 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     $scope.view.editMode = false;
   }
 
+
+  function makeMarkers(arr) {
+    console.log(arr);
+  }
   // Do I ever have to retrieve ALL farms?
   // Right now: YES, until my API returns nearest farms by zip
   $scope.view.zipDecode = function(zip) {
-    var url = 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zip;
+    var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip;
     $http.get(url).then(function(data) {
       $scope.view.searchOrigin = data.data.results[0].geometry.location;
       // post to /farms/all and retrieve farms by zip
@@ -179,6 +183,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       $http.post('/farms/all',zipObj).then(function(data) {
         delete $scope.farms;
         $scope.farms = data.data;
+        // makeMarkers($scope.farms);
       });
     });
   };
@@ -195,6 +200,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
       $http.post('/farms/all',currentObj).then(function(data) {
         delete $scope.farms;
         $scope.farms = data.data;
+        makeMarkers($scope.farms);
       })
     });
   };

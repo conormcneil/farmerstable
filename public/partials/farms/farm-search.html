@@ -25,12 +25,11 @@
         <input type="text" ng-model="view.zipCode" placeholder="12345" autofocus>
       </div>
       <button ng-click="view.zipDecode(view.zipCode)" ng-show="forms.zip_search">Search</button>
-      <div id="map">
-      </div>
+      <ui-gmap-google-map center="map.center" zoom="map.zoom" control="map.control">
+        <ui-gmap-markers models='{{ farms.markers }}'>
+    </ui-gmap-markers>
+      </ui-gmap-google-map>
     </div>
   </div>
 
 </div>
-
-<script src="./javascripts/googlemaps.js" charset="utf-8" async defer></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc&callback=initMap" async defer></script>
