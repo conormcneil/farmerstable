@@ -382,6 +382,7 @@ a, a * {
 .farm-details, .farm-dynamic {
   background: rgba(255,255,255,0.95);
   border-radius: 3px;
+  height: 0%;
 }
 .farm {
   width: 100%;
@@ -393,7 +394,7 @@ a, a * {
     margin-left: 75px;
     padding: 5px;
     width: 20%;
-    height: auto;
+    height: 0%;
     // background: red;
     .farm-csa {
       display: flex;
@@ -594,6 +595,13 @@ ft-account-csa {
   a {
     padding: 0;
   }
+}
+
+footer {
+  position: fixed;
+  background: rgba(255,255,255,0);
+  bottom: 0;
+  left: 0;
 }
 
 // CONFIRM //
