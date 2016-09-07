@@ -35,12 +35,15 @@ a, a * {
   color: inherit; }
 
 .header {
+  margin: 0;
+  padding: 0;
   height: 185px;
   width: 100vw;
   color: black;
   font-family: "Catamaran", sans-serif;
   display: flex;
   flex-direction: column;
+  text-align: center;
   z-index: 3;
   font-size: 1em; }
   .header a, .header p {
@@ -59,11 +62,12 @@ a, a * {
   .header .header-row2 {
     margin: 0;
     padding: 0;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 110px;
+    padding-right: 110px;
     display: flex;
     flex-flow: row;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center; }
   .header .user-dropdown {
     display: flex;
     flex-flow: row;
@@ -78,7 +82,7 @@ a, a * {
     color: black;
     flex-direction: column;
     position: absolute;
-    right: 0;
+    right: 110px;
     top: 185px;
     z-index: 1;
     background: white;
@@ -96,12 +100,12 @@ a, a * {
     .header .signin input, .header .signup input {
       padding: 5px; }
     .header .signin button, .header .signup button {
-      width: 185px;
-      margin-right: -5px;
+      width: 210px;
       border: none;
+      border-radius: 0;
       font-variant: small-caps; }
     .header .signin .radio-option, .header .signup .radio-option {
-      width: 100%;
+      width: 210px;
       display: flex;
       align-items: center;
       background: white; }
@@ -111,16 +115,17 @@ a, a * {
         margin-right: 5px; }
       .header .signin .radio-option label, .header .signup .radio-option label {
         width: 75%; }
-  .header .signin-box .pointer:active {
+  .header .user-box .pointer:active {
     background: rgba(0, 0, 0, 0.1); }
-  .header .signin-box {
+  .header .user-box {
+    padding: 0;
+    margin: 0;
     font-size: 0.7em;
     display: flex;
-    flex-flow: column nowrap;
-    padding-right: 15px; }
-    .header .signin-box * {
-      margin: 0;
-      padding: 0; }
+    flex-flow: row nowrap;
+    align-items: center; }
+    .header .user-box p {
+      padding-left: 15px; }
 
 .content {
   display: flex;

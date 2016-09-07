@@ -36,20 +36,21 @@ body {
   overflow-x: hidden;
   font-variant: small-caps;
   font-family: $font;
-  // margin-bottom: 300px;
-  // background: green;
 }
 a, a * {
   text-decoration: none;
   color: inherit;
 }
 .header {
+  margin: 0;
+  padding: 0;
   height: 185px;
   width: 100vw;
   color: black;
   font-family: $font;
   display: flex;
   flex-direction: column;
+  text-align: center;
   z-index: 3;
   font-size: 1em;
   // padding-left: 75px;
@@ -75,12 +76,13 @@ a, a * {
   .header-row2 {
     margin: 0;
     padding: 0;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 110px;
+    padding-right: 110px;
     // background: red;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+    align-items: center;
   }
   .user-dropdown {
     display: flex;
@@ -98,7 +100,7 @@ a, a * {
     color: black;
     flex-direction: column;
     position: absolute;
-    right: 0;
+    right: 110px;
     top: 185px;
     z-index: 1;
     background: white;
@@ -118,13 +120,14 @@ a, a * {
       padding: 5px;
     }
     button {
-      width: 185px;
-      margin-right: -5px;
+      width: 210px;
+      // margin-right: -5px;
       border: none;
+      border-radius: 0;
       font-variant: small-caps;
     }
     .radio-option {
-      width: 100%;
+      width: 210px;
       display: flex;
       align-items: center;
       background: white;
@@ -138,17 +141,19 @@ a, a * {
       }
     }
   }
-  .signin-box .pointer:active {
+  .user-box .pointer:active {
     background: rgba(0,0,0,0.1);
   }
-  .signin-box {
+  .user-box {
+    padding: 0;
+    margin: 0;
     font-size: 0.7em;
     display: flex;
-    flex-flow: column nowrap;
-    padding-right: 15px;
-    * {
-      margin: 0;
-      padding: 0;
+    flex-flow: row nowrap;
+    align-items: center;
+    // background: red;
+    p {
+      padding-left: 15px;
     }
   }
 }
