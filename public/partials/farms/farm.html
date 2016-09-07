@@ -4,16 +4,10 @@
   <div class="back-button">
     <a href="/farms"><button class="shadow pointer">Back to Farms</button></a>
   </div>
-  <!-- <ui-gmap-google-map id="farm-map" center="map.center" zoom="map.zoom" control="map.control">
-    <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
-    </ui-gmap-marker>
-  </ui-gmap-google-map> -->
   <div class="farm">
     <div class="farm-dynamic shadow">
       <!-- show if this farm's CSA exists -->
       <div class="farm-csa" ng-show="farm.csa">
-        <!-- <div>
-        </div> -->
         <h3 class="farm-csa-title">Current CSA: </h3>
         <h3 class="farm-csa-title">{{farm.csa.csa_name}}</h3>
         <p class="success message" ng-show="message.success">{{ message.success }}</p>
@@ -46,7 +40,6 @@
         <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
         </ui-gmap-marker>
       </ui-gmap-google-map>
-      <!-- <img ng-src="{{ farm.image_url }}"> -->
       <button class="follow-button shadow pointer">+ Follow this Farm</button>
       <h5><img class="icon" ng-src="../images/icons/phone_icon.svg">{{farm.contact_phone}}</h5>
       <h5><img class="icon" ng-src="../images/icons/mail_icon_black.svg"><a href="mailto:{{farm.contact_email}}" class="pointer">{{farm.contact_email}}</h5>

@@ -14,7 +14,6 @@
     <label for="post">Post this Message on my Farm's home page</label>
     <input type="checkbox" ng-model="view.message.post"></input>
 
-    <!-- <p>{{ message.success }} / {{ message.error }}</p> -->
     <p class="success message" ng-show="message.success">{{ message.success }}</p>
     <p class="error message" ng-show="message.error">{{ message.error }}</p>
 
@@ -33,9 +32,6 @@
 
 <!-- user is NOT a farmer -->
 <div class="account-home" ng-show="!user.isFarmer">
-  <!-- <div class="account-home-main">
-    <h1>This is the main section</h1>
-  </div> -->
   <aside class="account-home-aside">
     <h3>Farms You Follow</h3>
     <div class="no-follows" ng-show="!user.follows.farms">

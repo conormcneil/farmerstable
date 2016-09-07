@@ -88,7 +88,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   $scope.view.deletePost = function(id) {
     if (checkConfirm('Are you sure you want to permanently delete this post?')) {
       $http.delete(`/farms/deletepost/${id}`).then(function(data) {
-        // console.log('deleted:',data);
         getPosts($scope.farm.id);
       });
     } else {
@@ -178,12 +177,10 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
         title: e.name
       });
     });
-    // console.log($scope.markers);
     return $scope.markers;
   };
 
   function nearestFarms(lat,lng) {
-    // console.log(JSON.parse(localStorage.getItem('mapConditions')));
     // add default location in case !localStorage.mapConditions
     $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lng).then(function(data) {
       var currentZip = data.data.results[0].address_components[data.data.results[0].address_components.length-1].long_name;
@@ -221,13 +218,13 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
   }
   function makeMap(lat,lng,zoom,markers) {
     $scope.map = {
-         center : {
-             latitude: lat,
-             longitude: lng
-         },
-         zoom : zoom || 8,
-         control : {}
-     };
+      center : {
+        latitude: lat,
+        longitude: lng
+      },
+      zoom : zoom || 8,
+      control : {}
+    };
   };
   $scope.view.centerMap = function(address) {
     address = address.split(' ').join('+');
@@ -364,8 +361,6 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
     });
   };
   $scope.view.sendMessage = function(sendFrom,sendTo,subject,body,post) {
-    // delete $scope.view.message;
-    // view.message.sendTo,view.message.subject,view.message.body,view.message.post
     if (post) {
       var postObj = {
         farm_id: $scope.user.farm.id,
@@ -382,7 +377,6 @@ function makeAccountController($scope,$http,$routeParams,FormService,UserService
         return prev;
       },[]);
     }
-    // 'Yo Face <conor@conorkingston.com>'
     var message = {
       sendFrom: sendFrom,
       sendTo: sendTo,
