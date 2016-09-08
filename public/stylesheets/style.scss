@@ -74,7 +74,7 @@ a, a * {
     display: flex;
     justify-content: center;
     .logo {
-      width: 175px;
+      height: 175px;
       position: absolute;
       top: 25px;
       z-index: 4;
@@ -334,6 +334,7 @@ a, a * {
       min-width: 400px;
       min-height: 120px;
       border: 1px solid black;
+      border-radius: 3px;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -369,29 +370,30 @@ a, a * {
         }
       }
     }
-    .zip-search {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      margin: 15px;
-      padding: 5px;
-      background: rgba(255,255,255,0.85);
-      ui-gmap-google-map {
-        margin: 0;
-        padding: 0;
-        width: 95%;
-      }
-      div {
-        padding: 5px;
-        width: 100%;
-        display: flex;
-        flex-flow: row;
-        justify-content: center;
-        input {
-          width: 20%;
-        }
-      }
-    }
+    // .zip-search {
+    //   display: flex;
+    //   flex-flow: column;
+    //   align-items: center;
+    //   margin: 15px;
+    //   padding: 5px;
+    //   background: rgba(255,255,255,0.85);
+    //   ui-gmap-google-map {
+    //     margin: 0;
+    //     padding: 0;
+    //     width: 95%;
+    //     border-radius: 3px;
+    //   }
+    //   div {
+    //     padding: 5px;
+    //     width: 100%;
+    //     display: flex;
+    //     flex-flow: row;
+    //     justify-content: center;
+    //     input {
+    //       width: 20%;
+    //     }
+    //   }
+    // }
   }
 }
 .wrap-fixed {
@@ -418,6 +420,7 @@ a, a * {
     justify-content: space-between;
     align-items: center;
     background: rgba(255,255,255,0.95);
+    border-radius: 3px;
     * {
       padding: 0;
       margin: 0;
@@ -455,10 +458,12 @@ a, a * {
     margin: 15px;
     padding: 5px;
     background: rgba(255,255,255,0.85);
+    border-radius: 3px;
     ui-gmap-google-map {
       margin: 0;
       padding: 0;
       width: 95%;
+      border-radius: 3px;
     }
     div {
       padding: 5px;
