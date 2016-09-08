@@ -40,13 +40,13 @@ a, a * {
 .header {
   margin: 0;
   padding: 0;
-  height: 185px;
+  height: 225px;
   width: 100vw;
   color: black;
   font-family: "Catamaran", sans-serif;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: flex-end;
   z-index: 3;
   font-size: 1em; }
   .header a, .header p {
@@ -59,7 +59,14 @@ a, a * {
     font-size: 5em;
     color: #ffc107;
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    display: flex;
+    justify-content: center; }
+    .header .header-title .logo {
+      width: 175px;
+      position: absolute;
+      top: 25px;
+      z-index: 4; }
     .header .header-title a {
       text-align: center; }
   .header .header-row2 {

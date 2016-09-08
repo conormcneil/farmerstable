@@ -44,16 +44,18 @@ a, a * {
   text-decoration: none;
   color: inherit;
 }
+
 .header {
   margin: 0;
   padding: 0;
-  height: 185px;
+  height: 225px;
   width: 100vw;
   color: black;
   font-family: $font;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: flex-end;
+  // text-align: center;
   z-index: 3;
   font-size: 1em;
   a, p {
@@ -65,11 +67,19 @@ a, a * {
   .header-title {
     margin: 0;
     padding: 0;
-    // background: blue;
     font-size: 5em;
     color: $accent;
     width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    .logo {
+      width: 175px;
+      position: absolute;
+      top: 25px;
+      z-index: 4;
+      // background: red;
+    }
     a {
       text-align: center;
     }
@@ -285,6 +295,7 @@ a, a * {
 }
 
 .farm-search {
+  // padding-top: 50px;
   width: 100%;
   background: url('../images/originals/market_eggplant2.JPG');
   background-size: cover;
