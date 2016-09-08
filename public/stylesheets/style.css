@@ -170,7 +170,7 @@ a, a * {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.85); }
+    background: rgba(255, 255, 255, 0.9); }
   .home .home-box-title {
     margin-top: 5px;
     display: flex;
@@ -186,11 +186,16 @@ a, a * {
     display: flex;
     justify-content: center; }
     .home aside button {
-      height: 55px;
-      width: 253px;
-      font-size: 1.7em;
+      height: 75px;
+      width: 285px;
+      font-size: 2.8em;
       font-family: "Catamaran", sans-serif;
-      margin-top: 25px; }
+      margin-top: 25px;
+      background: white;
+      color: #ffc107; }
+
+.home-icon {
+  height: 1.5em; }
 
 .angular-google-map-container {
   display: block;
