@@ -62,11 +62,12 @@ a, a * {
     text-align: center;
     display: flex;
     justify-content: center; }
-    .header .header-title .logo {
+    .header .header-title .logo, .header .header-title .logo-link {
+      width: 175px;
       height: 175px;
       position: absolute;
       top: 25px;
-      z-index: 4; }
+      z-index: 5; }
     .header .header-title a {
       text-align: center; }
   .header .header-row2 {
