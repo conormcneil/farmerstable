@@ -16,7 +16,6 @@
   align-items: center; }
 
 .curtain-title {
-  background: rgba(255, 255, 255, 0.77);
   color: black;
   margin-top: 23vh;
   width: 300px;
@@ -29,6 +28,9 @@
   align-items: center;
   font-family: "Catamaran", sans-serif;
   font-size: 2em; }
+  .curtain-title img {
+    height: 300px;
+    opacity: .85; }
   .curtain-title * {
     margin: 0;
     padding: 0; }

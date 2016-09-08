@@ -25,7 +25,6 @@ $font: 'Catamaran', sans-serif;
   // display: none;
 }
 .curtain-title {
-  background: rgba(255,255,255,0.77);
   color: black;
   margin-top: 23vh;
   width: 300px;
@@ -36,6 +35,10 @@ $font: 'Catamaran', sans-serif;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  img {
+    height: 300px;
+    opacity: .85;
+  }
   font: {
     family: $font;
     size: 2em;
