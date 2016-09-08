@@ -111,8 +111,8 @@ a, a * {
     color: black;
     flex-direction: column;
     position: absolute;
-    right: 110px;
-    top: 185px;
+    right: 105px;
+    top: 225px;
     z-index: 1;
     background: white;
     width: 210px;
@@ -185,22 +185,23 @@ a, a * {
   flex-flow: column;
   align-items: center;
   .home-boxes {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 50px;
-    width: 85%;
+    width: 65%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
   }
   .home-box {
-    width: 30%;
-    min-height: 150px;
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
     background: rgba(255,255,255,0.85);
-    border-radius: 3px;
+    // border-radius: 3px;
   }
   .home-box-title {
     margin-top: 5px;
