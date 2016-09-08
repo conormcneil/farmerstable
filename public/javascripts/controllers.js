@@ -95,39 +95,6 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     }
   };
 
-  function makeMarker(obj) {
-    $scope.marker = {
-       id: 0,
-       coords: {
-         latitude: obj.lat,
-         longitude: obj.lng
-       },
-       options: {
-         label: obj.name,
-         title: obj.name,
-         MarkerLabel: {
-           text: 'Test text'
-         }
-       },
-       // events: {}
-       events: {
-         dragend: function (marker, eventName, args) {
-           $log.log('marker dragend');
-           var lat = marker.getPosition().lat();
-           var lon = marker.getPosition().lng();
-           $log.log(lat);
-           $log.log(lon);
-
-           $scope.marker.options = {
-             labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
-             labelAnchor: "100 0",
-             labelClass: "marker-labels"
-           };
-         }
-       }
-     };
-  }
-
   // if url has route param: id, set this to active farm
   if($routeParams.id) {
     $http.get(`/farms/details/${$routeParams.id}`).then(function(data) {
@@ -164,6 +131,39 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     });
   };
 
+  // make a single marker
+  function makeMarker(obj) {
+    $scope.marker = {
+       id: 0,
+       coords: {
+         latitude: obj.lat,
+         longitude: obj.lng
+       },
+       options: {
+         label: obj.name,
+         title: obj.name,
+         MarkerLabel: {
+           text: 'Test text'
+         }
+       },
+       // events: {}
+       events: {
+         dragend: function (marker, eventName, args) {
+           $log.log('marker dragend');
+           var lat = marker.getPosition().lat();
+           var lon = marker.getPosition().lng();
+           $log.log(lat);
+           $log.log(lon);
+
+           $scope.marker.options = {
+             labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
+             labelAnchor: "100 0",
+             labelClass: "marker-labels"
+           };
+         }
+       }
+     };
+  }
   // this function takes an array of farms => sets marker for each farm on googlemap
   function makeMarkers(arr) {
     $scope.markers = [];
@@ -174,7 +174,14 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
           latitude: e.lat,
           longitude: e.lng,
         },
-        title: e.name
+        options: {
+          label: e.name,
+          title: e.name,
+          MarkerLabel: {
+            // text: 'Test text'
+          }
+        }
+        // title: e.name
       });
     });
     return $scope.markers;
