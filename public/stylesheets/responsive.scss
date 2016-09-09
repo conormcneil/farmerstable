@@ -33,6 +33,10 @@
 }
 
 @media (max-width: 420px) {
+  .curtain {
+    width: 110vw;
+    height: 110vh;
+  }
   .curtain-title {
     img {
       height: 250px;
