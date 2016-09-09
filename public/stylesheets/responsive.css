@@ -13,6 +13,9 @@
       position: static;
       flex-wrap: wrap; } }
 @media (max-width: 768px) {
+  .curtain-title img {
+    height: 250px; }
+
   .header .header-title {
     left: 16vw; } }
 @media (max-width: 420px) {

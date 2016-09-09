@@ -22,6 +22,11 @@
 }
 // iPad Portrait (<768px)
 @media (max-width: 768px) {
+  .curtain-title {
+    img {
+      height: 250px;
+    }
+  }
   .header .header-title {
     left: 16vw;
   }
