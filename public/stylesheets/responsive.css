@@ -9,13 +9,10 @@
     flex-flow: column;
     justify-content: center;
     align-items: center; }
-    .header .header-title {
-      display: flex;
-      justify-content: center; }
-      .header .header-title .logo, .header .header-title .logo-link {
-        position: relative;
-        width: 75px;
-        height: 75px; }
+    .header .header-title .logo, .header .header-title .logo-link {
+      position: relative;
+      width: 75px;
+      height: 75px; }
     .header .header-row2 {
       width: calc(100vw-220px);
       padding: 0; }
