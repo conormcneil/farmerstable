@@ -38,9 +38,10 @@
     width: 414px;
     height: 245px;
     .header-title {
-
+      background: red;
     }
     .header-row2 {
+      background: blue;
       width: 100%;
       display: flex;
       flex-flow: row nowrap;

@@ -17,7 +17,10 @@
   ft-header {
     width: 414px;
     height: 245px; }
+    ft-header .header-title {
+      background: red; }
     ft-header .header-row2 {
+      background: blue;
       width: 100%;
       display: flex;
       flex-flow: row nowrap;
