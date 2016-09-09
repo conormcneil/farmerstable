@@ -35,7 +35,6 @@
 
 @media (max-width: 420px) {
   body {
-    background: green;
     width: 100vw !important;
   }
   ft-header {
@@ -48,6 +47,7 @@
       }
     }
     .header-row2 {
+      padding: 0;
       background: blue;
       width: 100%;
       display: inline-block;
