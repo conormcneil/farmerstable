@@ -67,7 +67,7 @@ a, a * {
       height: 175px;
       position: absolute;
       top: 25px;
-      z-index: 6; }
+      z-index: 4; }
     .header .header-title a {
       text-align: center; }
   .header .header-row2 {
