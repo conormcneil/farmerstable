@@ -41,7 +41,9 @@
     width: 100vw;
     height: 175px;
     .header-title {
-      .logo {
+      .logo,.logo-link {
+        width: 75px;
+        height: 75px;
         opacity: 0.9;
       }
     }
