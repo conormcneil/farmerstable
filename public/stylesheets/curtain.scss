@@ -22,28 +22,11 @@ $font: 'Catamaran', sans-serif;
   display: flex;
   flex-flow: column;
   align-items: center;
-}
-.curtain-title {
-  color: black;
-  margin-top: 23vh;
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
-  text-align: center;
-  display: flex;
-  flex-flow: column;
   justify-content: center;
-  align-items: center;
+}
+a {
   img {
-    height: 500px;
+    height: 400px;
     opacity: .85;
-  }
-  font: {
-    family: $font;
-    size: 2em;
-  }
-  * {
-    margin: 0;
-    padding: 0;
   }
 }

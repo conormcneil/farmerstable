@@ -1,9 +1,9 @@
 @media (max-width: 420px) {
   .curtain {
-    width: 110vw;
-    height: 110vh; }
+    width: 100%;
+    height: 100%; }
 
-  .curtain-title img {
+  .curtain a img {
     height: 250px; } }
 
 /*# sourceMappingURL=responsive.css.map */
