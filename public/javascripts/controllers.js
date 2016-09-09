@@ -120,7 +120,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
 
 
   // retrieve nearest farms and make google map automatically on route load
-  makeMap(currentLocation.lat,currentLocation.lng,3);
+  makeMap(currentLocation.lat || 35,currentLocation.lng || -110,3);
   nearestFarms(currentLocation.lat,currentLocation.lng); // gets nearest farms
   // this function is used for manual farm search by zip;
   // takes zip code => ordered list of nearest 10 farms
