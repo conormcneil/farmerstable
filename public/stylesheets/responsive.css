@@ -1,7 +1,6 @@
 @media (max-width: 420px) {
   body {
-    width: 100vw !important;
-    background: pink; }
+    width: 100vw !important; }
 
   .header {
     width: 100vw;
@@ -10,9 +9,7 @@
     .header .header-title .logo {
       opacity: 0.9; }
     .header .header-row2 {
-      padding-left: -110px;
-      padding-right: -110px;
-      width: 100vw; }
+      width: calc(100vw-220px); }
 
   .content {
     background: yellow;
