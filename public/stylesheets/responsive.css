@@ -1,37 +1,5 @@
-@media (max-width: 1280px) {
-  .header .header-title {
-    top: 0;
-    left: 29vw; } }
-@media (max-width: 1024px) {
-  .header .header-title {
-    left: 20vw; }
-
-  .farm-search {
-    padding-left: 0;
-    justify-content: space-around; }
-    .farm-search .zip-search, .farm-search .more {
-      position: static;
-      flex-wrap: wrap; } }
-@media (max-width: 768px) {
-  .curtain-title img {
-    height: 250px; }
-
-  .header .header-title {
-    left: 16vw; } }
 @media (max-width: 420px) {
-  body {
-    background: blue; }
-
-  ft-header {
-    position: absolute;
-    display: inline-block;
-    background: green;
-    width: 500px;
-    height: 500px; }
-
-  .header .header-title {
-    left: 16vw;
-    font-size: 3em;
-    width: 100vw; } }
+  .curtain-title img {
+    height: 250px; } }
 
 /*# sourceMappingURL=responsive.css.map */

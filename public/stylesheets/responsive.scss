@@ -1,52 +1,41 @@
 // title begins to superimpose over nav-bar
 @media (max-width: 1280px) {
-  .header .header-title {
-    top: 0;
-    left: 29vw;
-  }
+  // .header .header-title {
+  //   top: 0;
+  //   left: 29vw;
+  // }
 }
 
 // iPad Lanscape (<1024px)
 @media (max-width: 1024px) {
-  .header .header-title {
-    left: 20vw;
-  }
-  .farm-search {
-    padding-left: 0;
-    justify-content: space-around;
-    .zip-search, .more {
-      position: static;
-      flex-wrap: wrap;
-    }
-  }
+  // .header .header-title {
+  //   left: 20vw;
+  // }
+  // .farm-search {
+  //   padding-left: 0;
+  //   justify-content: space-around;
+  //   .zip-search, .more {
+  //     position: static;
+  //     flex-wrap: wrap;
+  //   }
+  // }
 }
 // iPad Portrait (<768px)
 @media (max-width: 768px) {
+  // body {
+  //   background:
+  // }
+  // .curtain-title {
+  //   img {
+  //     height: 250px;
+  //   }
+  // }
+}
+
+@media (max-width: 420px) {
   .curtain-title {
     img {
       height: 250px;
     }
-  }
-  .header .header-title {
-    left: 16vw;
-  }
-}
-
-@media (max-width: 420px) {
-  body {
-    background: blue;
-  }
-  ft-header {
-    position: absolute;
-    display: inline-block;
-    background: green;
-    width: 500px;;
-    height: 500px;
-  }
-  .header .header-title {
-    left: 16vw;
-    font-size: 3em;
-    width: 100vw;
-    // background: red;
   }
 }
