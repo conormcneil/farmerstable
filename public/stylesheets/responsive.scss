@@ -44,6 +44,7 @@
     // }
   }
   .header {
+    display: none;
     width: 10px;
     height: 245px;
     background: red;
@@ -79,6 +80,7 @@
     height: 250px;
   }
   .footer {
+    display: none;
     width: 414px;
   }
 }
