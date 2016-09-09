@@ -37,11 +37,6 @@
   body {
     width: 100vw !important;
     background: pink;
-    // * {
-    //   margin: 0;
-    //   padding: 0;
-    //   width: 100vw;
-    // }
   }
   .header {
     display: none;
@@ -58,20 +53,15 @@
       padding-right: -110px;
       width: 414px;
       display: inline-block;
-      // flex-flow: row nowrap;
-      // justify-content: space-around;
-      .top-nav, .user-dropdown {
-        // background: red;
-      }
     }
   }
   .content {
-    // display: none;
     background: yellow;
     width: 414px;
     height: 10px;
   }
   .curtain {
+    position: fixed;
     margin: 0;
     padding: 0;
     width: 100%;
