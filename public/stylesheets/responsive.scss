@@ -1,6 +1,9 @@
 // title begins to superimpose over nav-bar
 @media (max-width: 1280px) {
-
+  .curtain {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 
@@ -25,7 +28,7 @@
     height: 0px;
   }
   .curtain a img {
-    height: 150px;
+    height: 250px;
   }
 }
 
