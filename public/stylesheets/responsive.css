@@ -1,6 +1,7 @@
 @media (max-width: 420px) {
   body {
-    width: 100vw !important; }
+    width: 100vw !important;
+    background: pink; }
 
   .header {
     width: 100%;
@@ -15,7 +16,8 @@
       display: inline-block; }
 
   .content {
-    background: yellow; }
+    background: yellow;
+    width: 414px; }
 
   .curtain {
     width: 100%;
