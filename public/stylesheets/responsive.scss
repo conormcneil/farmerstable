@@ -37,15 +37,18 @@
   ft-header {
     width: 414px;
     height: 245px;
+    background: red;
     .header-title {
-      background: red;
+      .logo {
+        opacity: 0.9;
+      }
     }
     .header-row2 {
       background: blue;
       width: 100%;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-around;
+      display: inline-block;
+      // flex-flow: row nowrap;
+      // justify-content: space-around;
       .top-nav, .user-dropdown {
         // background: red;
       }

@@ -16,15 +16,14 @@
 @media (max-width: 420px) {
   ft-header {
     width: 414px;
-    height: 245px; }
-    ft-header .header-title {
-      background: red; }
+    height: 245px;
+    background: red; }
+    ft-header .header-title .logo {
+      opacity: 0.9; }
     ft-header .header-row2 {
       background: blue;
       width: 100%;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-around; }
+      display: inline-block; }
 
   .content {
     display: none; }
