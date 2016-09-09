@@ -14,6 +14,9 @@
   .curtain a img {
     height: 250px; } }
 @media (max-width: 420px) {
+  .content {
+    width: 100vw; }
+
   .curtain {
     width: 100%;
     height: 100%; }
