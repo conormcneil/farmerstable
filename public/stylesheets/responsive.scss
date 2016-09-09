@@ -45,6 +45,7 @@
     justify-content: center;
     align-items: center;
     .header-title {
+      border: 1px solid black;
       // display: flex;
       // justify-content: center;
       .logo,.logo-link {
@@ -54,6 +55,7 @@
       }
     }
     .header-row2 {
+      border: 1px solid black;
       width: calc(100vw-220px);
       padding: 0;
     }

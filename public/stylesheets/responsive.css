@@ -9,11 +9,14 @@
     flex-flow: column;
     justify-content: center;
     align-items: center; }
-    .header .header-title .logo, .header .header-title .logo-link {
-      position: relative;
-      width: 75px;
-      height: 75px; }
+    .header .header-title {
+      border: 1px solid black; }
+      .header .header-title .logo, .header .header-title .logo-link {
+        position: relative;
+        width: 75px;
+        height: 75px; }
     .header .header-row2 {
+      border: 1px solid black;
       width: calc(100vw-220px);
       padding: 0; }
 
