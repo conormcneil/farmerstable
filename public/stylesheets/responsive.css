@@ -14,8 +14,12 @@
   .curtain a img {
     height: 250px; } }
 @media (max-width: 420px) {
+  ft-header {
+    width: 414px;
+    height: 245px; }
+
   .content {
-    width: 414px; }
+    display: none; }
 
   .curtain {
     width: 100%;
