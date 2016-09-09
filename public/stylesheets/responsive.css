@@ -9,7 +9,8 @@
     ft-header .header-title .logo {
       opacity: 0.9; }
     ft-header .header-row2 {
-      padding: 0;
+      padding-left: -110px;
+      padding-right: -110px;
       background: blue;
       width: 100%;
       display: inline-block; }
