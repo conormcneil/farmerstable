@@ -54,8 +54,7 @@
     .header-row2 {
       padding-left: -110px;
       padding-right: -110px;
-      background: blue;
-      width: 100%;
+      width: 414px;
       display: inline-block;
       // flex-flow: row nowrap;
       // justify-content: space-around;
@@ -66,6 +65,7 @@
   }
   .content {
     // display: none;
+    background: yellow;
   }
   .curtain {
     width: 100%;

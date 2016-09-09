@@ -11,9 +11,11 @@
     .header .header-row2 {
       padding-left: -110px;
       padding-right: -110px;
-      background: blue;
-      width: 100%;
+      width: 414px;
       display: inline-block; }
+
+  .content {
+    background: yellow; }
 
   .curtain {
     width: 100%;
