@@ -1,14 +1,21 @@
 @media (max-width: 420px) {
+  body {
+    background: green;
+    width: 100vw; }
+
   ft-header {
-    width: 414px;
+    width: 100%;
     height: 245px;
     background: red; }
     ft-header .header-title .logo {
       opacity: 0.9; }
     ft-header .header-row2 {
       background: blue;
-      width: 414px;
+      width: 100%;
       display: inline-block; }
+
+  .content {
+    overflow: hidden; }
 
   .curtain {
     width: 100%;
