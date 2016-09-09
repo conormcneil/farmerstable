@@ -4,7 +4,9 @@
 
   .header {
     width: 100vw;
-    height: 125px; }
+    height: 125px;
+    display: flex;
+    justify-content: center; }
     .header .header-title {
       display: flex;
       justify-content: center; }

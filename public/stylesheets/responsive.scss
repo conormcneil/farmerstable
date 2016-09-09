@@ -40,6 +40,8 @@
   .header {
     width: 100vw;
     height: 125px;
+    display: flex;
+    justify-content: center;
     .header-title {
       display: flex;
       justify-content: center;
