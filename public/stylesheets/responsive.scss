@@ -22,14 +22,9 @@
 }
 // iPad Portrait (<768px)
 @media (max-width: 768px) {
-  // body {
-  //   background:
-  // }
-  // .curtain-title {
-  //   img {
-  //     height: 250px;
-  //   }
-  // }
+  .curtain a img {
+    height: 250px;
+  }
 }
 
 @media (max-width: 420px) {
