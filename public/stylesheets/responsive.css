@@ -15,6 +15,8 @@
         position: relative;
         width: 75px;
         height: 75px; }
+      .header .header-title .logo {
+        border: 1px solid black; }
     .header .header-row2 {
       border: 1px solid black;
       width: calc(100vw-220px);

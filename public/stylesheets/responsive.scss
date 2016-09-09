@@ -48,10 +48,13 @@
       border: 1px solid black;
       // display: flex;
       // justify-content: center;
-      .logo,.logo-link {
+      .logo, .logo-link {
         position: relative;
         width: 75px;
         height: 75px;
+      }
+      .logo {
+        border: 1px solid black;
       }
     }
     .header-row2 {
