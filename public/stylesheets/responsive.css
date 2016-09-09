@@ -19,8 +19,7 @@
 
   .content {
     background: yellow;
-    width: 100vw;
-    height: calc(100vh - 125px); }
+    width: 100vw; }
 
   .curtain {
     position: fixed;
