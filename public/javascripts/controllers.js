@@ -212,7 +212,7 @@ function makeFarmsController($scope,$http,$routeParams,GoogleMapsService,UserSer
     $http.get(`/csa/details/${farm.id}`).then(function(data) {
       if (data.data) { // data.data is csa object returned from API
         var tempArr = data.data.products.split(',');
-        var productsArr = tempArr.map(e => {
+        var productsArr = tempArr.map(function(e) {
           return e.trim();
         });
         farm.csa = data.data;

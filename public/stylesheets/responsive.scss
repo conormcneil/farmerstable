@@ -45,7 +45,7 @@
     justify-content: center;
     align-items: center;
     .header-title {
-      border: 1px solid black;
+      // border: 1px solid black;
       // display: flex;
       // justify-content: center;
       .logo, .logo-link {
@@ -54,11 +54,11 @@
         height: 75px;
       }
       .logo {
-        border: 1px solid black;
+        // border: 1px solid black;
       }
     }
     .header-row2 {
-      border: 1px solid black;
+      // border: 1px solid black;
       width: calc(100vw-220px);
       padding: 0;
     }
@@ -80,6 +80,13 @@
   }
   .footer {
     width: 100vw;
+  }
+  .home {
+    aside {
+      button {
+        width: 400px;
+      }
+    }
   }
 }
 
