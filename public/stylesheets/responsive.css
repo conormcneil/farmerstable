@@ -4,8 +4,7 @@
 
   .header {
     width: 100vw;
-    height: 245px;
-    background: red; }
+    height: 175px; }
     .header .header-title .logo {
       opacity: 0.9; }
     .header .header-row2 {
