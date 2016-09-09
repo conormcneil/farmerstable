@@ -1,24 +1,3 @@
-@media (max-width: 1280px) {
-  .curtain {
-    width: 100%;
-    height: 100%; } }
-@media (max-width: 768px) {
-  body {
-    overflow-y: hidden;
-    height: 100%;
-    width: 100vw; }
 
-  .home {
-    height: 0px; }
-
-  .curtain a img {
-    height: 250px; } }
-@media (max-width: 420px) {
-  .curtain {
-    width: 100%;
-    height: 100%; }
-
-  .curtain a img {
-    height: 250px; } }
 
 /*# sourceMappingURL=responsive.css.map */
