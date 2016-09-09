@@ -5,10 +5,13 @@
   .header {
     width: 100vw;
     height: 175px; }
-    .header .header-title .logo, .header .header-title .logo-link {
-      width: 75px;
-      height: 75px;
-      opacity: 0.9; }
+    .header .header-title {
+      display: flex;
+      justify-content: center; }
+      .header .header-title .logo, .header .header-title .logo-link {
+        width: 75px;
+        height: 75px;
+        opacity: 0.9; }
     .header .header-row2 {
       width: calc(100vw-220px);
       padding: 0; }
