@@ -17,22 +17,22 @@
   <script src="./javascripts/jwtdecode.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" charset="utf-8"></script>
   <script src="https://rawgit.com/angular-ui/angular-google-maps/2.0.11/dist/angular-google-maps.min.js" charset="utf-8"></script>
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> disables zoom -->
-  <meta name="viewport" content="width=device-width"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> disables zoom
+  <!-- <meta name="viewport" content="width=device-width"/> -->
   <base href="/">
   <title>Farmer's Table</title>
 </head>
 <body>
 
-  <!-- <ft-curtain></ft-curtain> -->
+  <ft-curtain></ft-curtain>
+
   <ft-header class="header shadow" ng-controller="HeaderController"></ft-header>
-  <!-- <div id="map"></div> -->
 
   <div ng-view class="content shadow"></div>
 
   <footer class="footer">&copy; 2016 farmers table</footer>
 
   <script src="./javascripts/googlemaps.js" charset="utf-8" async defer></script>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtVdRd8z-_OzSEdxwsym11zRxGygotFc&callback=initMap" async defer></script> -->
+
 </body>
 </html>

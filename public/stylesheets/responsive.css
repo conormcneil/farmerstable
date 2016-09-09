@@ -1,6 +1,17 @@
 @media (max-width: 768px) {
+  body {
+    overflow-y: hidden;
+    height: 100%;
+    width: 100vw; }
+
+  .content {
+    height: 0px; }
+
+  .home {
+    height: 0px; }
+
   .curtain a img {
-    height: 250px; } }
+    height: 150px; } }
 @media (max-width: 420px) {
   .curtain {
     width: 100%;
@@ -8,5 +19,13 @@
 
   .curtain a img {
     height: 250px; } }
+@media (max-height: 720px) {
+  .content {
+    height: 100vh;
+    width: 100vw; }
+
+  .curtain {
+    height: 100%;
+    width: 100%; } }
 
 /*# sourceMappingURL=responsive.css.map */

@@ -1,31 +1,34 @@
 // title begins to superimpose over nav-bar
 @media (max-width: 1280px) {
-  // .header .header-title {
-  //   top: 0;
-  //   left: 29vw;
-  // }
+
 }
+
 
 // iPad Lanscape (<1024px)
 @media (max-width: 1024px) {
-  // .header .header-title {
-  //   left: 20vw;
-  // }
-  // .farm-search {
-  //   padding-left: 0;
-  //   justify-content: space-around;
-  //   .zip-search, .more {
-  //     position: static;
-  //     flex-wrap: wrap;
-  //   }
-  // }
+
 }
+
+
 // iPad Portrait (<768px)
 @media (max-width: 768px) {
+  body {
+    overflow-y: hidden;
+    height: 100%;
+    width: 100vw;
+  }
+  .content {
+    height: 0px;
+    // width: 100vw;
+  }
+  .home {
+    height: 0px;
+  }
   .curtain a img {
-    height: 250px;
+    height: 150px;
   }
 }
+
 
 @media (max-width: 420px) {
   .curtain {
@@ -34,5 +37,21 @@
   }
   .curtain a img {
     height: 250px;
+  }
+}
+
+
+
+
+@media (max-height: 720px) {
+  .content {
+    // display: none;
+    height: 100vh;
+    width: 100vw;
+  }
+  .curtain {
+    // display: none;
+    height: 100%;
+    width: 100%;
   }
 }
