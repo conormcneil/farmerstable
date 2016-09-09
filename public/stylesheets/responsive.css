@@ -4,7 +4,7 @@
     background: pink; }
 
   .header {
-    width: 10px;
+    width: 100vw;
     height: 245px;
     background: red; }
     .header .header-title .logo {
