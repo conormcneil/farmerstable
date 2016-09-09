@@ -36,6 +36,9 @@
     width: 100vw; }
 
   .home aside button {
-    width: 350px; } }
+    width: 350px; }
+
+  .home-box {
+    height: 350px; } }
 
 /*# sourceMappingURL=responsive.css.map */
