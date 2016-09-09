@@ -17,6 +17,11 @@
   ft-header {
     width: 414px;
     height: 245px; }
+    ft-header .header-row2 {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around; }
 
   .content {
     display: none; }
