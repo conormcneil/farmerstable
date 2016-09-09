@@ -46,9 +46,8 @@
       }
     }
     .header-row2 {
-      // padding-left: -110px;
-      // padding-left: -110px;
-      width: 100vw;
+      width: calc(100vw-220px);
+      padding: 0;
     }
   }
   .content {

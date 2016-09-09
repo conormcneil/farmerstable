@@ -8,7 +8,8 @@
     .header .header-title .logo {
       opacity: 0.9; }
     .header .header-row2 {
-      width: 100vw; }
+      width: calc(100vw-220px);
+      padding: 0; }
 
   .content {
     background: yellow;
