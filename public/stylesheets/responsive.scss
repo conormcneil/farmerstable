@@ -36,8 +36,13 @@
 @media (max-width: 420px) {
   body {
     width: 100vw !important;
+    * {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+    }
   }
-  ft-header {
+  .header {
     width: 100%;
     height: 245px;
     background: red;

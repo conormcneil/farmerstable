@@ -1,14 +1,18 @@
 @media (max-width: 420px) {
   body {
     width: 100vw !important; }
+    body * {
+      margin: 0;
+      padding: 0;
+      width: 100vw; }
 
-  ft-header {
+  .header {
     width: 100%;
     height: 245px;
     background: red; }
-    ft-header .header-title .logo {
+    .header .header-title .logo {
       opacity: 0.9; }
-    ft-header .header-row2 {
+    .header .header-row2 {
       padding-left: -110px;
       padding-right: -110px;
       background: blue;
