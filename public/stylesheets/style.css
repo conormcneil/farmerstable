@@ -158,7 +158,7 @@ a, a * {
     margin-bottom: 50px;
     width: 65%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-around; }
   .home .home-box {
     width: 250px;

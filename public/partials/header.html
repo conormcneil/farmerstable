@@ -36,10 +36,6 @@
       <input type="radio" name="is-farmer" ng-model="view.signup.isFarmer" value="true" checked>
       <label for="is-farmer">I'm a farmer</label>
     </aside>
-    <!-- <aside class="radio-option">
-      <input type="radio" name="is-farmer" ng-model="view.signup.isNotFarmer" value="false">
-      <label for="is-farmer">I'm a consumer</label>
-    </aside> -->
     <button ng-click="view.signup(view.signup.email,view.signup.username,view.signup.password,view.signup.passwordConfirm,view.signup.isFarmer,view.signup.isNotFarmer);view.toggle('signup')">Sign Up</button>
   </form>
   <div class="signin user-nav" ng-show="forms.user_nav">

@@ -32,7 +32,8 @@
     }
   }
   .content {
-    background: yellow;
+    height: calc(100vh - 95px);
+    // height: 0%;
     width: 100vw;
   }
   .curtain {
@@ -49,15 +50,22 @@
     width: 100vw;
   }
   .home {
-    display: none;
+    height: 100%;
+    overflow-y: scroll;
+    background-attachment: fixed;
     aside {
+      margin-top: 750px;
+      margin-bottom: 300px;
       button {
-        width: 350px;
+        width: 300px;
       }
     }
   }
+  .home-boxes {
+    width: 100vw;
+  }
   .home-box {
-    height: 350px;
+    margin-bottom: 25px;
   }
   .close {
     position: absolute;

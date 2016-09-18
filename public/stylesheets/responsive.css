@@ -23,7 +23,7 @@
         height: 60px; }
 
   .content {
-    background: yellow;
+    height: calc(100vh - 95px);
     width: 100vw; }
 
   .curtain {
@@ -40,12 +40,20 @@
     width: 100vw; }
 
   .home {
-    display: none; }
-    .home aside button {
-      width: 350px; }
+    height: 100%;
+    overflow-y: scroll;
+    background-attachment: fixed; }
+    .home aside {
+      margin-top: 750px;
+      margin-bottom: 300px; }
+      .home aside button {
+        width: 300px; }
+
+  .home-boxes {
+    width: 100vw; }
 
   .home-box {
-    height: 350px; }
+    margin-bottom: 25px; }
 
   .close {
     position: absolute;
