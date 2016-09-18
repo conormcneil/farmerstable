@@ -70,7 +70,7 @@ app.use(function(req, res, next) {
 //     error: {}
 //   });
 //   // TODO
-//   res.send('you fucked up');
+//   res.send('error');
 // });
 
 
