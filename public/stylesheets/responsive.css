@@ -2,6 +2,9 @@
   .mobile-responsive {
     display: inherit; }
 
+  .desktop-only {
+    display: none; }
+
   body {
     width: 100vw !important; }
 
@@ -98,6 +101,11 @@
       height: 40px; }
     .user-nav-mobile p, .user-nav-mobile a {
       padding: 5px;
-      margin: 0; } }
+      margin: 0; }
+
+  .farm-search {
+    background-attachment: fixed; }
+    .farm-search .wrap .nearby-farm {
+      flex-flow: row wrap; } }
 
 /*# sourceMappingURL=responsive.css.map */
