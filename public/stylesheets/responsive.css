@@ -61,11 +61,19 @@
       .home-boxes .mobile-responsive .placeholder {
         border: none;
         box-shadow: none; }
-      .home-boxes .mobile-responsive button {
+      .home-boxes .mobile-responsive a {
+        margin: 0;
+        padding: 0;
         height: 100%;
-        width: 100%;
-        background: white;
-        font-size: 2em; }
+        width: 100%; }
+        .home-boxes .mobile-responsive a button {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          background: white;
+          color: #ffc107;
+          font-size: 2em; }
 
   .home-box {
     margin-bottom: 25px; }

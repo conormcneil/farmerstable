@@ -1,3 +1,8 @@
+$primary: rgba(63,81,181,1);
+$accent: rgba(255,193,7,1);
+$testBorder: 1px solid black;
+$font: 'Catamaran', sans-serif;
+
 @media (max-width: 420px) {
   .mobile-responsive {
     display: inherit;
@@ -72,11 +77,20 @@
         border: none;
         box-shadow: none;
       }
-      button {
+      a {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        button {
+        margin: 0;
+        padding: 0;
         height: 100%;
         width: 100%;
         background: white;
+        color: $accent;
         font-size: 2em;
+        }
       }
     }
   }
