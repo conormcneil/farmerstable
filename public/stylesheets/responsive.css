@@ -6,16 +6,15 @@
     width: 100vw;
     height: 125px;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center; }
+    flex-flow: column; }
     .header .header-title .logo, .header .header-title .logo-link {
-      position: relative;
       width: 75px;
       height: 75px; }
     .header .header-row2 {
       width: calc(100vw-220px);
-      padding: 0; }
+      padding: 0;
+      display: flex;
+      justify-content: center; }
 
   .content {
     background: yellow;
@@ -34,8 +33,10 @@
   .footer {
     width: 100vw; }
 
-  .home aside button {
-    width: 350px; }
+  .home {
+    display: none; }
+    .home aside button {
+      width: 350px; }
 
   .home-box {
     height: 350px; } }
