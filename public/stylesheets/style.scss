@@ -54,7 +54,6 @@ a, a * {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // text-align: center;
   z-index: 3;
   font-size: 1em;
   a, p {
@@ -88,7 +87,6 @@ a, a * {
     padding: 0;
     padding-left: 110px;
     padding-right: 110px;
-    // background: red;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -170,8 +168,6 @@ a, a * {
   justify-content: center;
   margin: 0 auto;
   width: 100vw;
-  // min-width: 730px;
-  // min-height: 71vh;
 }
 // partials/home
 .home {
@@ -301,7 +297,6 @@ a, a * {
 }
 
 .farm-search {
-  // padding-top: 50px;
   width: 100%;
   background: url('../images/originals/market_eggplant2.JPG');
   background-size: cover;
@@ -318,7 +313,6 @@ a, a * {
     position: absolute;
     display: flex;
     align-items: center;
-    // justify-content: center;
     padding-left: 100px;
   }
   .wrap {
@@ -375,30 +369,6 @@ a, a * {
         }
       }
     }
-    // .zip-search {
-    //   display: flex;
-    //   flex-flow: column;
-    //   align-items: center;
-    //   margin: 15px;
-    //   padding: 5px;
-    //   background: rgba(255,255,255,0.85);
-    //   ui-gmap-google-map {
-    //     margin: 0;
-    //     padding: 0;
-    //     width: 95%;
-    //     border-radius: 3px;
-    //   }
-    //   div {
-    //     padding: 5px;
-    //     width: 100%;
-    //     display: flex;
-    //     flex-flow: row;
-    //     justify-content: center;
-    //     input {
-    //       width: 20%;
-    //     }
-    //   }
-    // }
   }
 }
 .wrap-fixed {
@@ -604,7 +574,6 @@ a, a * {
   background: rgba(255,255,255,0.95);
   border-radius: 3px;
   .post-subject {
-    // text-align: center;
     color: $accent;
     margin-bottom: 0;
     padding-bottom: 0;

@@ -59,4 +59,36 @@
   .home-box {
     height: 350px;
   }
+  .close {
+    position: absolute;
+    z-index: 998;
+    width: 100vw;
+    height: 736px;
+  }
+  .user-nav-mobile {
+    z-index: 999;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 190px;
+    height: 100vh;
+    box-shadow: 0px 5px 12px grey;
+    background: rgba(255,255,255,0.94);
+    font-size: 1.5em;
+    img {
+      display: flex;
+      align-self: flex-start;
+      margin: 0;
+      margin-bottom: 5px;
+      padding: 0;
+      height: 40px;
+    }
+    p, a {
+      padding: 5px;
+      margin: 0;
+    }
+  }
 }

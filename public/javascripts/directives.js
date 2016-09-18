@@ -43,4 +43,9 @@ app
     return {
       templateUrl: "partials/accounts/account-settings.html"
     }
+  })
+  .directive("ftMobileNav",function() {
+    return {
+      templateUrl: "partials/nav/mobile-nav.html"
+    }
   });

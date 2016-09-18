@@ -5,6 +5,7 @@ app
         signin: false, // false
         signup: false, // false
         user_nav: false, // false
+        mobile_user_nav: false, // false
         // TODO
         account_home: true, // true
         account_csa: false, // false
