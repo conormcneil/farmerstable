@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/new', function(req, res, next) {
   var passwordHS = bcrypt.hashSync(req.body.password,8);
-  console.log(passwordHS);
   knex('users')
     .insert({
       email: req.body.email,
