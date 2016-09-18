@@ -4,17 +4,23 @@
 
   .header {
     width: 100vw;
-    height: 125px;
-    display: flex;
-    flex-flow: column; }
+    height: 95px; }
     .header .header-title .logo, .header .header-title .logo-link {
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 10px;
+      left: 10px;
       width: 75px;
       height: 75px; }
     .header .header-row2 {
-      width: calc(100vw-220px);
-      padding: 0;
-      display: flex;
-      justify-content: center; }
+      display: none; }
+    .header .header-row2-mobile {
+      position: absolute;
+      top: 20px;
+      right: 25px; }
+      .header .header-row2-mobile img {
+        height: 60px; }
 
   .content {
     background: yellow;
