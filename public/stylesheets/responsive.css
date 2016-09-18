@@ -33,14 +33,11 @@
     width: 100vw; }
 
   .curtain {
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
     height: 100vh; }
 
   .curtain a img {
-    height: 250px; }
+    height: 250px;
+    z-index: 990; }
 
   .footer {
     width: 100vw; }
