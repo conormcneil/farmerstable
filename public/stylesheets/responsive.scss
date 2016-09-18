@@ -1,4 +1,7 @@
 @media (max-width: 420px) {
+  .mobile-responsive {
+    display: inherit;
+  }
   body {
     width: 100vw !important;
   }
@@ -50,19 +53,33 @@
     width: 100vw;
   }
   .home {
+    padding-bottom: 150px;
     height: 100%;
     overflow-y: scroll;
     background-attachment: fixed;
     aside {
-      margin-top: 750px;
-      margin-bottom: 300px;
-      button {
-        width: 300px;
-      }
+      display: none;
     }
   }
   .home-boxes {
     width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    .mobile-responsive {
+      margin-bottom: 100px;
+      width: 300px;
+      height: 75px;
+      .placeholder {
+        border: none;
+        box-shadow: none;
+      }
+      button {
+        height: 100%;
+        width: 100%;
+        background: white;
+        font-size: 2em;
+      }
+    }
   }
   .home-box {
     margin-bottom: 25px;
