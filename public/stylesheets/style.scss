@@ -25,6 +25,13 @@ $font: 'Catamaran', sans-serif;
 .error {
   color: red;
 }
+
+
+.width-wrap {
+  width: 80vw;
+}
+
+
 button {
   font-weight: 900;
   background: $primary;
@@ -172,32 +179,41 @@ a, a * {
   width: 100vw;
 }
 // partials/home
-.home {
-  height: 71vh;
-  width: 100%;
+.headline-image {
   background: url('../images/originals/market_flowers.JPG');
-  background-position: center;
   background-size: cover;
+  height: 250px;
+  width: 100%;
+}
+.home {
+  // height: 71vh;
+  width: 100%;
   display: flex;
   flex-flow: column;
   align-items: center;
   .home-boxes {
-    margin-top: 5%;
-    margin-bottom: 50px;
-    width: 65%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+  button {
+    margin-bottom: 50px;
+    height: 75px;
+    width: 285px;
+    font-size: 2.8em;
+    font-family: $font;
+    background: white;
+    color: $accent;
   }
   .home-box {
     width: 250px;
     height: 250px;
-    border-radius: 125px;
+    // border-radius: 125px;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,.9);
+    // background: rgba(255,255,255,.9);
   }
   .home-box-title {
     margin-top: 5px;
@@ -212,19 +228,6 @@ a, a * {
   p {
     padding: 5px;
     text-align: center;
-  }
-  aside {
-    display: flex;
-    justify-content: center;
-    button {
-      height: 75px;
-      width: 285px;
-      font-size: 2.8em;
-      font-family: $font;
-      margin-top: 25px;
-      background: white;
-      color: $accent;
-    }
   }
 }
 .home-icon {
