@@ -579,6 +579,7 @@ ft-account-csa {
     padding: 0; }
 
 footer {
+  position: fixed;
   background: rgba(255, 255, 255, 0);
   bottom: 0;
   left: 0;
