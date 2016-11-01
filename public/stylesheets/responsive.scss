@@ -3,6 +3,10 @@ $accent: rgba(255,193,7,1);
 $testBorder: 1px solid black;
 $font: 'Catamaran', sans-serif;
 
+.width-wrap {
+  width: 80vw;
+}
+
 @media (max-width: 420px) {
   .mobile-responsive {
     display: inherit;

@@ -19,9 +19,6 @@
 .error {
   color: red; }
 
-.width-wrap {
-  width: 80vw; }
-
 button {
   font-weight: 900;
   background: #3f51b5;
@@ -151,8 +148,6 @@ a, a * {
   width: 100vw; }
 
 .headline-image {
-  background: url("../images/originals/market_flowers.JPG");
-  background-size: cover;
   height: 250px;
   width: 100%; }
 
@@ -161,6 +156,9 @@ a, a * {
   display: flex;
   flex-flow: column;
   align-items: center; }
+  .home .headline-image {
+    background: url("../images/originals/market_flowers.JPG");
+    background-size: cover; }
   .home .home-boxes {
     display: flex;
     flex-flow: row wrap;
@@ -223,37 +221,27 @@ a, a * {
       font-size: 0.8em; }
 
 .csa {
-  padding: 5px;
-  background: url("../images/originals/market_greens.JPG");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  height: 76vh; }
-  .csa * {
-    padding: 0;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    margin: 0; }
-  .csa .csa-title {
-    width: 100%; }
-
-.csa-form {
-  width: 40%; }
-
-.csa-description {
-  margin-top: 25px;
-  padding: 15px;
-  height: 505px;
-  text-align: justify;
-  width: 40%;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 3px;
-  font-size: 0.9em; }
-  .csa-description h3 {
-    font-weight: 900; }
+  flex-direction: column;
+  justify-content: space-around; }
+  .csa .headline-image {
+    background: url("../images/originals/market_greens.JPG");
+    background-size: cover;
+    background-position: center; }
+  .csa .csa-description {
+    padding: 15px;
+    text-align: justify;
+    font-size: 0.9em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; }
+    .csa .csa-description h3 {
+      width: 100%;
+      font-weight: 900; }
+    .csa .csa-description p {
+      width: 30%; }
+  .csa .csa-form {
+    width: 40%; }
 
 .farm-search {
   width: 100%;

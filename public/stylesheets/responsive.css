@@ -1,3 +1,6 @@
+.width-wrap {
+  width: 80vw; }
+
 @media (max-width: 420px) {
   .mobile-responsive {
     display: inherit; }
